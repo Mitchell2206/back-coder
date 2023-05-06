@@ -11,7 +11,7 @@ export default class ProductManager {
 
     constructor() {
         this.products = [];
-        this.productsId = 1;
+        this.productsId = 0;
     }
 
     addProducts(product) {
@@ -41,13 +41,10 @@ export default class ProductManager {
         try {
 
             const todosLosProductos = JSON.parse(await promises.readFile('./archivoDeProducts.txt', 'utf-8'));
-           
-            const productoBuscado = todosLosProductos.find((prod) => prod.id === product.id);
-            productoBuscado.title = product.title;
-            productoBuscado.descripcion = product.descripcion;
-            productoBuscado.price = product.price;
-            productoBuscado.thumbnail = product.thumbnail;
-            productoBuscado.code = product.code;
+
+            const productoBuscado = todosLosProductos.findIndex((prod) => prod.id === product.id);
+            todosLosProductos[productoBuscado] = product
+
             const newProducts = todosLosProductos.filter((prod) => prod.id !== productoBuscado.id);
             newProducts.push(productoBuscado);
             writeFileSync('./archivoDeProducts.txt', JSON.stringify(newProducts))
