@@ -1,20 +1,44 @@
- import { Router } from "express";
+import { Router } from "express";
+import cartManagers from "../cartManager.js";
 
- const carts = []
+const cartRouter = Router();
 
- const cartRouter = Router();
-
- cartRouter.get('/', (req, res) =>{
-    
-     res.send(carts)
- });
+const cartList = new cartManagers();
 
 
- cartRouter.post('/', (req, res)=>{
-    const cart = req.body;
-    carts.push(cart)
-    res.status(201).send(cart)
- }) 
+cartRouter.post('/', async (req, res) => {
+
+    const crearCarrito = await cartList.addCart()
+    console.log(crearCarrito)
+    try {
+        res.status(201).send(crearCarrito);
+    } catch (error) {
+        res.status(400).send({ error });
+    }
+});
+
+cartRouter.get('/:cid', async (req, res) => {
+      
+    try {
+        const id = req.params.cid;
+      let getID = await cartList.idToCart(id);
+        res.status(200).send(await getID);
+    } catch (err) {
+        res.status(400).send({ err });
+    }
+});
 
 
- export { cartRouter } ;
+cartRouter.post('/:cid/product/:pid', async (req, res) => {
+	try {
+		const cid = req.params.cid;
+		const pid = req.params.pid;
+		res.status(201).send(cartList.addProductCart(cid, pid));
+	} catch (err) {
+		res.status(400).send({ err });
+	}
+});
+
+
+
+export { cartRouter };

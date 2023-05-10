@@ -1,24 +1,25 @@
 import { AsyncLocalStorage } from "async_hooks";
 import { Router } from "express";
-import {writeFileSync, promises, readFile } from 'fs';
-
+import { writeFileSync, promises, readFile } from 'fs';
+import ProductManager from "../primeramitchell.js";
 import { parse } from "path";
 
-const data = JSON.parse(await promises.readFile('src/archivoDeProducts.txt', 'utf-8'))
+const data = JSON.parse(await promises.readFile('./src/models/products.json', 'utf-8'))
 
 
 const products = []
-
- 
 const productsId = 1;
 
 
-const productRouter  = Router();
+const productoManager1 = new ProductManager();
 
-productRouter.get('/',  (req, res) => {
-   //aqui traigo todos los productos con su funcion limite//
-    const limite = req.query.limite;
+const productRouter = Router();
+
+productRouter.get('/', (req, res) => {
+    //aqui traigo todos los productos con su funcion limite//
+    let limite = req.query.limite;
     if (data) {
+
         return res.send(data.slice(0, limite))
 
     } else {
@@ -27,12 +28,15 @@ productRouter.get('/',  (req, res) => {
     }
 });
 
+
 productRouter.get('/:id', async (req, res) => {
-    const filterId = await data.find((prod) => prod.id === parseInt(req.params.id))
+    let idUnico = req.params.id
+    const filterId = await productoManager1.getProductsById(idUnico)
     try {
         if (filterId != undefined) {
-            console.log("Producto encontrado ", filterId)
-            return res.send(filterId)
+            return res.status(200).send(filterId)
+        } else {
+            res.status(200).send(await filterId);
         }
 
     } catch (error) {
@@ -42,32 +46,36 @@ productRouter.get('/:id', async (req, res) => {
 });
 
 
-
-
-productRouter.post('/',  (req, res) => {
-   
+productRouter.post('/', async (req, res) => {
     const product = req.body
- 
-    if (product.title != '' && product.descripcion != '' && product.price != '' && product.code != '' && product.status != '') {
-      
-        const idIcrement = data.map((pid) => pid.id === product.id++);
-        const filtroCode = data.map(prod => prod.code === product.code);
- 
-        if (filtroCode.length > 0) {
-           
-            console.log("No puedes agregar mas de este articulo, porque es uno por persona")
-            
-        }
-       products.push(...data, product)
-       console.log(products)
-       console.log("El producto con el id: ", product.id, "Ha sido agregado.");
-        writeFileSync('src/archivoDeProducts.txt', JSON.stringify(products));
-        res.status(201).send(product)
-    } else {
-        res.status(400).send(` los campos deben estar llenos ${error}`)
+    try {
+        let productos = await productoManager1.addProducts(product);
+        return res.status(200).send(productos)
 
+    } catch (error) {
+        console.log(res.status(400).send("No entra el producto"))
     }
+});
 
+
+productRouter.put('/:id', async (req, res) => {
+
+    const id = req.params.id
+    const productActualizado = req.body
+    try {
+        return res.status(200).send(await productoManager1.updateProduct(id, productActualizado))
+    } catch (error) {
+        console.log(res.status(400).send("No se actualizo el producto"))
+    }
+})
+
+productRouter.delete('/:id', async (req, res) => {
+    const id = req.params.id
+    try{
+        return res.status(200).send(await productoManager1.deleteProduct(id))
+    }catch(error){
+        console.log(res.status(400).send("No se elimino el producto"))
+    }
 })
 
 
