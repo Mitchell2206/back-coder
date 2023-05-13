@@ -1,7 +1,7 @@
 import { AsyncLocalStorage } from "async_hooks";
 import { Router } from "express";
 import { writeFileSync, promises, readFile } from 'fs';
-import ProductManager from "../primeramitchell.js";
+import ProductManager from "../controllers/primeramitchell.js";
 import { parse } from "path";
 
 const data = JSON.parse(await promises.readFile('./src/models/products.json', 'utf-8'))
