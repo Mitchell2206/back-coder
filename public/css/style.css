@@ -1,0 +1,32 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.div{
+    display: flex;
+   flex-direction: column;
+    padding: 30px;
+    justify-content: center;
+}
+
+h1{
+    font-style: italic;
+    color: rgba(117, 14, 14, 0.332);
+}
+
+h2{
+   
+    color: brown;
+    font-size: 15px;
+   
+}
+
+p{
+    display: flex;
+ 
+    flex-direction: column;
+}
+
+
