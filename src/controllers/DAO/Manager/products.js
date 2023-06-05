@@ -1,8 +1,5 @@
 
-import { Console } from 'console';
-import { writeFileSync, promises, readFile } from 'fs';
-import { parse } from 'path';
-import { json } from 'stream/consumers';
+import {  promises } from 'fs';
 import { nanoid } from 'nanoid';
 
 export default class ProductManager {

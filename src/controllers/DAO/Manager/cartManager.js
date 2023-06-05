@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { nanoid } from 'nanoid';
-import ProductManager from './primeramitchell.js';
+import ProductManager from './products.js';
 
 const productToCart = new ProductManager();
 

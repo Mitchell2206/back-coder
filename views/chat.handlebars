@@ -1,0 +1,43 @@
+<div><br /></div>
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-4'>
+            <h2>Fomulario Email y Mensaje</h2>
+            <form action='/' method='post'>
+
+                <div class='row'>
+
+                    <div class='col-6'>
+                        <input type='text' class='form-control' placeholder='Email' aria-label='user' name='user' />
+                    </div>
+
+                    <div class='col-6'>
+                        <input type='text' class='form-control' placeholder='ingresa un mensaje' aria-label='menssage'
+                            name='menssage' />
+                    </div>
+
+                    <div class='col-12'>
+                        <button type='submit' class='form-control'>
+                            Enviar
+                        </button>
+                    </div>
+                </div>
+ 
+ 
+                <h2>Lista de Mensajes</h2>
+                <div id="List-Message"></div>
+
+            </form>
+        </div>
+    </div>
+    {{#if successMessage}}
+    <div class="row">
+        <div class="col-md-4">
+            <p class="text-success">{{ successMessage }}</p>
+        </div>
+    </div>
+    {{/if}}
+</div>
+
+<script src='/socket.io/socket.io.js'></script>
+<script src='/js/index.js'></script>
