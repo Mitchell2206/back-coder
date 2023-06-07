@@ -1,32 +1,72 @@
-
 body {
+    background-color: rgba(16, 16, 85, 0.587);
+}
+
+.container {
+  width: 500px;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.container .row {
+    width: 500px;  
+    display: flex;
+    
+  }
+
+  .container .row .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(71, 71, 113, 0.401);
+    padding: 20px;
+  }
+
+  .container .row .col-md-4 h2 {
+    color: azure;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.div{
+  }
+
+  .container .row .col-md-4 form div  {
     display: flex;
-   flex-direction: column;
-    padding: 30px;
-    justify-content: center;
-}
-
-h1{
-    font-style: italic;
-    color: rgba(117, 14, 14, 0.332);
-}
-
-h2{
-   
-    color: brown;
-    font-size: 15px;
-   
-}
-
-p{
-    display: flex;
- 
     flex-direction: column;
-}
+    padding: 10px;
+    background-color: rgba(157, 143, 192, 0.504);
+  }
+
+  .container .row .col-md-4 form div p {
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .container .row .col-md-4 form .row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .row .col-md-4 form .row .col-6{
+    border: 50px;
+    padding: 15px;
+  }
+
+  .container .row .col-md-4 form .row .comentario .form-control{
+    border: 50px;
+    width: 300px;
+    right: 300px;
 
 
+  } 
+
+  .container .row .col-md-4 form .row .col-12 {
+   padding: 20px;
+    width: 50px;
+    
+  }
