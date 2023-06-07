@@ -23,18 +23,6 @@ app.set('views', 'views/');
 app.set('view engine', 'handlebars');
 
 app.use(express.static('public'))
-// creamos rutas api
-
-
-app.get('/chat', async (req, res) => {
-  try {
-    const messages = await menssagerModel.find({}).lean();
-    res.render('chat', { messages });
-  } catch (err) {
-    res.render('error', { error: err.message });
-  }
-});
-
 
 
 app.post('/', async (req, res) => {

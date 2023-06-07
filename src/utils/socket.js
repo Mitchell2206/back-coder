@@ -11,17 +11,14 @@ export const io = new Server(server);
 
 io.on('connection', async (socket) => {
 	console.log('Cliente conectado');
-  
+
 	//socket.emit('List-Product', await productList.getProducts());
 
-	
-	socket.on('List-Message', async () => {
-	  const messages = await menssagerModel.find({}).lean();
-	  socket.emit('List-Message', { messages } );
-	 
-	});
-  
+	const messages = await menssagerModel.find({}).lean();
+	socket.emit('List-Message', { messages });
+
+
 	socket.on('disconnect', () => {
-	  console.log('Cliente desconectado..');
+		console.log('Cliente desconectado..');
 	});
-  });
+});
