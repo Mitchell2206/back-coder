@@ -2,27 +2,33 @@
 const socket = io();
 
 //creamos el js del live producto en tiempo real, trabajando con el io//
-const render = async (data) => {
 
-  console.log(data, "holaaa aqui entre en data");
 
-  /*const html = document.getElementById('List-Product');
-  html.innerHTML = '';           // linea   index.js:8  //
-  await data.products.forEach((element) => {
+const renderProducts = (products) => {
+
+  const html = document.getElementById('List-Product');
+
+  html.innerHTML = '';
+  products.forEach((product) => {
     const elementHtml = document.createElement('div');
     elementHtml.innerHTML = `
-        <p>${element.title}</p>
-        <p>${element.code}</p>
-        <p>${element.price}</p>
-        <p>${element.stock}</p>
-      `;
+      <p>${product.title}</p>
+      <p>${product.code}</p>
+      <p>${product.price}</p>
+      <p>${product.stock}</p>
+    `;
     html.appendChild(elementHtml);
-  });*/
+  });
+
+
+};
+
+
+const render = async (data) => {
 
   const messageHtml = document.getElementById('List-Message');
-  if (messageHtml) {
-    messageHtml.innerHTML = '';
-    await data.messages.forEach((message) => {
+  if (data && data.messages && data.messages.length > 0) {
+    data.messages.forEach((message) => {
       const messageElement = document.createElement('div');
       messageElement.innerHTML = `
       <p>User: ${message.user}</p>
@@ -35,8 +41,13 @@ const render = async (data) => {
 
 };
 
+
+socket.on('List-Product', (data) => {
+  renderProducts(data);
+});
+
 socket.on('List-Message', (data) => {
-  render(data);      
+  render(data);
 });
 
 socket.on('product_updated', (data) => {

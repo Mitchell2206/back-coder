@@ -36,6 +36,7 @@ body {
     flex-direction: column;
     padding: 10px;
     background-color: rgba(157, 143, 192, 0.504);
+    
   }
 
   .container .row .col-md-4 form div p {
@@ -70,3 +71,8 @@ body {
     width: 50px;
     
   }
+
+
+  /* aqui css de los productos del index.handlebars */
+
+  

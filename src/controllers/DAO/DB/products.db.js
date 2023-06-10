@@ -1,5 +1,6 @@
 
-import { userModel } from '../../models/product.model.js';
+import userModel  from '../../models/product.model.js';
+
 
 
 export default class ProductManager {
@@ -27,8 +28,8 @@ export default class ProductManager {
     }
 
 
-    async deleteProduct(id) {
-        return await this.product.deleteOne({ _id: id });
+    async deleteProduct(pid) {
+        return await this.product.deleteOne({ _id: pid });
     }
 
 }

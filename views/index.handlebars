@@ -1,18 +1,21 @@
 
-<div>
-	<h1>Lista de Productos</h1>
-	{{#if prodc}}
-		{{#each prodc}}
-			<h2>{{this.title}}</h2>
-			<p>{{this.description}}</p>
-			<p>{{this.code}}</p>
-			<p>{{this.price}}</p>
-			<p>{{this.stock}}</p>
-			<p>{{this.category}}</p>
-			{{#if this.thumbnails}}
-			{{/if}}
-		{{/each}}
-	{{else}}
-		<h3>No hay productos agregados recientemente</h3>
-	{{/if}}
+<h1>Lista de Productos</h1>
+<div id="List-Product">
+  {{#if prodc}}
+   {{#each prodc}}
+      <h2>{{this.title}}</h2>
+      <p>{{this.description}}</p>
+      <p>{{this.code}}</p>
+      <p>{{this.price}}</p>
+      <p>{{this.stock}}</p>
+      <p>{{this.category}}</p>
+      {{#if this.thumbnails}}
+      {{/if}}
+    {{/each}}
+  {{else}}
+    <h3>No hay productos agregados recientemente</h3>
+  {{/if}}
 </div>
+
+<script src='/socket.io/socket.io.js'></script>
+<script src='/js/index.js'></script>

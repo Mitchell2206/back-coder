@@ -4,18 +4,29 @@ import mongoose from 'mongoose';
 import express from 'express';
 import { server, app } from './utils/socket.js';
 import handlerbars from 'express-handlebars';
+import handlebars from 'handlebars';
 // creamos rutas de js //
 import { productRouter } from './routes/products.router.js';
 import { cartRouter } from './routes/carts.router.js';
 import wiewsRouter from './routes/views.router.js';
 import { menssagerModel } from "../src/controllers/models/menssage.model.js";
 import { productList } from './utils/instances.js';
+
 import { io } from './utils/socket.js';
 import { cartList } from './utils/instances.js';
 
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
+
+
+
+const handlebarsOptions = {
+  allowProtoPropertiesByDefault: true,
+};
+
+
+const engine = handlebars.create(handlebarsOptions);
 
 // creamos accesos a handlerbars de enlazamiento //
 app.engine('handlebars', handlerbars.engine());
@@ -44,6 +55,7 @@ app.post('/', async (req, res) => {
     res.render('error', { error: err.message });
   }
 });
+
 
 
 app.use('/', wiewsRouter)

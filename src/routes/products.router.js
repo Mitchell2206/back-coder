@@ -9,6 +9,7 @@ productRouter.get('/', async (req, res) => {
 
     try {
         const getProductsRouter = await productList.getProducts()
+      
         res.send(getProductsRouter)
     } catch (err) {
         res.status(500).send({ err });

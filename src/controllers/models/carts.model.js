@@ -1,14 +1,14 @@
 import mongoose from 'mongoose';
-import { userModel } from './product.model.js';
+import  productModel  from './product.model.js';
 
 const cartSchema = new mongoose.Schema({
-    name: String,
-    products: {
-        type: [mongoose.Schema.Types.ObjectId],
-        ref: ' userModel ',
-        require: false,
-        default: []
-    },
+   
+    products: [
+        {
+         product: { type: mongoose.Schema.Types.ObjectId, ref: productModel } ,
+         quantity: { type: Number },
+        },
+    ]
 
 });
 
