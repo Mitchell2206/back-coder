@@ -1,89 +1,144 @@
-body {
-    background-color: rgba(16, 16, 85, 0.587);
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.container {
-  width: 500px;
-  padding: 50px;
+body{
+  background-color:rgb(207, 255, 205);
+}
+
+
+
+/* aqui css de los productos del index.handlebars */
+.container-product {
+  padding:20px ;
+  margin: 10px;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.container-product h1{
+  color: rgb(9, 7, 7);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container-product .container {
+  display: flex;
+  flex-direction: row;
+   align-items: center;
   justify-content: center;
 }
 
-.container .row {
-    width: 500px;  
-    display: flex;
-    
-  }
 
-  .container .row .col-md-4 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(71, 71, 113, 0.401);
-    padding: 20px;
-  }
-
-  .container .row .col-md-4 h2 {
-    color: azure;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container .row .col-md-4 form div  {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    background-color: rgba(157, 143, 192, 0.504);
-    
-  }
-
-  .container .row .col-md-4 form div p {
-    display: flex;
-    flex-direction: column;
-    color: aliceblue;
-    font-family: 'Courier New', Courier, monospace;
-  }
-
-  .container .row .col-md-4 form .row{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .container .row .col-md-4 form .row .col-6{
-    border: 50px;
-    padding: 15px;
-  }
-
-  .container .row .col-md-4 form .row .comentario .form-control{
-    border: 50px;
-    width: 300px;
-    right: 300px;
+.container-product .container .card {
+ 
+  background-color: rgba(183, 194, 190, 0.579);
+}
 
 
-  } 
+.container-product .container .card .card-body h5{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: rgb(16, 19, 15);
+}
 
-  .container .row .col-md-4 form .row .col-12 {
-   padding: 20px;
-    width: 50px;
-    
-  }
+.container-product .container .card .card-body .card-text{
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
+}
+
+.container-product .container .card .card-body .addToCart {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 120px;
+  height: 30px;
+  background-color: rgba(19, 56, 19, 0.304);
+}
+
+/** mi register**/
+
+.container-register {
+  padding: 50px;
+  background-color:rgb(207, 255, 205); 
+}
+
+.container-register h1 {
+  color: rgba(53, 42, 42, 0.483);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 20px;
+}
+
+.container-register .row{
+  background-color: rgba(47, 72, 72, 0.419);
+  padding: 30px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-register .row .btn{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 120px;
+  height: 50px;
+
+  background-color: rgba(19, 56, 19, 0.304);
+}
+
+/* el login aqui */
+
+.container-login{
+  padding: 50px;
+  background-color:rgb(207, 255, 205); 
+}
+
+.container-login h1 {
+  color: rgba(53, 42, 42, 0.483);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 20px;
+}
+
+.container-login .row{
+  background-color: rgba(47, 72, 72, 0.419);
+  padding: 30px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-login .row .btn{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 120px;
+  height: 50px;
+
+  background-color: rgba(19, 56, 19, 0.304);
+}
 
 
-  /* aqui css de los productos del index.handlebars */
-  .container-product{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    background-color: aquamarine;
-  }
-  .container{
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-  }
+/* css del profile*/
+
+
+.container-profile {
+  padding: 50px;
+  background-color:rgb(207, 255, 205); 
+}
+
+.container-profile .card{
+  height: 400px;
+
+  background-color: rgba(160, 180, 180, 0.623);
+}
+
+.container-profile .card .row{
+  padding: 30px;
+}
+.container-profile .card .row .col-md-4 .img-fluid{
+   border-radius: 20px;
+}
+
+
+

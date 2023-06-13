@@ -1,17 +1,36 @@
-import express from "express";
 import { Router } from "express";
 import { productList } from '../utils/instances.js';
-import mongoose from "mongoose";
-import ProductManager from "../controllers/Dao/DB/products.db.js";
-import CartManagers from "../controllers/DAO/DB/cart.bd.js";
-import { cartList } from "../utils/instances.js";
+import CartManagers from "../controllers/DAO/service/cart.service.js";
+import { isAuth, isGuest } from '../middleware/auth.middleware.js';
 
 const cartManagers = new CartManagers();
 const wiewsRouter = Router()
 
 
+wiewsRouter.get('/profile', isAuth, (req, res) => {
+	const { user } = req.session;
+	delete user.password;
+	res.render('profile', {
+		title: 'Perfil de Usuario',
+		user,
+	});
+});
 
-wiewsRouter.get('/index', async (req, res) => {
+wiewsRouter.get('/', isGuest, (req, res) => {
+	res.render('register', {
+		title: 'Registrar Nuevo Usuario',
+	});
+});
+
+wiewsRouter.get('/login', isGuest, (req, res) => {
+	res.render('login', {
+		title: 'Inicio de Sesión',
+	});
+});
+
+
+
+wiewsRouter.get('/index', isAuth, async (req, res) => {
   const { limit = 5, page = 1, sort, descripcion, availability } = req.query;
   try {
     const result = await productList.getProducts(limit, page, sort, descripcion, availability);
@@ -46,7 +65,6 @@ wiewsRouter.get('/chat', (req, res) => {
 
 });
 
-
 wiewsRouter.get('/carts/:cid', async (req, res) => {
   try {
     const cid = req.params.cid;
@@ -59,6 +77,8 @@ wiewsRouter.get('/carts/:cid', async (req, res) => {
     res.status(400).send(`${err}`);
   }
 });
+
+
 
 
 
