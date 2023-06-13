@@ -14,10 +14,10 @@ cartRouter.post('/', async (req, res) => {
 });
 
 // traemos el carrito con sus repectivos productos //
-cartRouter.get('/', async (req, res) => {
-    
+cartRouter.get('/:cid', async (req, res) => {
+    const cid = req.params.cid;
     try {
-        const getCartRouter = await cartList.getProducts()
+        const getCartRouter = await cartList.getProducts(cid)
 
         res.send(getCartRouter)
     } catch (err) {

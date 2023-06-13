@@ -74,5 +74,16 @@ body {
 
 
   /* aqui css de los productos del index.handlebars */
-
-  
+  .container-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: aquamarine;
+  }
+  .container{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+  }

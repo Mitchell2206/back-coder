@@ -21,18 +21,11 @@ export default class cartManagers {
         }
     }
 
-    async getProducts() {
-       
-      const aggProduct = await this.model.find();
-       
-       console.log(aggProduct)
-       
-       
-        return aggProduct
-    }
+
+
+
 
     async addProductCart(cid, pid) {
-
         const cart = await this.model.findOne({ _id: cid });
         const product = await productList.getProductsById(pid);
 
@@ -45,11 +38,34 @@ export default class cartManagers {
         } else {
             cart.products[index].quantity += 1;
         }
-
-
         return await cart.save()
+    }
+
+    async getCartProducts(cid) {
+        try {
+            const cart = await this.model.findById(cid).populate('products.product').lean()
+
+        } catch (err) {
+            throw new Error(`No se pudo obtener el contenido del carrito: ${err}`);
+        }
 
     }
+
+
+    async getCartContents(cid){
+        try {
+          const cart = await this.model.findById(cid).populate('products.product').lean();
+        
+          if (!cart) {
+            throw new Error("No existe el carrito buscado");
+          }
+          
+          return cart;
+        } catch (error) {
+          throw new Error(`No se pudo obtener el contenido del carrito: ${error}`);
+        }
+      }
+
 
     async getMenssage() {
         return console.log(await this.menssage.find())
@@ -74,10 +90,10 @@ export default class cartManagers {
         if (!cart) {
             throw new Error("No se encontró el carrito");
         }
-
+        
+        
         cart.products = newProducts.products;
 
-        
         await cart.save();
 
         return cart;
@@ -86,29 +102,27 @@ export default class cartManagers {
 
     async updateQuantityProduct(cid, pid, qty) {
         try {
-          const cart = await this.model.findOne({ _id: cid });
-      
-          const product = cart.products.find((product) => product._id == pid);
-          if (!product) {
-            throw new Error('No se encontró el producto en el carrito');
-          }
-      
-          product.quantity = qty;
-      
-          await cart.save();
-          return cart;
-        } catch (err) {
-          console.log('Error en la actualización de la cantidad:', err);
-        }
-      }
+            const cart = await this.model.findOne({ _id: cid });
+            const product = cart.products.find((product) => product._id == pid);
+            if (!product) {
+                throw new Error('No se encontró el producto en el carrito');
+            }
+            product.quantity = qty;
 
-      async clearProductToCart(cid){
-           
+            await cart.save();
+            return cart;
+        } catch (err) {
+            console.log('Error en la actualización de la cantidad:', err);
+        }
+    }
+
+    async clearProductToCart(cid) {
+
         const cart = await this.model.findOne({ _id: cid });
         cart.products = []
         return await cart.save();
 
-      }
+    }
 
 
 }

@@ -21,12 +21,12 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-const handlebarsOptions = {
+/*const handlebarsOptions = {
   allowProtoPropertiesByDefault: true,
 };
 
 
-const engine = handlebars.create(handlebarsOptions);
+const engine = handlebars.create(handlebarsOptions);*/
 
 // creamos accesos a handlerbars de enlazamiento //
 app.engine('handlebars', handlerbars.engine());
@@ -45,7 +45,7 @@ app.post('/', async (req, res) => {
     const messages = await menssagerModel.find({}).lean();
 
     io.emit('List-Message', {
-      products: await cartList.getProducts(),
+      //products: await cartList.getProducts(),
       messages: messages
 
     })

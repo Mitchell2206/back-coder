@@ -1,53 +1,35 @@
 
 const socket = io();
 
-//creamos el js del live producto en tiempo real, trabajando con el io//
-
-
-const renderProducts = (products) => {
-
-  const html = document.getElementById('List-Product');
-
-  html.innerHTML = '';
-  products.forEach((product) => {
-    const elementHtml = document.createElement('div');
-    elementHtml.innerHTML = `
-      <p>${product.title}</p>
-      <p>${product.code}</p>
-      <p>${product.price}</p>
-      <p>${product.stock}</p>
-    `;
-    html.appendChild(elementHtml);
-  });
-
-
-};
-
 
 const render = async (data) => {
-
   const messageHtml = document.getElementById('List-Message');
   if (data && data.messages && data.messages.length > 0) {
-    data.messages.forEach((message) => {
+    data.messages.forEach((message) => {   //at render (index.js:30:19)//
       const messageElement = document.createElement('div');
       messageElement.innerHTML = `
       <p>User: ${message.user}</p>
       <p>Message: ${message.menssage}</p>
     `;
-      messageHtml.appendChild(messageElement);
+      messageHtml.appendChild(messageElement);   // at index.js:36:19//
     });
   }
-
-
 };
 
 
-socket.on('List-Product', (data) => {
-  renderProducts(data);
+
+const renderd = (products) => {
+  const template = Handlebars.compile(document.getElementById('product-template').innerHTML);
+  const renderedHTML = template(products);
+  document.getElementById('List-Product').innerHTML = renderedHTML;
+};
+
+socket.on('List-Product', (products) => {
+  render(products);
 });
 
 socket.on('List-Message', (data) => {
-  render(data);
+  render(data); 
 });
 
 socket.on('product_updated', (data) => {

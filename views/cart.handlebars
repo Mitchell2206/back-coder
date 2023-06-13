@@ -1,0 +1,24 @@
+{{#if cart.products}}
+{{#each products}}
+<div class="card text-center mb-3" style="width: 18rem;">
+  <div class="card-body" scope="row">
+    <h5 class="card-title">{{this.product.title}}</h5>
+    <p class="card-text">{{this.product.descripcion}}</p>
+    <p class="card-text">{{this.product.code}}</p>
+    <p class="card-text">{{this.product.price}}</p>
+    <p class="card-text">{{this.product.quantity}}</p>
+  </div>
+</div>
+{{/each}}
+
+<div class="modal-body">
+  <div id="cartItemsContainer"></div>
+</div>
+{{else}}
+<tr>
+  <td colspan='9'>No se encontraron productos.</td>
+</tr>
+{{/if}}
+
+
+<script src="/js/cart.js"></script>
