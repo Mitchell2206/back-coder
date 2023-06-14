@@ -5,6 +5,8 @@ const cartRouter = Router();
 
 // creo mi carrito //
 cartRouter.post('/', async (req, res) => {
+
+    
     try {
         const crearCarrito = await cartList.addCart()
         res.status(201).res.send(crearCarrito);

@@ -6,21 +6,19 @@ class UserService {
         this.model = userModel;
     }
 
-  
-
-    async getAll(){
+    async getAll() {
         return await this.model.find();
     }
 
-    async  getByEmail(email){
-        return await this.model.findOne({email: email});
+    async getByEmail(email) {
+        return await this.model.findOne({ email: email });
     }
 
-    async createUser(userData){
+    async createUser(userData) {
         return await this.model.create(userData);
     }
 
-  
+
 }
 
 const userService = new UserService();

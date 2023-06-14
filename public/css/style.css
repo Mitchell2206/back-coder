@@ -1,29 +1,28 @@
-
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body{
-  background-color:rgb(207, 255, 205);
+body {
+  background-color: rgb(207, 255, 205);
 }
 
 
 
 /* aqui css de los productos del index.handlebars */
 .container-product {
-  padding:20px ;
+  padding: 20px;
   margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
- 
+
 }
 
-.container-product h1{
+.container-product h1 {
   color: rgb(9, 7, 7);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -31,26 +30,26 @@ body{
 .container-product .container {
   display: flex;
   flex-direction: row;
-   align-items: center;
+  align-items: center;
   justify-content: center;
 }
 
 
 .container-product .container .card {
- 
+
   background-color: rgba(183, 194, 190, 0.579);
 }
 
 
-.container-product .container .card .card-body h5{
+.container-product .container .card .card-body h5 {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   color: rgb(16, 19, 15);
 }
 
-.container-product .container .card .card-body .card-text{
+.container-product .container .card .card-body .card-text {
   font-size: 15px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
- 
+
 }
 
 .container-product .container .card .card-body .addToCart {
@@ -64,7 +63,7 @@ body{
 
 .container-register {
   padding: 50px;
-  background-color:rgb(207, 255, 205); 
+  background-color: rgb(207, 255, 205);
 }
 
 .container-register h1 {
@@ -73,7 +72,7 @@ body{
   padding: 20px;
 }
 
-.container-register .row{
+.container-register .row {
   background-color: rgba(47, 72, 72, 0.419);
   padding: 30px;
   border-radius: 10px;
@@ -81,7 +80,7 @@ body{
   align-items: center;
 }
 
-.container-register .row .btn{
+.container-register .row .btn {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 120px;
   height: 50px;
@@ -91,9 +90,9 @@ body{
 
 /* el login aqui */
 
-.container-login{
+.container-login {
   padding: 50px;
-  background-color:rgb(207, 255, 205); 
+  background-color: rgb(207, 255, 205);
 }
 
 .container-login h1 {
@@ -102,7 +101,7 @@ body{
   padding: 20px;
 }
 
-.container-login .row{
+.container-login .row {
   background-color: rgba(47, 72, 72, 0.419);
   padding: 30px;
   border-radius: 10px;
@@ -110,11 +109,10 @@ body{
   align-items: center;
 }
 
-.container-login .row .btn{
+.container-login .row .btn {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 120px;
   height: 50px;
-
   background-color: rgba(19, 56, 19, 0.304);
 }
 
@@ -124,21 +122,78 @@ body{
 
 .container-profile {
   padding: 50px;
-  background-color:rgb(207, 255, 205); 
+  background-color: rgb(207, 255, 205);
 }
 
-.container-profile .card{
+.container-profile .card {
   height: 400px;
 
   background-color: rgba(160, 180, 180, 0.623);
 }
 
-.container-profile .card .row{
+.container-profile .card .row {
   padding: 30px;
 }
-.container-profile .card .row .col-md-4 .img-fluid{
-   border-radius: 20px;
+
+.container-profile .card .row .col-md-4 .img-fluid {
+  border-radius: 20px;
 }
 
 
 
+/* Formulario - Chat  */
+
+
+.container-chat {
+  padding: 50px;
+  background-color: rgb(207, 255, 205);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-chat h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(53, 42, 42, 0.483);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 20px;
+}
+
+.container-chat .mb-3 {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.container-chat .btn {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 100px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(19, 56, 19, 0.304);
+}
+
+
+.container-chat .container-chat {
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(19, 56, 19, 0.304);
+
+}
+
+.container-chat .container-chat .Lista{
+  color: rgb(240, 242, 244);
+}

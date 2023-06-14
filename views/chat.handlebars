@@ -1,43 +1,35 @@
+<div class="container-chat">
+    <form action='/' method='post'>
 
-<div class='container'>
-    <div class='row'>
-        <div class='col-md-4'>
+        <div class="mb-3">
+
             <h2>Fomulario</h2>
-            <form action='/' method='post'>
+            <input type='text' class='form-control' placeholder='Email' aria-label='user' name='user' />
 
-                <div class='row'>
-
-                    <div class='col-6'>
-                        <input type='text' class='form-control' placeholder='Email' aria-label='user' name='user' />
-                    </div>
-
-                    <div class='comentario'>
-                        <input type='text' class='form-control' placeholder='ingresa un mensaje' aria-label='menssage'
-                            name='menssage' />
-                    </div>
-
-                    <div class='col-12'>
-                        <button type='submit' class='form-control'>
-                            Enviar
-                        </button>
-                    </div>
-                </div>
- 
- 
-                <h2>Lista de Mensajes</h2>
-                <div id="List-Message"></div>
-
-            </form>
+            <div id="emailHelp" class="form-text">Ingresa tu email para poder contactarte despues de tu gestion</div>
         </div>
-    </div>
-    {{#if successMessage}}
-    <div class="row">
-        <div class="col-md-4">
-            <p class="text-success">{{ successMessage }}</p>
+        <div class="mb-3">
+            <input type='text' class='form-control' placeholder='ingresa un mensaje' aria-label='menssage'
+                name='menssage' />
         </div>
+        <button type="submit" class="btn btn-primary">enviar</button>
+
+    </form>
+
+    <div class='container-chat'>
+
+
+        <h2 class="Lista">Lista de Mensajes</h2>
+        <div id="List-Message"></div>
+
+
+
     </div>
-    {{/if}}
+
+
 </div>
+
+
 
 <script src='/socket.io/socket.io.js'></script>
 <script src='/js/index.js'></script>
