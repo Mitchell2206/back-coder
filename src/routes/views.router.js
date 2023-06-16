@@ -2,10 +2,8 @@ import { Router } from "express";
 import { productList } from '../utils/instances.js';
 import CartManagers from "../controllers/DAO/service/cart.service.js";
 import { isAuth, isGuest } from '../middleware/auth.middleware.js';
+import { cartList } from "../utils/instances.js";
 
-
-
-const cartManagers = new CartManagers();
 const wiewsRouter = Router()
 
 
@@ -34,7 +32,7 @@ wiewsRouter.get('/login', isGuest, (req, res) => {
 
 wiewsRouter.get('/index', isAuth, async (req, res) => {
   const { limit = 5, page = 1, sort, descripcion, availability } = req.query;
-  
+
   try {
     const result = await productList.getProducts(limit, page, sort, descripcion, availability);
     const pag = result.page;
@@ -70,16 +68,9 @@ wiewsRouter.get('/chat', (req, res) => {
 });
 
 wiewsRouter.get('/carts/:cid', async (req, res) => {
-  try {
-    const cid = req.params.cid;
-
-    const cart = await cartManagers.getCartContents(cid);
-
-    console.log(cart.products)  // aqui tengo mis productos que pushee al carrito cuando cree los post //
-    res.render("cart", { title: "cart", cart });
-  } catch (err) {
-    res.status(400).send(`${err}`);
-  }
+  const Cart = await cartList.getCartId(req.params.cid);
+  console.log('Datos del carrito:', Cart);
+	res.render('cart', { Cart });
 });
 
 

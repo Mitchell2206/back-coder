@@ -1,4 +1,4 @@
-
+const socket = io();
 // Selecciona todos los botones "Agregar al carrito"
 const addToCartButtons = document.querySelectorAll(".addToCart");
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -30,33 +30,56 @@ const addProduct = (productId) => {
 
 
 
+socket.on('cartId', (cartId) => {
+  const existingCartId = localStorage.getItem('cartId');
+  if (!existingCartId) {
+    localStorage.setItem('cartId', cartId);
+  }
+  socket.emit('cartIdMostrar', cartId);
+});
 
+const cartId = localStorage.getItem('cartId');
 
 addToCartButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const productId = e.target.dataset.productId;
-    addProduct(productId);
+    console.log(productId, cartId)
+    socket.emit('agregarProducto', { cartId, productId }); // enviamos los productos y el carrito al servidor mediante su id //
   });
 });
 
-const generateCartItemsHTML = () => {
-  const cartItemsContainer = document.getElementById("cartItemsContainer");
-  cartItemsContainer.innerHTML = "";
 
-  cartItems.forEach((item) => {
-    const productHTML = `
-      <div>
-        <p class="fw-bold">Producto: ${item.productId}</p>
-        <p class="fw-bold">Cantidad: ${item.quantity}</p>
-      </div>
-    `;
-    cartItemsContainer.innerHTML += productHTML;
+
+document.addEventListener('DOMContentLoaded', () => {
+  const cartId = localStorage.getItem('cartId');
+
+  if (cartId) {
+    socket.emit('agregarProducto', { cartId, productId: null });
+  }
+  socket.on('Cartproducts', (data) => {
+    const bodyElement = document.getElementById("bodyproducts");
+    const products = data.products;
+    let html = '';
+
+    products.forEach((item) => {
+      const product = item.product;
+
+
+      if (product !== null) {
+
+        const productHtml = `
+          <div class="product">
+            <h2>${product.title}</h2>
+            <p>Description: ${product.descripcion}</p>
+            <p>Price: $${product.price}</p>
+          </div>
+        `;
+
+        html += productHtml;
+      }
+    });
+
+    bodyElement.innerHTML = html;
   });
-};
-
-const showCartModal = () => {
-  generateCartItemsHTML();
-};
-
-window.addEventListener("DOMContentLoaded", showCartModal)
+});
 

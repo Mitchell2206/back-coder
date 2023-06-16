@@ -22,16 +22,18 @@ export default class cartManagers {
     }
 
 
-
-
+    async getCartId(cartId) {
+        return await this.model.findById(cartId).populate('products.product').lean();
+    }
 
     async addProductCart(cid, pid) {
         const cart = await this.model.findOne({ _id: cid });
         const product = await productList.getProductsById(pid);
 
         const index = cart.products.findIndex((producto) => {
-            return producto.product.toString() === pid;
-        })
+            return producto.product !== null && producto.product.toString() === pid;
+        });
+
 
         if (index === -1) {
             cart.products.push({ product: pid, quantity: 1 })
@@ -52,19 +54,19 @@ export default class cartManagers {
     }
 
 
-    async getCartContents(cid){
+    async getCartContents(cid) {
         try {
-          const cart = await this.model.findById(cid).populate('products.product').lean();
-        
-          if (!cart) {
-            throw new Error("No existe el carrito buscado");
-          }
-          
-          return cart;
+            const cart = await this.model.findById(cid).populate('products.product').lean();
+
+            if (!cart) {
+                throw new Error("No existe el carrito buscado");
+            }
+
+            return cart;
         } catch (error) {
-          throw new Error(`No se pudo obtener el contenido del carrito: ${error}`);
+            throw new Error(`No se pudo obtener el contenido del carrito: ${error}`);
         }
-      }
+    }
 
 
     async getMenssage() {
@@ -90,8 +92,8 @@ export default class cartManagers {
         if (!cart) {
             throw new Error("No se encontró el carrito");
         }
-        
-        
+
+
         cart.products = newProducts.products;
 
         await cart.save();

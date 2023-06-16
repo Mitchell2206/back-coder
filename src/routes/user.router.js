@@ -1,7 +1,6 @@
 import { Router } from "express";
-
 import userService from "../controllers/DAO/service/user.service.js";
-
+import { encriptPassword, comparePassword } from "../utils/encript.util.js";
 
 const userRouter = Router()
 

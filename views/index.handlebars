@@ -7,29 +7,22 @@
     {{#each products}}
 
     <div class="card text-center mb-3" style="width: 18rem;">
-
       <div class="card-body" scope="row">
         <h5 class="card-title">{{title}}</h5>
         <p class="card-text">{{descripcion}}</p>
         <p class="card-text">{{code}}</p>
         <p class="card-text">{{stock}}</p>
         <p class="card-text">{{price}}</p>
-
         <button class="btn btn-sm btn-success addToCart" data-product-id="{{_id}}">Agregar al carrito</button>
-
       </div>
-
     </div>
 
     {{/each}}
-
-
-
   </div>
 
 
   <div class="card text-center mb-3" style="width: 18rem;">
-    <div id="cartItemsContainer"></div>
+    <div id="bodyproducts"></div>
   </div>
 
 
