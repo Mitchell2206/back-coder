@@ -18,17 +18,14 @@ userRouter.post('/', async (req, res) => {
 userRouter.post('/auth', async (req, res) => {
 	const { email, password } = req.body;
 	try {
-		const user = await userService.getByEmail(email);
+		const user = await userService.getByEmail(email);  // verifico los datos con el email
 
-		// Chequeo de datos
 		if (!user) throw new Error('Invalid data'); // Existe el usuario?
 		if (user.password !== password) throw new Error('Invalid data'); // La contraseña es correcta?
-
 		// Si todo está bien, guardo el usuario en la sesión
 		req.session.user = user;
-
-		//res.status(201).json(user);
-		res.redirect('/profile');
+		
+		res.redirect('/index');
 	} catch (error) {
 		res.status(400).json({ error: error.message });
 	}

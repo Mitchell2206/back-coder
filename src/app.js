@@ -49,7 +49,9 @@ app.use(
 
 
 app.post('/', async (req, res) => {
+  
   try {
+   
     const { user, menssage } = req.body;
     const newMessage = new menssagerModel({ user, menssage });
     await newMessage.save();
