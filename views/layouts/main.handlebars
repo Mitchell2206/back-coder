@@ -31,7 +31,7 @@
 
 
             <form action='/api/users/logout' method='post'>
-                <img src="{{user.img}}" alt="Logo" width="30" height="24" class="img"><a class="tex-img">{{user.first_name}}</a>
+                <img src="{{user.img}}" alt="Logo" width="30" height="24" class="img"><a class="tex-img"> {{user.rol}} {{user.first_name}}  </a>
                 <button class='btn btn-outline-danger' type='submit'>
                     Cerrar Sesión
                 </button>

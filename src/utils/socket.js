@@ -36,6 +36,7 @@ io.on('connection', async (socket) => {
     
     socket.on('agregarProducto', async ({ cartId, productId }) => {
 		try {
+			console.log(cartId, productId)
 		  await cartList.addProductCart(cartId,productId);
 		  let cart = await cartList.getCartId(cartId);
 		  io.emit('Cartproducts', cart );

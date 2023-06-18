@@ -15,7 +15,7 @@ export function isGuest(req, res, next) {
 }
 
 export function auth(req, res, next){
-	if (req.session.user === 'Jonathan' && req.session.admin){
+	if (req.session.user === 'Mitchell' && req.session.admin){
 		 next()
 	}
 	 res.status(401).send('Rol Usuario')
