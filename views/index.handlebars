@@ -1,9 +1,11 @@
 <div class="container-product">
-  <h1>Lista de Productos</h1>
 
+  <h1> Productos </h1>
+
+  <h2>Bienvenido <b>{{user.first_name}}, </b> tu email es <b>{{user.email}}</b></h2>
   <div class="container">
-    {{#each products}}
 
+    {{#each products}}
     <div class="card text-center mb-3" style="width: 18rem;">
       <div class="card-body" scope="row">
         <h5 class="card-title">{{title}}</h5>

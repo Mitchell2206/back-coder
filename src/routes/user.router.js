@@ -28,6 +28,8 @@ userRouter.post('/auth', async (req, res) => {
 		if (admin.email === email && admin.password === password) {
 			req.session.user = {
 				rol: "Admin",
+				first_name: "Mitchell",
+				last_name: "Davila",
 				img: "https://res.cloudinary.com/hdsqazxtw/image/upload/v1655770489/ymgfv5xi7fcyazdihbez.jpg",
 				email: "mitchel2206@gmail.com"
 			}

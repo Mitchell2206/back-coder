@@ -26,6 +26,11 @@ body {
   color: rgb(9, 7, 7);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.container-product h2 {
+  color: rgb(9, 7, 7);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
 
 .container-product .container {
   display: flex;
@@ -129,6 +134,7 @@ body {
   height: 50px;
   background-color: rgba(19, 56, 19, 0.304);
 }
+
 
 
 /* css del profile*/
