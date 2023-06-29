@@ -3,30 +3,22 @@
   <h1> Productos </h1>
 
   <h2>Bienvenido <b>{{user.first_name}}, </b> tu email es <b>{{user.email}}</b></h2>
-  <div class="container">
 
+
+  <div class="container">
     {{#each products}}
-    <div class="card text-center mb-3" style="width: 18rem;">
+    <div class="card text-center mb-3">
       <div class="card-body" scope="row">
+        <img class="img-product" src="{{thumbnail}}" alt="">
         <h5 class="card-title">{{title}}</h5>
         <p class="card-text">{{descripcion}}</p>
-        <p class="card-text">{{code}}</p>
-        <p class="card-text">{{stock}}</p>
-        <p class="card-text">{{price}}</p>
+        <p class="card-text">Stock {{stock}}</p>
+        <p class="card-text">${{price}}</p>
         <button class="btn btn-sm btn-success addToCart" data-product-id="{{_id}}">Agregar al carrito</button>
       </div>
     </div>
-
-    {{/each}}
+   {{/each}}
   </div>
-
-
-  <div class="card text-center mb-3" style="width: 18rem;">
-    <div id="bodyproducts"></div>
-  </div>
-
-
-
 
 
   <div class="row mt-4">

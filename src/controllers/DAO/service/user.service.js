@@ -18,6 +18,10 @@ class UserService {
         return await this.model.create(userData);
     }
 
+    async getUserById(id) {
+		return await this.model.findById(id);
+	}
+
 
 }
 

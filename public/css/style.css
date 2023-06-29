@@ -6,12 +6,32 @@
 }
 
 body {
-  background-color: rgb(207, 255, 205);
+  background-color: rgba(10, 4, 4, 0.808);
 }
 
+.navbar-brand {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: 5px;
+  font-size: 25px;
+  color: rgb(0, 0, 0);
+}
 
+.logo {
+  width: 80px;
+  height: 40px;
+  margin: 10px;
+}
 
+.btn-logout {
+  width: 100px;
+  border-radius: 60px;
+  font-family: cursive;
+  font-size: 10px;
+  background-color: rgba(255, 0, 0, 0.841);
+  color: white;
+}
 /* aqui css de los productos del index.handlebars */
+
 .container-product {
   padding: 20px;
   margin: 10px;
@@ -23,13 +43,16 @@ body {
 }
 
 .container-product h1 {
-  color: rgb(9, 7, 7);
+  color: rgb(255, 255, 255);
+  font-size: 50px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 .container-product h2 {
-  color: rgb(9, 7, 7);
+  color: rgb(255, 255, 255);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 20px;
+  font-size: 12px;
+  padding-bottom: 10px;
 }
 
 .container-product .container {
@@ -41,46 +64,101 @@ body {
 
 
 .container-product .container .card {
+padding: 5px;
+  background-color: rgba(172, 119, 114, 0.579);
 
-  background-color: rgba(183, 194, 190, 0.579);
 }
+
 
 
 .container-product .container .card .card-body h5 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  color: rgb(16, 19, 15);
+ font-family: cursive;
+ margin: 5px;
+  color: rgb(251, 251, 251);
 }
 
 .container-product .container .card .card-body .card-text {
-  font-size: 15px;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
 
+}
+
+.container-product .container .card .card-body .img-product{
+  height: 300px;
+  width: 200px;
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .container-product .container .card .card-body .addToCart {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10px;
   width: 120px;
   height: 30px;
-  background-color: rgba(19, 56, 19, 0.304);
+  background-color: rgba(0, 0, 0, 0.785);
 }
+
+.container-product .container .card .card-body .addToCart:hover{
+  background-color: rgba(0, 128, 0, 0.508);
+}
+
+/** paginacion  **/
+
+
+.page-link{
+  background-color: rgba(235, 10, 10, 0.641);
+  text-decoration: none;
+  height: 20px;
+  width: 90px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 10px;
+  color: aliceblue;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
 
 /** mi register**/
 
 .container-register {
   padding: 50px;
-  background-color: rgb(207, 255, 205);
+  background-color: rgba(10, 4, 4, 0.808);
 }
 
 .container-register h1 {
-  color: rgba(53, 42, 42, 0.483);
+  color: rgba(255, 255, 255, 0.93);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 20px;
+  font-size: 20px;
+}
+
+.container-register .col-md-6 .form-label {
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container-register .row {
-  background-color: rgba(47, 72, 72, 0.419);
+  background-color: rgba(150, 172, 172, 0.419);
   padding: 30px;
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-register .row .col-md-6 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-register .row .col-12 {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -89,25 +167,31 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 120px;
   height: 50px;
-
-  background-color: rgba(19, 56, 19, 0.304);
+  margin: 10px;
+  font-size: 12px;
+  background-color: rgba(104, 30, 23, 0.607);
 }
 
+.container-register .row .btn:hover{
+  background-color: rgba(20, 23, 20, 0.656);
+  
+
+}
 /* el login aqui */
 
 .container-login {
   padding: 50px;
-  background-color: rgb(207, 255, 205);
+  background-color: rgba(10, 4, 4, 0.792);
 }
 
-.img{
+.img {
   margin: 10px;
   width: 30px;
   height: 30px;
   border-radius: 30px;
 }
 
-.tex-img{
+.tex-img {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: rgba(53, 42, 42, 0.483);
   text-decoration: none;
@@ -115,15 +199,28 @@ body {
 }
 
 .container-login h1 {
-  color: rgba(53, 42, 42, 0.483);
+  color: rgba(255, 255, 255, 0.761);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 20px;
+  font-size: 25px;
 }
 
 .container-login .row {
-  background-color: rgba(47, 72, 72, 0.419);
-  padding: 30px;
+  background-color: rgba(150, 172, 172, 0.419);
+
   border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-login .row .col-md-6 .form-label {
+  color: rgba(255, 255, 255, 0.981);
+  
+}
+
+
+.container-login .row .col-12 {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -132,9 +229,19 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 120px;
   height: 50px;
-  background-color: rgba(19, 56, 19, 0.304);
+  margin: 10px;
+  font-size: 12px;
+  background-color: rgba(104, 30, 23, 0.607);
 }
 
+.container-login .row .btn-2 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  width: 120px;
+  height: 50px;
+  margin: 10px;
+  font-size: 10px;
+  background-color: rgb(0, 0, 0);
+}
 
 
 /* css del profile*/
@@ -142,53 +249,94 @@ body {
 
 .container-profile {
   padding: 50px;
-  background-color: rgb(207, 255, 205);
+  background-color: rgba(10, 4, 4, 0.808);
 }
 
 .container-profile .card {
-  height: 400px;
-
-  background-color: rgba(160, 180, 180, 0.623);
-}
-
-.container-profile .card .row {
-  padding: 30px;
-}
-
-.container-profile .card .row .col-md-4 .img-fluid {
-  border-radius: 20px;
+  background-color: rgba(150, 172, 172, 0.419);
 }
 
 
+.container-profile .card .row  .card-body {
+ display: flex;
+ flex-direction: row;
+
+}
+
+.container-profile .card .row .card-body .text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.container-profile .card .row .card-body .text .card-title {
+  color: white;
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container-profile .card .row .card-body .text .card-text{
+  color: aliceblue;
+}
+
+
+.container-profile .card .row .card-body .text .card-text .text-body-secondary {
+  color: aliceblue;
+}
+.container-profile .card .row .card-body .img-fluid {
+  border-radius: 50px;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+ 
+}
+
+.card-text-2 {
+  color: rgb(197, 156, 156);
+ font-family:'Times New Roman', Times, serif
+}
 
 /* Formulario - Chat  */
 
 
 .container-chat {
   padding: 50px;
-  background-color: rgb(207, 255, 205);
+  background-color: rgba(10, 4, 4, 0.808);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+.container-chat .mb-3 .form-text {
+  color: white;
+}
+
+.container-chat .mb-3 .form-control {
+  margin: 20px;
+}
+
 
 .container-chat h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(53, 42, 42, 0.483);
+  color: rgb(255, 255, 255);
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   padding: 20px;
 }
 
 .container-chat .mb-3 {
-  width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
+  background-color: rgba(150, 172, 172, 0.419);
+  padding: 80px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -200,20 +348,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(19, 56, 19, 0.304);
+  background-color: rgba(56, 19, 19, 0.511);
 }
 
 
-.container-chat .container-chat {
-  margin: 100px;
+.container-chat .container-mensaje {
+  padding: 100px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(19, 56, 19, 0.304);
+  background-color: rgba(235, 243, 235, 0.968);
 
 }
 
-.container-chat .container-chat .Lista{
-  color: rgb(240, 242, 244);
+.container-chat .container-mensaje .Lista {
+  color: rgb(0, 0, 0);
 }

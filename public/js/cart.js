@@ -57,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cartId) {
     socket.emit('agregarProducto', { cartId, productId: null });
   }
+  
   socket.on('Cartproducts', (data) => {
     const bodyElement = document.getElementById("bodyproducts");
     const products = data.products;

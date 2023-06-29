@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { productList } from '../utils/instances.js';
 import CartManagers from "../controllers/DAO/service/cart.service.js";
-import { isAuth, isGuest, auth} from '../middleware/auth.middleware.js';
+import { isAuth, isGuest } from '../middleware/auth.middleware.js';
 import { cartList } from "../utils/instances.js";
 
 const wiewsRouter = Router()
@@ -32,7 +32,8 @@ wiewsRouter.get('/login', isGuest, (req, res) => {
 
 wiewsRouter.get('/index', isAuth, async (req, res) => {
   const { user } = req.session;
-  const { limit = 5, page = 1, sort, descripcion, availability } = req.query;
+  const { limit = 4, page = 1, sort, descripcion, availability } = req.query;
+ 
 
   try {
     const result = await productList.getProducts(limit, page, sort, descripcion, availability);
@@ -56,7 +57,7 @@ wiewsRouter.get('/index', isAuth, async (req, res) => {
 
     //mapeo para evitar el Object.object
     const products = result.docs.map((product) => product.toObject());
-    res.render("index", { title: "Products", products, prevLink, pag, totalPages, nextLink, user });
+    res.render("index", { title: "Products", products, prevLink, pag, totalPages, nextLink, user, });
   } catch (error) {
     res.status(500).send(`No se pudieron obtener los productos`);
   }

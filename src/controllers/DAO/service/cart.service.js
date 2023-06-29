@@ -22,8 +22,8 @@ export default class cartManagers {
     }
 
 
-    async getCartId(cartId) {
-        return await this.model.findById(cartId).populate('products.product').lean();
+    async getCartId(cid) {
+        return await this.model.findById(cid).populate('products.product').lean();
     }
 
     async addProductCart(cid, pid) {

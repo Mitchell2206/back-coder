@@ -5,10 +5,10 @@ const cartRouter = Router();
 
 // creo mi carrito //
 cartRouter.post('/', async (req, res) => {
-  try {
+    try {
         const crearCarrito = await cartList.addCart()
         console.log(crearCarrito)
-        res.status(201).res.send(crearCarrito);
+        res.status(201).send(crearCarrito);
     } catch (error) {
         res.status(500).send({ error });
     }
@@ -18,9 +18,9 @@ cartRouter.post('/', async (req, res) => {
 cartRouter.get('/:cid', async (req, res) => {
     const cid = req.params.cid;
     try {
-        const getCartRouter = await cartList.getProducts(cid)
-
-        res.send(getCartRouter)
+        const getCartRouter = await cartList.getCartId(cid)
+        console.log(getCartRouter)
+        res.status(201).send(getCartRouter)
     } catch (err) {
         res.status(500).send({ error: err.message });
     }
@@ -44,7 +44,7 @@ cartRouter.delete('/:cid/product/:pid', async (req, res) => {
     const pid = req.params.pid;
     try {
         const deleteProdCart = await cartList.deleteProductCart(cid, pid)
-        res.status(201).res.send(deleteProdCart)
+        res.status(201).send(deleteProdCart)
     } catch (err) {
         res.status(500).send({ error: err.message });
     }

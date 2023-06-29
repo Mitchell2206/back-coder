@@ -4,7 +4,8 @@ import mongoosePaginate from 'mongoose-paginate-v2'
 
 const productSchema = new mongoose.Schema({
     title: String,
-    cc: String,
+    descripcion: String,
+    thumbnail: String,
     price: Number,
     code: {
         type: String,
