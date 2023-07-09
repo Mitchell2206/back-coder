@@ -1,5 +1,5 @@
 export function isAuth(req, res, next) {
-	if (req.session.user) {
+	if (req.user) {
 		next();
 	} else {
 		res.redirect('/login');
@@ -7,7 +7,7 @@ export function isAuth(req, res, next) {
 }
 
 export function isGuest(req, res, next) {
-	if (!req.session.user) {
+	if (!req.user) {
 		next();
 	} else {
 		res.redirect('/');

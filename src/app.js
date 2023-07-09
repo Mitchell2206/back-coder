@@ -16,6 +16,7 @@ import { userRouter } from './routes/user.router.js';
 import inicializePassport from './config/passport.config.js';
 
 
+
 import { io } from './utils/socket.js';
 
 app.use(express.json())
@@ -85,5 +86,4 @@ app.use('/api/users', userRouter);
 
 const httpServer = 8080;
 server.listen(httpServer, () => console.log(`estoy escuchando ${httpServer}...`));
-
 

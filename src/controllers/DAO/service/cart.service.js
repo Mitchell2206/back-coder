@@ -1,6 +1,6 @@
-import { cartModel } from '../../models/carts.model.js';
 import { productList } from '../../../utils/instances.js';
 import { menssagerModel } from '../../models/menssage.model.js';
+import cartModel from '../../models/carts.model.js';
 import userModel from '../../models/product.model.js';
 
 
@@ -28,7 +28,7 @@ export default class cartManagers {
 
     async addProductCart(cid, pid) {
         const cart = await this.model.findOne({ _id: cid });
-        const product = await productList.getProductsById(pid);
+       // const product = await productList.getProductsById(pid);
 
         const index = cart.products.findIndex((producto) => {
             return producto.product !== null && producto.product.toString() === pid;
@@ -42,6 +42,7 @@ export default class cartManagers {
         }
         return await cart.save()
     }
+    
 
     async getCartProducts(cid) {
         try {

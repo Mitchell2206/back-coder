@@ -1,16 +1,18 @@
 <div class="container-chat">
     <form action='/' method='post'>
-
+        {{#if user}}
         <div class="mb-3">
-            <h2>Fomulario</h2>
-            <input type='text' class='form-control' placeholder='Email' aria-label='user' name='user' />
+            <h2>Requerimiento</h2>
 
-            <div id="emailHelp" class="form-text">Ingresa tu email para poder contactarte despues de tu gestion</div>
+            <input type='text' class='form-control' placeholder='Email' aria-label='user' name='user'
+                value='{{user.email}}' />
+            <div id="emailHelp" class="form-text">Al enviar tu gestión te responderemos en un plazo de 24hs</div>
 
             <input type='text' class='form-control' placeholder='ingresa un mensaje' aria-label='menssage'
                 name='menssage' />
             <button type="submit" class="btn btn-primary">enviar</button>
         </div>
+        {{/if}}
 
     </form>
 

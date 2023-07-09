@@ -3,10 +3,11 @@ import local from "passport-local"
 import userService from "../controllers/DAO/service/user.service.js";
 import { comparePassword, hashPassword } from "../utils/encript.util.js";
 import GitHubStrategy from 'passport-github2';
-
+import { ExtractJwt, Strategy } from "passport-jwt";
 
 const localStrategy = local.Strategy;
-
+const jwtStrategy = Strategy;
+const jwtExtract = ExtractJwt;
 
 const inicializePassport = () => {
 
@@ -26,7 +27,6 @@ const inicializePassport = () => {
                             message: 'El usuario ya existe'
                         })
                     }
-
 
                     const escripPassword = await hashPassword(password)
 
@@ -79,7 +79,9 @@ const inicializePassport = () => {
                         done(null, user)
 
                     }
+                   
                     done(null, user)
+                    
 
                 } catch (err) {
                     done(err, false)
@@ -97,11 +99,11 @@ const inicializePassport = () => {
 
     passport.deserializeUser(async (id, done) => {
         const user = await userService.getUserById(id);
-        if (user.email === 'mitchel2206@gmail.com') {
+       /* if (user.email === 'mitchel2206@gmail.com') {
             user.admin = true; // tenerlo como administrador 
         } else {
             user.admin = false
-        }
+        }*/
         done(null, user);
     });
 
@@ -137,6 +139,36 @@ const inicializePassport = () => {
         )
     )
 
+
+
+    passport.use(
+        'jwt',
+        new jwtStrategy(
+            {
+                jwtFromRequest: jwtExtract.fromExtractors([cookieExtractor]),
+                secretOrKey: 'privatekey',
+            },
+            (payload, done) => {
+                done(null, payload);
+            }
+        ),
+        async (payload, done) => {
+            try {
+                return done(null, payload)
+            } catch (error) {
+                done(error)
+            }
+        }
+    )
+
 };
+
+const cookieExtractor = (req) => {
+    let token = null;
+    if (req && req.cookies) {
+        token = req.cookies['token']
+    }
+    return token;
+}
 
 export default inicializePassport;

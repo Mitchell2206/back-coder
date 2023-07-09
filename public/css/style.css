@@ -23,13 +23,21 @@ body {
 }
 
 .btn-logout {
-  width: 100px;
-  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 20px;
+  border-radius: 200px;
   font-family: cursive;
-  font-size: 10px;
-  background-color: rgba(255, 0, 0, 0.841);
-  color: white;
+  font-size: 9px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.313);
+  color: rgb(0, 0, 0);
+  border-color: rgb(229, 10, 10);
+  font-family:Georgia, 'Times New Roman', Times, serif;
 }
+
 /* aqui css de los productos del index.handlebars */
 
 .container-product {
@@ -64,7 +72,7 @@ body {
 
 
 .container-product .container .card {
-padding: 5px;
+  padding: 5px;
   background-color: rgba(172, 119, 114, 0.579);
 
 }
@@ -72,8 +80,8 @@ padding: 5px;
 
 
 .container-product .container .card .card-body h5 {
- font-family: cursive;
- margin: 5px;
+  font-family: cursive;
+  margin: 5px;
   color: rgb(251, 251, 251);
 }
 
@@ -84,7 +92,7 @@ padding: 5px;
 
 }
 
-.container-product .container .card .card-body .img-product{
+.container-product .container .card .card-body .img-product {
   height: 300px;
   width: 200px;
   border-radius: 10px;
@@ -99,14 +107,14 @@ padding: 5px;
   background-color: rgba(0, 0, 0, 0.785);
 }
 
-.container-product .container .card .card-body .addToCart:hover{
+.container-product .container .card .card-body .addToCart:hover {
   background-color: rgba(0, 128, 0, 0.508);
 }
 
 /** paginacion  **/
 
 
-.page-link{
+.page-link {
   background-color: rgba(235, 10, 10, 0.641);
   text-decoration: none;
   height: 20px;
@@ -172,11 +180,12 @@ padding: 5px;
   background-color: rgba(104, 30, 23, 0.607);
 }
 
-.container-register .row .btn:hover{
+.container-register .row .btn:hover {
   background-color: rgba(20, 23, 20, 0.656);
-  
+
 
 }
+
 /* el login aqui */
 
 .container-login {
@@ -215,7 +224,7 @@ padding: 5px;
 
 .container-login .row .col-md-6 .form-label {
   color: rgba(255, 255, 255, 0.981);
-  
+
 }
 
 
@@ -257,13 +266,13 @@ padding: 5px;
 }
 
 
-.container-profile .card .row  .card-body {
- display: flex;
- flex-direction: row;
+.container-profile .card .row .card-body {
+  display: flex;
+  flex-direction: row;
 
 }
 
-.container-profile .card .row .card-body .text{
+.container-profile .card .row .card-body .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -276,7 +285,7 @@ padding: 5px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.container-profile .card .row .card-body .text .card-text{
+.container-profile .card .row .card-body .text .card-text {
   color: aliceblue;
 }
 
@@ -284,17 +293,18 @@ padding: 5px;
 .container-profile .card .row .card-body .text .card-text .text-body-secondary {
   color: aliceblue;
 }
+
 .container-profile .card .row .card-body .img-fluid {
   border-radius: 50px;
   margin: 10px;
   width: 100px;
   height: 100px;
- 
+
 }
 
 .card-text-2 {
   color: rgb(197, 156, 156);
- font-family:'Times New Roman', Times, serif
+  font-family: 'Times New Roman', Times, serif
 }
 
 /* Formulario - Chat  */
@@ -365,4 +375,199 @@ padding: 5px;
 
 .container-chat .container-mensaje .Lista {
   color: rgb(0, 0, 0);
+}
+
+
+/* Register Error */
+
+.container-error-register .card .row .card-body .error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+
+}
+
+.container-error-register .card .row .card-body .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container-error-register .card .row .card-body .error h2 {
+  font-family: cursive;
+  font-size: 20px;
+  color: rgb(221, 12, 12);
+}
+
+.container-error-register .card .row .card-body .error h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 15px;
+  color: rgb(9, 9, 9);
+}
+
+.container-error-register .card .row .card-body .btn .nav-link {
+  padding: 5px;
+  color: rgb(105, 31, 31);
+  margin: 10px;
+  border-radius: 10px;
+  font-style: oblique;
+}
+
+.container-error-register .card .row .card-body .btn .nav-link:hover {
+  color: rgb(90, 34, 34);
+}
+
+/* Carrito del cliente */
+
+
+
+.container-cart {
+  padding: 50px;
+  background-color: rgba(10, 4, 4, 0.808);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container-cart h1 {
+  color: rgb(255, 255, 255);
+  font-size: 30px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container-cart .cart {
+  padding: 50px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(235, 243, 235, 0.968);
+}
+
+.container-cart .cart div ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.container-cart .cart div ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+  list-style: none;
+  border-radius: 10px;
+  border-color: black;
+
+}
+
+
+.container-cart .cart div ul li .img-product {
+  text-decoration: none;
+
+  height: 90x;
+  width: 80px;
+  border-radius: 10px;
+}
+
+.container-cart .cart div ul li .title {
+  color: rgb(12, 12, 12);
+  font-size: 15px;
+  margin: 5px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container-cart .cart div ul li p {
+  color: rgb(12, 12, 12);
+  font-size: 10px;
+  margin: 2px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+
+/* Error del servidor */
+
+.container-error-servidor .card .row .card-body-dos .error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px;
+  align-items: center;
+  padding: 70px;
+
+}
+
+.container-error-servidor .card .row .card-body-dos .btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container-error-servidor .card .row .card-body-dos h1 {
+  font-family: cursive;
+  font-size: 10px;
+  color: rgb(119, 91, 91);
+}
+
+.container-error-register .card .row .card-body-dos .error h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 100px;
+  color: rgb(9, 9, 9);
+}
+
+.container-error-servidor .card .row .card-body-dos .error .btn .nav-link {
+  padding: 5px;
+  color: rgb(0, 0, 0);
+  margin: 20px;
+  border-radius: 50px;
+  font-style: oblique;
+}
+
+.container-error-servidor .card .row .card-body-dos .error .btn .nav-link:hover {
+  color: rgb(90, 34, 34);
+}
+
+
+/* error caduco el token */
+
+.container-mensaje {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px;
+  background-color: white;
+}
+
+.container-mensaje .token {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 12px;
+  color: rgb(9, 9, 9);
+  margin: 20px;
+}
+
+.container-mensaje .img-error{
+  width: 70px;
+  height: 70px;
+}
+
+.container-mensaje a {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 12px;
+  padding: 5px;
+  color: rgb(100, 108, 113);
+  background-color: rgb(219, 200, 200);
+  border-radius: 10px;
 }
