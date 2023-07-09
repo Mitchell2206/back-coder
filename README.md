@@ -32,8 +32,5 @@ Utilización de la tecnología Socket para habilitar la comunicación bidireccio
 Créditos
 Este proyecto fue creado por Mitchell Davila.
 
-Licencia
-Este proyecto está bajo la Licencia [nombre de la licencia]. Para más detalles, consulta el archivo LICENSE.md.
-
 Contacto
 Si tienes alguna pregunta o sugerencia relacionada con este proyecto, por favor contáctame a través de Mitchel2206@gmail.com.
