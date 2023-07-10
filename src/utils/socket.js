@@ -45,9 +45,9 @@ io.on('connection', async (socket) => {
 			let cart = await cartList.getCartId(cartId);
 
 			const userCard = await cartModel.findById(cart._id).lean()
+        
 
-
-			socket.emit('cartproducts', { userCard });
+			//socket.emit('cartproducts', { userCard });
 		} catch (error) {
 			console.log(error)
 		}
@@ -66,7 +66,6 @@ io.on('connection', async (socket) => {
 			console.log(error);
 		}
 	});
-
 
 	try {
 		const messages = await menssagerModel.find({}).lean();

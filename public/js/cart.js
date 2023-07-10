@@ -20,7 +20,6 @@ const addProduct = (productId) => {
 
   localStorage.setItem("cartItems", JSON.stringify(cartItems));
   alert("¡Producto agregado al carrito!");
-
   generateCartItemsHTML();
 };
 

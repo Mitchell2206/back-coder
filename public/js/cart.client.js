@@ -1,23 +1,31 @@
 
 const socket = io();
 
-const emitirMostrarCarrito = () => {
-    console.log("Ejecuto")  //se ejecuta y pasa //
-    const cartIdd = localStorage.getItem('cartId');
-    console.log("pero no el cartid del localstorage", cartIdd) // me ejecuta y pasa //
-    socket.emit('enviarCarrito', { cartIdd }); // debo verificar que hay momentos que emit y momentos que no //
 
+const emitirMostrarCarrito = () => {
+  console.log("Ejecuto");
+  const cartIdd = localStorage.getItem('cartId');
+  console.log("cartId del localStorage:", cartIdd);
+  if (cartIdd) {
+    setTimeout(() => {
+      socket.emit('enviarCarrito', { cartIdd }, (ack) => {
+        console.log('Respuesta del servidor:', ack);
+      });
+    }, 1000); // Espera 2 segundos antes de emitir el evento (ajusta el tiempo según tus necesidades)
+  }
 };
-emitirMostrarCarrito();
+
+
+  emitirMostrarCarrito(); 
 
 
 
 socket.on('cartUser', ({ cartUser }) => {
-    console.log(cartUser);
-    const cartHtml = document.getElementById('mostrarCarrito');
-    cartHtml.innerHTML = '';
-    const cartElement = document.createElement('div');
-    cartElement.innerHTML = `
+  console.log(cartUser);
+  const cartHtml = document.getElementById('mostrarCarrito');
+  cartHtml.innerHTML = '';
+  const cartElement = document.createElement('div');
+  cartElement.innerHTML = `
       <ul>
         ${cartUser.products.map((product) => `
           <li>
@@ -29,6 +37,6 @@ socket.on('cartUser', ({ cartUser }) => {
         `).join('')}
       </ul>
     `;
-    cartHtml.appendChild(cartElement);
+  cartHtml.appendChild(cartElement);
 });
 
