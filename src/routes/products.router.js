@@ -1,20 +1,22 @@
 import { Router } from "express";
 import { io } from "../utils/socket.js";
 import { productList } from "../utils/instances.js";
+import productController from "../controllers/product.controller.js";
 
 const productRouter = Router();
 
 productRouter.get('/', async (req, res) => {
   try {
     const { limit = 10, page = 1, sort, descripcion, availability } = req.query;
-
-    const products = await productList.getProducts(
+    const products = await productController.getProducts(
       limit,
       page,
       sort,
       descripcion,
       availability
     );
+
+    console.log(products)
 
     const prevPage = products.prevPage;
     const nextPage = products.nextPage;
@@ -66,7 +68,7 @@ productRouter.get('/:uid', async (req, res) => {
   // traemos el id especifico //
   try {
     let uid = req.params.uid
-    const filterId = await productList.getProductsById(uid)
+    const filterId = await productController.getProductsById(uid)
     res.status(200).send(filterId)
   } catch (error) {
     res.status(400).send(`Problemas 400 ${error}`)
@@ -76,14 +78,10 @@ productRouter.get('/:uid', async (req, res) => {
 
 
 productRouter.post('/', async (req, res) => {
-
-
-  // agregamos con el metodo post y se actualiza en socket, io.emit//
   try {
     let product = req.body;
-    let productos = await productList.addProducts(product);
+    let productos = await productController.addProducts(product);
     res.status(201).send(productos);
-    // io.emit('product_list_updated', await productList.getProducts());
   } catch (err) {
     res.status(400).send({ err });
   }
@@ -91,10 +89,9 @@ productRouter.post('/', async (req, res) => {
 
 
 productRouter.put('/:uid', async (req, res) => {
-  // actualizamos los productos //
   const uid = req.params.uid;
   try {
-    const productActualizado = await productList.updateProduct(uid, req.body)
+    const productActualizado = await productController.updateProduct(uid, req.body)
     console.log(productActualizado)
     res.status(201).send(productActualizado)
   } catch (error) {
@@ -105,7 +102,7 @@ productRouter.put('/:uid', async (req, res) => {
 productRouter.delete('/:id', async (req, res) => {
   const id = req.params.id
   try {
-    await productList.deleteProduct(id)
+    await productController.deleteProduct(id)
     res.sendStatus(204)
   } catch (error) {
     console.log(res.status(500).send("No se elimino el producto"))

@@ -1,6 +1,6 @@
 import passport from "passport";
 import local from "passport-local"
-import userService from "../controllers/DAO/service/user.service.js";
+import userController from "../controllers/user.controller.js";
 import { comparePassword, hashPassword } from "../utils/encript.util.js";
 import GitHubStrategy from 'passport-github2';
 import { ExtractJwt, Strategy } from "passport-jwt";
@@ -20,7 +20,8 @@ const inicializePassport = () => {
 
                 try {
 
-                    const user = await userService.getByEmail(username);
+                    const user = await userController.getByEmail(username);
+
 
                     if (user) {
                         return done(null, false, {
@@ -30,13 +31,14 @@ const inicializePassport = () => {
 
                     const escripPassword = await hashPassword(password)
 
-                    const newUser = await userService.createUser({
+                    const newUser = await userController.createUser({
                         first_name,
                         last_name,
                         email: username,
                         password: escripPassword,
                         img,
                     })
+    
                     return done(null, newUser)
 
                 } catch (err) {
@@ -60,7 +62,7 @@ const inicializePassport = () => {
             },
             async (accessToken, refreshToken, profile, done) => {
                 try {
-                    let user = await userService.getByEmail(
+                    let user = await userController.getByEmail(
                         profile._json.email
                     );
 
@@ -73,7 +75,7 @@ const inicializePassport = () => {
                             password: '',
                             img: profile._json.avatar_url,
                         }
-                        user = await userService.createUser(newUser);
+                        user = await userController.createUser(newUser);
                     } else {
 
                         done(null, user)
@@ -98,7 +100,7 @@ const inicializePassport = () => {
 
 
     passport.deserializeUser(async (id, done) => {
-        const user = await userService.getUserById(id);
+        const user = await userController.getUserById(id);
        /* if (user.email === 'mitchel2206@gmail.com') {
             user.admin = true; // tenerlo como administrador 
         } else {
@@ -116,7 +118,7 @@ const inicializePassport = () => {
 
                 try {
 
-                    const user = await userService.getByEmail(username)
+                    const user = await userController.getByEmail(username)
 
                     if (!user) {
                         return done(null, false, {

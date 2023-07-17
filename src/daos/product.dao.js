@@ -1,11 +1,7 @@
 
-import productModel from "../../models/product.model.js";
-import mongoose from "mongoose";
+import productModel from "../models/product.model.js";
 
-
-export default class ProductManager {
-
-
+class ProductDao {
     constructor() {
         this.product = productModel;
     }
@@ -21,38 +17,38 @@ export default class ProductManager {
 
 
     async getProducts(limit, page, sort, descripcion, availability) {
+
         try {
             let options = {};
             let optionalQueries = {};
-        
-            // Verificar si se proporcionó el parámetro de categoría
+
+
             if (descripcion) {
-              optionalQueries.descripcion = descripcion;
+                optionalQueries.descripcion = descripcion;
             }
-        
-            // Verificar si se proporcionó el parámetro de disponibilidad
+
+
             if (availability !== undefined) {
-              optionalQueries.status = availability;
+                optionalQueries.status = availability;
             }
-        
-            // Verificar el parámetro de orden
+
+
             if (sort === "asc") {
-              options.sort = { price: 1 };
+                options.sort = { price: 1 };
             } else if (sort === "desc") {
-              options.sort = { price: -1 };
+                options.sort = { price: -1 };
             }
-        
-            // paginate({},options)
+
             const products = await this.product.paginate(optionalQueries, {
-              page: parseInt(page),
-              limit: parseInt(limit),
-              ...options,
+                page: parseInt(page),
+                limit: parseInt(limit),
+                ...options,
             });
-    
+
             return products;
-          } catch (error) {
+        } catch (error) {
             throw new Error(`Error al obtener los productos: ${error}`);
-          }
+        }
     }
 
 
@@ -67,3 +63,7 @@ export default class ProductManager {
     }
 
 }
+
+const productDao = new ProductDao;
+
+export default productDao;

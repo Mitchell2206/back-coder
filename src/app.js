@@ -11,10 +11,10 @@ import passport from 'passport';
 import { productRouter } from './routes/products.router.js';
 import { cartRouter } from './routes/carts.router.js';
 import wiewsRouter from './routes/views.router.js';
-import { menssagerModel } from "../src/controllers/models/menssage.model.js";
+import { menssagerModel } from "../src/models/menssage.model.js";
 import { userRouter } from './routes/user.router.js';
 import inicializePassport from './config/passport.config.js';
-
+import enviroment from './config/enviroment.js';
 
 
 import { io } from './utils/socket.js';
@@ -36,8 +36,7 @@ app.use(cookieParser())
 app.use(
   session({
     store: MongoStore.create({
-      mongoUrl:
-        'mongodb+srv://mitch2206:24591959@codercluster.ouvay3s.mongodb.net/?retryWrites=true&w=majority',
+      mongoUrl: enviroment.DB_LINK_CREATE,
       mongoOptions: {
         useNewUrlParser: true,
       },
@@ -74,7 +73,7 @@ app.post('/', async (req, res) => {
 });
 
 mongoose.connect(
-  "mongodb+srv://mitch2206:24591959@codercluster.ouvay3s.mongodb.net/?retryWrites=true&w=majority"
+  enviroment.DB_LINK
 );
 
 app.use('/', wiewsRouter)
@@ -84,6 +83,6 @@ app.use('/api/users', userRouter);
 
 
 
-const httpServer = 8080;
+const httpServer = enviroment.PORT;
 server.listen(httpServer, () => console.log(`estoy escuchando ${httpServer}...`));
 

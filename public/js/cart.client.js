@@ -21,7 +21,7 @@ const emitirMostrarCarrito = () => {
 
 
 socket.on('cartUser', ({ cartUser }) => {
-  console.log(cartUser);
+  console.log(cartUser.products);
   const cartHtml = document.getElementById('mostrarCarrito');
   cartHtml.innerHTML = '';
   const cartElement = document.createElement('div');
