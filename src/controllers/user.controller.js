@@ -1,5 +1,5 @@
 import UserService from "../service/user.service.js";
-import userDao from "../daos/user.dao.js";
+import userDao from "../daos/dao.mongo/user.dao.js";
 
 
 class UserController {

@@ -1,14 +1,10 @@
-
-
-
 <div class="container-cart">
     <h1>TUS PRODUCTOS</h1>
-
+    {{#if user}}
     <div id="mostrarCarrito" class="cart"></div>
-
+    <button class="btn btn-sm btn-success succesCart" data-product-id="{{user._id}}">Confirmar Compra</button>
+    {{/if}}
 </div>
-
-
 
 <script src='/socket.io/socket.io.js'></script>
 <script src="/js/cart.client.js"></script>

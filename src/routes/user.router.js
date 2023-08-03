@@ -8,9 +8,11 @@ const userRouter = Router()
 
 userRouter.post('/', passport.authenticate('register', { failureRedirect: '/registererror' }),
 	async (req, res) => {
-		try { res.redirect('/login'); }
-		 catch (errorservidor) {
-			res.redirect('/errorservidor')
+		try {
+			console.log("paso el registro y fue exitoso pero no lo redireciona al login")
+			res.status(200).redirect('/login')
+		} catch (errorservidor) {
+			res.redirect('/errorservidor');
 		}
 	}
 );
@@ -25,7 +27,9 @@ userRouter.post('/auth', passport.authenticate('login', { failureRedirect: '/reg
 			res.cookie('token', token, {
 				httpOnly: true,
 				maxAge: 60000000,
+				
 			}).redirect('/profile')
+	
 		} catch (errorservidor) {
 			res.redirect('/errorservidor')
 		}

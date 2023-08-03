@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { cartList } from "../utils/instances.js";
 import cartController from "../controllers/cart.controller.js";
+import { isAuth } from "../middleware/auth.middleware.js";
+import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 
 const cartRouter = Router();
 
@@ -28,7 +30,7 @@ cartRouter.get('/:cid', async (req, res) => {
 });
 
 
-cartRouter.post('/:cid/product/:pid', async (req, res) => {
+cartRouter.post('/:cid/product/:pid' , isAuth , async (req, res) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
     try {
@@ -40,7 +42,7 @@ cartRouter.post('/:cid/product/:pid', async (req, res) => {
 });
 
 
-cartRouter.delete('/:cid/product/:pid', async (req, res) => {
+cartRouter.delete('/:cid/product/:pid', isAuth, async (req, res) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
     try {
@@ -66,7 +68,7 @@ cartRouter.delete('/:cid/product/:pid', async (req, res) => {
 //  ]
 // }
 
-cartRouter.put('/:cid', async (req, res) => {
+cartRouter.put('/:cid', isAuth, async (req, res) => {
     const cid = req.params.cid;
     const newProducts = req.body;
     try {
@@ -79,7 +81,7 @@ cartRouter.put('/:cid', async (req, res) => {
 })
 
 
-cartRouter.put('/:cid/product/:pid', async (req, res) => {
+cartRouter.put('/:cid/product/:pid', isAuth, async (req, res) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
     const { quantity } = req.body;
@@ -93,7 +95,7 @@ cartRouter.put('/:cid/product/:pid', async (req, res) => {
 });
 
 // vaciamos los productos del carrito //
-cartRouter.delete('/:cid/product/', async (req, res) => {
+cartRouter.delete('/:cid/product/', isAuth, async (req, res) => {
     const cid = req.params.cid;
     try {
 

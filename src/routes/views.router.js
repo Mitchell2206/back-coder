@@ -2,12 +2,12 @@ import { Router } from "express";
 import productController from "../controllers/product.controller.js";
 import { isAuth, isGuest } from '../middleware/auth.middleware.js';
 import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
-
+import cartController from "../controllers/cart.controller.js";
 
 const wiewsRouter = Router()
 
 
-wiewsRouter.get('/profile', middlewarePassportJwt, isAuth, (req, res) => {
+wiewsRouter.get('/profile', middlewarePassportJwt, (req, res) => {
 
   if (!req.user) {
     res.redirect('/errorcaduco')
@@ -20,31 +20,31 @@ wiewsRouter.get('/profile', middlewarePassportJwt, isAuth, (req, res) => {
   });
 });
 
-wiewsRouter.get('/', isGuest, (req, res) => {
+wiewsRouter.get('/', (req, res) => {
   res.render('register', {
     title: 'Registrar Nuevo Usuario',
   });
 });
 
-wiewsRouter.get('/login', isGuest, (req, res) => {
+wiewsRouter.get('/login', (req, res) => {
   res.render('login', {
     title: 'Inicio de Sesión',
   });
 });
 
-wiewsRouter.get('/registererror', isGuest, (req, res) => {
+wiewsRouter.get('/registererror', (req, res) => {
   res.render('registererror', {
     title: 'Error en registro',
   });
 });
 
-wiewsRouter.get('/errorservidor', isGuest, (req, res) => {
+wiewsRouter.get('/errorservidor', (req, res) => {
   res.render('errorservidor', {
     title: 'Error del servidor',
   });
 });
 
-wiewsRouter.get('/errorcaduco', isGuest, (req, res) => {
+wiewsRouter.get('/errorcaduco', (req, res) => {
   res.render('errorcaduco', {
     title: 'token jwt expired',
   });
@@ -53,7 +53,7 @@ wiewsRouter.get('/errorcaduco', isGuest, (req, res) => {
 
 
 
-wiewsRouter.get('/index', middlewarePassportJwt, isAuth, async (req, res) => {
+wiewsRouter.get('/index', isAuth, middlewarePassportJwt, async (req, res) => {
   const { limit = 4, page = 1, sort, descripcion, availability } = req.query;
 
   try {
@@ -88,18 +88,18 @@ wiewsRouter.get('/index', middlewarePassportJwt, isAuth, async (req, res) => {
 
 
 
-wiewsRouter.get('/chat', middlewarePassportJwt, (req, res) => {
-  const user = req.user;
-  console.log(user)
+wiewsRouter.get('/chat', isAuth, middlewarePassportJwt, (req, res) => {
+
   res.render('chat', { user: req.user });
 
 });
 
 
-wiewsRouter.get('/carts/', middlewarePassportJwt, isAuth, async (req, res) => {
+wiewsRouter.get('/carts/', isAuth, middlewarePassportJwt, async (req, res) => {
+  const productId = req.query.productId;
+  console.log(productId, "aqui", { user: req.user })
 
   res.render('cart', { user: req.user }); // Pasar el cartId a la vista
-
 });
 
 

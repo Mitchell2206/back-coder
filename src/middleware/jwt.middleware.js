@@ -33,10 +33,10 @@ const middlewarePassportJwt = async (req, res, next) => {
 
 		if (!usr) {
 			console.log("token jwt expired")
-			res.redirect('/errorcaduco')
+			res.redirect('/errorcaduco')	
 		} else {
 			req.user = usr
-			next(console.log("paso verificaciones", req.user = usr))
+			next()
 		}
 
 	})(req, res, next);

@@ -4,6 +4,7 @@ import userController from "../controllers/user.controller.js";
 import { comparePassword, hashPassword } from "../utils/encript.util.js";
 import GitHubStrategy from 'passport-github2';
 import { ExtractJwt, Strategy } from "passport-jwt";
+import UserDTO from "../dto/user.dto.js";
 
 const localStrategy = local.Strategy;
 const jwtStrategy = Strategy;
@@ -31,14 +32,19 @@ const inicializePassport = () => {
 
                     const escripPassword = await hashPassword(password)
 
-                    const newUser = await userController.createUser({
+                    const userdto = new UserDTO({
                         first_name,
                         last_name,
-                        email: username,
+                        username,
                         password: escripPassword,
                         img,
-                    })
-    
+                    });
+               
+                     console.log(userdto, "CONSLE DEL DTO")
+
+                    const newUser = await userController.createUser(userdto)  // voy por aca y siguen los productos con el dto //
+                    console.log(newUser)
+                   
                     return done(null, newUser)
 
                 } catch (err) {
@@ -81,9 +87,9 @@ const inicializePassport = () => {
                         done(null, user)
 
                     }
-                   
+
                     done(null, user)
-                    
+
 
                 } catch (err) {
                     done(err, false)
@@ -101,11 +107,11 @@ const inicializePassport = () => {
 
     passport.deserializeUser(async (id, done) => {
         const user = await userController.getUserById(id);
-       /* if (user.email === 'mitchel2206@gmail.com') {
-            user.admin = true; // tenerlo como administrador 
-        } else {
-            user.admin = false
-        }*/
+        /* if (user.email === 'mitchel2206@gmail.com') {
+             user.admin = true; // tenerlo como administrador 
+         } else {
+             user.admin = false
+         }*/
         done(null, user);
     });
 

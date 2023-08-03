@@ -1,5 +1,5 @@
 
-import cartModel from '../models/carts.model.js';
+import cartModel from '../../models/carts.model.js';
 
 
 class CartDao {
@@ -68,11 +68,16 @@ class CartDao {
 
         const cart = await this.cart.findOne({ _id: cid });
 
-        const updeteProdct = cart.products.filter(product => product._id != pid)
-        console.log(updeteProdct)
-        cart.products.splice(updeteProdct, 1)
+        const productIndex = cart.products.findIndex(product => product.product.equals(pid));
 
+        cart.products[productIndex].quantity -= 1;
 
+        if (cart.products[productIndex].quantity <= 0) {
+            cart.products.splice(productIndex, 1);
+            console.log("Producto eliminado del carrito:", pid);
+        } else {
+            console.log("Se eliminó uno del quantity del producto:", cart.products[productIndex]);
+        }
         return await cart.save();
     }
 

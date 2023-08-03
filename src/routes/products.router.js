@@ -3,6 +3,7 @@ import { io } from "../utils/socket.js";
 import { productList } from "../utils/instances.js";
 import productController from "../controllers/product.controller.js";
 
+
 const productRouter = Router();
 
 productRouter.get('/', async (req, res) => {
@@ -64,7 +65,7 @@ productRouter.get('/', async (req, res) => {
 });
 
 
-productRouter.get('/:uid', async (req, res) => {
+productRouter.get('/:uid' , async (req, res) => {
   // traemos el id especifico //
   try {
     let uid = req.params.uid
@@ -77,7 +78,7 @@ productRouter.get('/:uid', async (req, res) => {
 });
 
 
-productRouter.post('/', async (req, res) => {
+productRouter.post('/' , async (req, res) => {
   try {
     let product = req.body;
     let productos = await productController.addProducts(product);
@@ -88,7 +89,7 @@ productRouter.post('/', async (req, res) => {
 });
 
 
-productRouter.put('/:uid', async (req, res) => {
+productRouter.put('/:uid',  async (req, res) => {
   const uid = req.params.uid;
   try {
     const productActualizado = await productController.updateProduct(uid, req.body)
@@ -99,7 +100,7 @@ productRouter.put('/:uid', async (req, res) => {
   }
 })
 
-productRouter.delete('/:id', async (req, res) => {
+productRouter.delete('/:id' , async (req, res) => {
   const id = req.params.id
   try {
     await productController.deleteProduct(id)

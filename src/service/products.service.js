@@ -4,7 +4,7 @@ export default class ProductService {
     this.dao = dao;
   }
 
-  addProducts(product) {
+  async addProducts(product) {
     return this.dao.addProducts(product)
   }
 
@@ -14,16 +14,16 @@ export default class ProductService {
   }
 
 
-  updateProduct(uid, productActualizado) {
+  async updateProduct(uid, productActualizado) {
     return this.dao.updateProduct(uid, productActualizado);
   }
 
-  getProductsById(uid) {
+  async getProductsById(uid) {
     return this.dao.getProductsById(uid)
   }
 
 
-  deleteProduct(pid) {
+  async deleteProduct(pid) {
     return this.dao.deleteProduct(pid);
   }
 

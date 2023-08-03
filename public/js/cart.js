@@ -1,7 +1,18 @@
-const socket = io();
+
+const token = document.cookie.split('; ').find(cookie => cookie.startsWith('token='));
+const socket = io.connect('http://localhost:8080', {
+  extraHeaders: {
+    Authorization: `Bearer ${token ? token.split('=')[1] : ''}`, // Enviar el token en el encabezado si está disponible
+  },
+});
+
+console.log(socket)
 
 const addToCartButtons = document.querySelectorAll(".addToCart");
 const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+
+
 
 const addProduct = (productId) => {
   let found = false;
@@ -24,22 +35,25 @@ const addProduct = (productId) => {
 };
 
 
-socket.on('cartId', (cartId) => {
-  const existingCartId = localStorage.getItem('cartId');
-  if (!existingCartId) {
-    localStorage.setItem('cartId', cartId);
+const existingCartId = localStorage.getItem('cartId');
+
+socket.emit('cartId', existingCartId);
+
+socket.on('cartId', (cart) => {
+  if (cart) {
+    console.log(cart)
+    localStorage.setItem('cartId', cart);
+  } else {
+    console.error('Error al obtener el carrito del servidor o crear uno nuevo.');
   }
-  socket.emit('cartIdMostrar', cartId); // creo que no emite nada, debo verificar 
 });
 
-const cartId = localStorage.getItem('cartId');
-console.log(cartId)
-
-
+const cartId = localStorage.getItem('cartId')
 
 addToCartButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const productId = e.target.dataset.productId;
+    console.log(cartId, productId)
     socket.emit('agregarProducto', { cartId, productId });
   });
 });

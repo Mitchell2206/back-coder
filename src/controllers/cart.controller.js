@@ -1,6 +1,6 @@
 import cartService from "../service/cart.service.js";
-import cartDao from "../daos/cart.dao.js";
-
+import cartDao from "../daos/dao.mongo/cart.dao.js";
+import { isAuth } from "../middleware/auth.middleware.js";
 
 class CartController {
     constructor() {
@@ -17,7 +17,6 @@ class CartController {
     }
 
     async addProductCart(cid, pid) {
-
         return this.service.addProductCart(cid, pid);
     }
 

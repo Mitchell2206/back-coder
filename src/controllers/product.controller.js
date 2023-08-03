@@ -1,5 +1,5 @@
 import ProductService from "../service/products.service.js";
-import productDao from "../daos/product.dao.js";
+import productDao from "../daos/dao.mongo/product.dao.js";
 
 
 class ProductController {
