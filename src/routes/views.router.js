@@ -91,8 +91,8 @@ wiewsRouter.get('/index', middlewarePassportJwt, isAuth, async (req, res) => {
 
 
 wiewsRouter.get('/chat', middlewarePassportJwt, (req, res) => {
-  const user = req.user;
-  console.log(userl)
+ 
+ 
   res.render('chat', { user: req.user });
 
 });

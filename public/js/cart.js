@@ -17,7 +17,7 @@ async function mostrarCarrito() {
       console.log(data)
       const cartHtml = document.getElementById('mostrarCart');
       cartHtml.innerHTML = '';
-      const cartElement = document.createElement('div');
+     const cartElement = document.createElement('div');
       const total = data.products.reduce((acc, product) => acc + product.product.price * product.quantity, 0);
       cartElement.innerHTML = `
       
