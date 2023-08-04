@@ -6,8 +6,7 @@ export function isAuth(req, res, next) {
 	 
 	  res.redirect('/profile');
 	} else {
-	  console.log('USER');
-	  next(); // Continuar con la siguiente función de middleware
+	  next();
 	}
   }
 

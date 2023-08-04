@@ -11,7 +11,9 @@ cartRouter.post('/', async (req, res) => {
     try {
         const crearCarrito = await cartController.addCart()
         console.log(crearCarrito)
+        
         res.status(201).send(crearCarrito);
+        return 
     } catch (error) {
         res.status(500).send({ error });
     }
@@ -33,6 +35,7 @@ cartRouter.get('/:cid', async (req, res) => {
 cartRouter.post('/:cid/product/:pid' , isAuth , async (req, res) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
+    console.log(cid, pid, "entra y agrega")
     try {
         const addProdCart = await cartController.addProductCart(cid, pid);
         res.status(201).send(addProdCart);
@@ -45,6 +48,7 @@ cartRouter.post('/:cid/product/:pid' , isAuth , async (req, res) => {
 cartRouter.delete('/:cid/product/:pid', isAuth, async (req, res) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
+    console.log(cid, pid)
     try {
         const deleteProdCart = await cartController.deleteProductCart(cid, pid)
         res.status(201).send(deleteProdCart)

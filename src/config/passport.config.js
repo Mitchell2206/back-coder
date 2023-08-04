@@ -43,7 +43,7 @@ const inicializePassport = () => {
                      console.log(userdto, "CONSLE DEL DTO")
 
                     const newUser = await userController.createUser(userdto)  // voy por aca y siguen los productos con el dto //
-                    console.log(newUser)
+                    
                    
                     return done(null, newUser)
 

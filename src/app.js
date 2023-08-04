@@ -13,6 +13,7 @@ import { cartRouter } from './routes/carts.router.js';
 import wiewsRouter from './routes/views.router.js';
 import { menssagerModel } from "../src/models/menssage.model.js";
 import { userRouter } from './routes/user.router.js';
+import { ticketRouter } from './routes/ticket.router.js';
 import inicializePassport from './config/passport.config.js';
 import enviroment from './config/enviroment.js';
 
@@ -80,7 +81,7 @@ app.use('/', wiewsRouter)
 app.use('/api/products', productRouter)
 app.use('/api/carts', cartRouter)
 app.use('/api/users', userRouter);
-
+app.use('/api/purchase', ticketRouter);
 
 
 const httpServer = enviroment.PORT;

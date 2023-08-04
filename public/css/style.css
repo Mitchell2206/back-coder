@@ -493,10 +493,26 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.succesCart {
+.succesCartClient {
   padding: 2px;
   margin: 20px;
+  color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.totalPrice {
+  padding: 10px;
+  margin: 5px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+
 
 /* Error del servidor */
 
