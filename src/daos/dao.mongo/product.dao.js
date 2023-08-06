@@ -44,7 +44,7 @@ class ProductDao {
                 limit: parseInt(limit),
                 ...options,
             });
-
+            console.log(products)
             return products;
         } catch (error) {
             throw new Error(`Error al obtener los productos: ${error}`);

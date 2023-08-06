@@ -17,7 +17,7 @@ productRouter.get('/', async (req, res) => {
       availability
     );
 
-    console.log(products)
+ 
 
     const prevPage = products.prevPage;
     const nextPage = products.nextPage;

@@ -7,7 +7,7 @@ import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 const wiewsRouter = Router()
 
 
-wiewsRouter.get('/profile', middlewarePassportJwt, isAuth, (req, res) => {
+wiewsRouter.get('/profile', middlewarePassportJwt, (req, res) => {
 
   if (!req.user) {
     res.redirect('/errorcaduco')
@@ -50,12 +50,12 @@ wiewsRouter.get('/errorcaduco', isGuest, (req, res) => {
   });
 });
 
-wiewsRouter.get('/mail', async(req, res) =>{
+wiewsRouter.get('/mail', async (req, res) => {
   let result = await trasn
 })
 
 
-wiewsRouter.get('/index', middlewarePassportJwt, isAuth, async (req, res) => {
+wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
   const { limit = 4, page = 1, sort, descripcion, availability } = req.query;
 
   try {
@@ -91,23 +91,26 @@ wiewsRouter.get('/index', middlewarePassportJwt, isAuth, async (req, res) => {
 
 
 wiewsRouter.get('/chat', middlewarePassportJwt, (req, res) => {
- 
- 
+
+  if (req.user.rol === 'ADMIN') {
+    console.log('LOS ', req.user.rol, ' NO PUEDEN ENVIAR MENSAJES AL CHAT')
+    res.status(500).redirect('/profile');
+  }
   res.render('chat', { user: req.user });
 
 });
 
 
-wiewsRouter.get('/carts/', middlewarePassportJwt, isAuth, async (req, res) => {
+wiewsRouter.get('/carts/', middlewarePassportJwt, async (req, res) => {
 
-  res.render('cart',  { user: req.user }); 
+  res.render('cart', { user: req.user });
 });
 
 
 wiewsRouter.post('/', middlewarePassportJwt, isGuest, async (req, res) => {
   const id = req.params.id
   console.log(id)
-  res.render('purchase',  { user: req.user }); 
+  res.render('purchase', { user: req.user });
 });
 
 

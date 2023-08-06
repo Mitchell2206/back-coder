@@ -33,19 +33,13 @@ addToCartButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     const productId = e.target.dataset.productId;
     async function addProductCart() {
-      try {
-        const response = await fetch(`/api/carts/${cartId}/product/${productId}`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
-        const data = await response.json();
-        console.log(data)
-      } catch (error) {
-        console.error("Error:", error);
-      }
-
+      const response = await fetch(`/api/carts/${cartId}/product/${productId}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await response.json();
     }
     addProductCart()
   });

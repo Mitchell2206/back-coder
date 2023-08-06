@@ -7,7 +7,7 @@ import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 const cartRouter = Router();
 
 
-cartRouter.post('/', async (req, res) => {
+cartRouter.post('/', isAuth , async (req, res) => {
     try {
         const crearCarrito = await cartController.addCart()
         console.log(crearCarrito)
@@ -20,7 +20,7 @@ cartRouter.post('/', async (req, res) => {
 });
 
 
-cartRouter.get('/:cid', async (req, res) => {
+cartRouter.get('/:cid', isAuth, async (req, res) => {
     const cid = req.params.cid;
     try {
         const getCartRouter = await cartController.getCartId(cid)

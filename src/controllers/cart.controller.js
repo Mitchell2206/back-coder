@@ -1,6 +1,7 @@
 import cartService from "../service/cart.service.js";
 import cartDao from "../daos/dao.mongo/cart.dao.js";
 import { isAuth } from "../middleware/auth.middleware.js";
+import productController from "./product.controller.js";
 
 class CartController {
     constructor() {
@@ -17,7 +18,24 @@ class CartController {
     }
 
     async addProductCart(cid, pid) {
-        return this.service.addProductCart(cid, pid);
+        try {
+            const product = await productController.getProductsById(pid);
+            console.log(product)
+
+            if (product.length > 0) {
+                const productStock = product[0]
+                if (productStock.stock === 0) {
+
+                    console.log("No hay stock para agregar al carrito")
+                } else {
+                    return this.service.addProductCart(cid, pid);
+                }
+            }
+
+        } catch (error) {
+            console.log("Ocurrió un error al obtener el producto:", error.message);
+        }
+
     }
 
 

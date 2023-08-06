@@ -2,18 +2,25 @@ import { Router } from "express";
 import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 import cartController from "../controllers/cart.controller.js";
 import ticketController from "../controllers/ticket.controller.js";
-import productController from "../controllers/product.controller.js";
+import productModel from "../models/product.model.js";
+import userController from "../controllers/user.controller.js";
+import userModel from "../models/user.model.js";
+import cartModel from "../models/carts.model.js";
+
 
 const ticketRouter = Router()
 
 
 ticketRouter.post('/:id', middlewarePassportJwt, async (req, res) => {
   const user = req.user;
+
+  const client = await userModel.findById(user._id)
+  const productMongo = await productModel.find();
   const cartClient = await cartController.getCartId(req.params.id)
 
 
 
-  /*const productsToUpdate = cartClient.products.map(item => {
+  const productsToUpdate = cartClient.products.map(item => {
     return {
       productId: item.product._id,
       stock: item.product.stock,
@@ -21,41 +28,48 @@ ticketRouter.post('/:id', middlewarePassportJwt, async (req, res) => {
     };
   });
 
-  console.log(
-    productsToUpdate.products
-  )
+
+  for (const productUpdate of productsToUpdate) {
+    const product = productMongo.find(p => p._id.toString() === productUpdate.productId.toString());
+    if (product) {
+
+      const updatedStock = product.stock - productUpdate.quantity;
+      if (updatedStock < 0) {
+        return cartClient
+      }
 
 
-  const productUpMongo = await productController.getProducts()
-  console.log(productUpMongo)*/
-  // Restar la cantidad comprada del stock actual del producto
-  //productUpMongo.quantity -= productsToUpdate.quantity;
-
-  // Verificar si el stock no es negativo
-  // if (productUpMongo.quantity < 0) {
-  //   return res.status(400).send(`No hay suficiente stock disponible para el producto con ID ${productUpMongo.productId}.`);
-  // }
-
-  // Actualizar el producto en la base de datos usando el productController
-  // await productController.updateProduct(productUpMongo._id, { quantity: productsToUpdate.quantity });
-
-  // console.log(productController)
-
-  const total = cartClient.products.reduce((acc, product) => acc + product.product.price * product.quantity, 0);
-  const purchase_datatime = new Date().toLocaleString();
-
-  const generateRandomCode = () => Math.floor(Math.random() * 90000) + 10000;
-  const generatedCode = generateRandomCode();
+      try {
+        await productModel.findByIdAndUpdate(product._id, { stock: updatedStock });
+        console.log(`Stock actualizado para ${product.title}. Stock restante: ${updatedStock}`);
 
 
-  const createTicket = await ticketController.createTicket({
-    code: generatedCode,
-    purchase_datatime,
-    amount: total,
-    purchaser: user.email,
-  })
+        const total = cartClient.products.reduce((acc, product) => acc + product.product.price * product.quantity, 0);
+        const purchase_datatime = new Date().toLocaleString();
 
-  console.log(createTicket)
+        const generateRandomCode = () => Math.floor(Math.random() * 90000) + 10000;
+        const generatedCode = generateRandomCode();
+
+
+        const createTicket = await ticketController.createTicket({
+          code: generatedCode,
+          purchase_datatime,
+          amount: total,
+          purchaser: user.email,
+        })
+        console.log(createTicket)
+
+        client.cart.push(cartClient);
+
+        return await client.save()
+
+      } catch (error) {
+        console.log(`Error al actualizar el stock para ${product.title}: ${error}`);
+      }
+    } else {
+      console.log(`Producto con ID ${productUpdate.productId} no encontrado en la base de datos.`);
+    }
+  }
 })
 
 

@@ -27,7 +27,7 @@ class CartDao {
         const index = cart.products.findIndex((producto) => {
             return producto.product !== null && producto.product.toString() === pid;
         });
-
+        
         if (index === -1) {
             cart.products.push({ product: pid, quantity: 1 })
         } else {
