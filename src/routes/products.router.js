@@ -17,7 +17,7 @@ productRouter.get('/', async (req, res) => {
       availability
     );
 
- 
+
 
     const prevPage = products.prevPage;
     const nextPage = products.nextPage;
@@ -93,10 +93,9 @@ productRouter.put('/:uid',  async (req, res) => {
   const uid = req.params.uid;
   try {
     const productActualizado = await productController.updateProduct(uid, req.body)
-    console.log(productActualizado)
     res.status(201).send(productActualizado)
   } catch (error) {
-    console.log(res.status(500).send("Error al tratar de actualizar", error))
+    res.status(500).send("Error al tratar de actualizar", error)
   }
 })
 
@@ -106,7 +105,7 @@ productRouter.delete('/:id' , async (req, res) => {
     await productController.deleteProduct(id)
     res.sendStatus(204)
   } catch (error) {
-    console.log(res.status(500).send("No se elimino el producto"))
+    res.status(500).send("No se elimino el producto")
   }
 })
 

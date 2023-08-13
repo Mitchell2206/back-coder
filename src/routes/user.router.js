@@ -1,84 +1,92 @@
 import { Router } from "express";
 import passport from "passport";
-import { generateToken, authToken } from "../middleware/jwt.middleware.js";
+import { generateToken, middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 
+import ErrorCodes from "../utils/error.js";
+import { generateErrorAutenticacion, generateErrorDeslogueo, generateErrorEnrutamiento, generateUserErrorInfo } from "../utils/info.js";
+import CustomErrors from "../utils/customError.js";
+import { isGuest } from "../middleware/auth.middleware.js";
+import { es } from "@faker-js/faker";
 
 
 const userRouter = Router()
 
-userRouter.post('/', passport.authenticate('register', { failureRedirect: '/registererror' }),
-	async (req, res) => {
-		try {
-			console.log("paso el registro y fue exitoso pero no lo redireciona al login")
+
+
+userRouter.post('/', (req, res, next) => {
+	passport.authenticate('register', (err, user, info) => {
+		if (user) {
 			res.status(200).redirect('/login')
-		} catch (errorservidor) {
-			res.redirect('/errorservidor');
 		}
-	}
-);
 
-userRouter.post('/auth', passport.authenticate('login', { failureRedirect: '/registererror' }),
-	(req, res) => {
-		try {
-			const user = req.user;
-			delete user.password;
-			const token = generateToken(user) // genero el token pero no me viene con el beaker/
-
-			res.cookie('token', token, {
-				httpOnly: true,
-				maxAge: 60000000,
-				
-			}).redirect('/profile')
-	
-		} catch (errorservidor) {
-			res.redirect('/errorservidor')
+		if (info) {
+			CustomErrors.createError("Error de autenticacion", generateErrorAutenticacion(), 'Register Error', ErrorCodes.AUTENTICACION_ERROR);
 		}
-	}
-);
 
-userRouter.get('/private', authToken, (req, res) => {
-	try {
-		res.status(200).send({ message: 'Private route', user: req.user });
-	} catch (errorservidor) {
-		res.redirect('/errorservidor')
-	}
+		return next(err)
+
+	})(req, res, next);
 });
 
 
-userRouter.post('/logout', (req, res) => {
-	try {
-		req.session.destroy()
+userRouter.post('/auth', (req, res, next) => {
+	passport.authenticate('login', (err, user, info) => {
+
+		if (err) {
+			return next(err)
+		}
+
+
+		if (!user) {
+			CustomErrors.createError("Error de autenticacion", generateUserErrorInfo(), 'Login Error', ErrorCodes.AUTENTICACION_ERROR);
+		}
+
+		const token = generateToken(user);
+
+		res.cookie('token', token, {
+			httpOnly: true,
+			maxAge: 60000000,
+		}).redirect('/profile');
+
+	})(req, res, next);
+});
+
+
+
+
+userRouter.post('/logout', middlewarePassportJwt, (req, res, next) => {
+
+	if (req.user) {
+		req.session.destroy();
+		res.clearCookie('connect.sid');
+		res.clearCookie('token');
 		res.redirect('/login');
-	} catch (errorservidor) {
-		res.redirect('/errorservidor')
+	} else {
+		CustomErrors.createError('problemas en deslogueo', generateErrorDeslogueo(), 'no se pudo desloguear el usuario', ErrorCodes.DESLOGUEO_ERROR);
 	}
 });
 
 
+userRouter.get('/github', passport.authenticate('github', { scope: ['user:email'] }), (err, req, res, next) => {
+	if (err) {
+		CustomErrors.createError('Error Routing', generateErrorEnrutamiento(), 'no redireciono', ErrorCodes.ROUTING_ERROR)
+	}
 
-// Registro Callback Github //
-
-
-userRouter.get('/github', passport.authenticate('github', { scope: ['user:email'] }),
-	async (req, res) => { } // me redirecciona al github a loguearme //
-)
-
+});
 
 
-userRouter.get('/githubcallback', passport.authenticate('github', { failureRedirect: '/login' }),
+userRouter.get('/githubcallback', passport.authenticate('github'),
 	(req, res) => {
-		try {
-			const user = req.user;
-			const token = generateToken(user)
-			res.cookie('token', token, {
-				httpOnly: true,
-				maxAge: 60000000,
-			}).redirect('/profile')
-		} catch (errorservidor) {
-			res.redirect('/errorservidor')
-		}
+
+		const user = req.user;
+		const token = generateToken(user)
+		res.cookie('token', token, {
+			httpOnly: true,
+			maxAge: 60000000,
+		}).redirect('/profile')
+
 	}
 )
 
 
-export { userRouter };
+export { userRouter }

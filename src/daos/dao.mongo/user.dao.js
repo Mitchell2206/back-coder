@@ -25,7 +25,6 @@ class UserDao {
         return await this.user.findById(id);
     }
 
-
 }
 
 

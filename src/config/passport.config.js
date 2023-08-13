@@ -4,7 +4,12 @@ import userController from "../controllers/user.controller.js";
 import { comparePassword, hashPassword } from "../utils/encript.util.js";
 import GitHubStrategy from 'passport-github2';
 import { ExtractJwt, Strategy } from "passport-jwt";
+import enviroment from "./enviroment.js";
 import UserDTO from "../dto/user.dto.js";
+import ErrorCodes from "../utils/error.js";
+import { generateErrorAutenticacion, generateUserErrorInfo } from "../utils/info.js";
+import CustomErrors from "../utils/customError.js";
+
 
 const localStrategy = local.Strategy;
 const jwtStrategy = Strategy;
@@ -21,13 +26,18 @@ const inicializePassport = () => {
 
                 try {
 
-                    const user = await userController.getByEmail(username);
+                    if (!first_name || !last_name || !username) {
+                        return done(null, false, {
+                            message: 'Todos los campos deben estar llenos',
+                        });
+                    }
 
+                    const user = await userController.getByEmail(username);
 
                     if (user) {
                         return done(null, false, {
-                            message: 'El usuario ya existe'
-                        })
+                            message: 'User already exists',
+                        });
                     }
 
                     const escripPassword = await hashPassword(password)
@@ -39,16 +49,18 @@ const inicializePassport = () => {
                         password: escripPassword,
                         img,
                     });
-               
-                     console.log(userdto, "CONSLE DEL DTO")
 
-                    const newUser = await userController.createUser(userdto)  // voy por aca y siguen los productos con el dto //
-                    
-                   
+                    if (userdto.email === "mitchel2206@gmail.com") {
+                        userdto.rol = "ADMIN";
+                    }
+
+                    const newUser = await userController.createUser(userdto)
+
                     return done(null, newUser)
 
                 } catch (err) {
-                    done(err);
+                    done(err)
+
                 }
             }
         )
@@ -60,17 +72,16 @@ const inicializePassport = () => {
         'github',
         new GitHubStrategy(
             {
-
-                clientID: 'Iv1.adef24a6051bd23a',
-                clientSecret: 'e8bfdd189109dbdd030cd7e1e9e7817b8d5e11c5',
+                clientID: enviroment.CLIENTID,
+                clientSecret: enviroment.CLIENTSECRET,
                 callbackURL: 'http://localhost:8080/api/users/githubcallback',
-
             },
             async (accessToken, refreshToken, profile, done) => {
                 try {
                     let user = await userController.getByEmail(
                         profile._json.email
                     );
+
 
                     if (!user) {
                         let newUser = {
@@ -90,7 +101,6 @@ const inicializePassport = () => {
 
                     done(null, user)
 
-
                 } catch (err) {
                     done(err, false)
                 }
@@ -107,11 +117,6 @@ const inicializePassport = () => {
 
     passport.deserializeUser(async (id, done) => {
         const user = await userController.getUserById(id);
-        /* if (user.email === 'mitchel2206@gmail.com') {
-             user.admin = true; // tenerlo como administrador 
-         } else {
-             user.admin = false
-         }*/
         done(null, user);
     });
 

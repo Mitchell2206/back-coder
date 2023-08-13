@@ -16,9 +16,10 @@ import { userRouter } from './routes/user.router.js';
 import { ticketRouter } from './routes/ticket.router.js';
 import inicializePassport from './config/passport.config.js';
 import enviroment from './config/enviroment.js';
-
+import errorsManagerMiddleware from './middleware/errorsManager.middleware.js';
 
 import { io } from './utils/socket.js';
+
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
@@ -83,6 +84,7 @@ app.use('/api/carts', cartRouter)
 app.use('/api/users', userRouter);
 app.use('/api/purchase', ticketRouter);
 
+app.use(errorsManagerMiddleware)
 
 const httpServer = enviroment.PORT;
 server.listen(httpServer, () => console.log(`estoy escuchando ${httpServer}...`));

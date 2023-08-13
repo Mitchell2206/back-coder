@@ -1,5 +1,6 @@
 
 import productModel from "../../models/product.model.js";
+import { generateProducts } from "../../utils/generate.js";
 
 class ProductDao {
     constructor() {
@@ -39,12 +40,14 @@ class ProductDao {
                 options.sort = { price: -1 };
             }
 
+        
+
+    
             const products = await this.product.paginate(optionalQueries, {
                 page: parseInt(page),
                 limit: parseInt(limit),
                 ...options,
             });
-            console.log(products)
             return products;
         } catch (error) {
             throw new Error(`Error al obtener los productos: ${error}`);

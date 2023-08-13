@@ -74,7 +74,6 @@ class CartDao {
 
         if (cart.products[productIndex].quantity <= 0) {
             cart.products.splice(productIndex, 1);
-            console.log("Producto eliminado del carrito:", pid);
         } else {
             console.log("Se eliminó uno del quantity del producto:", cart.products[productIndex]);
         }

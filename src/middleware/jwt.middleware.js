@@ -1,7 +1,12 @@
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
+import enviroment from '../config/enviroment.js';
+import CustomErrors from '../utils/customError.js';
+import ErrorCodes from '../utils/error.js';
+import { generateErrorTokenNoFound } from '../utils/info.js';
 
-const privatekey = 'privatekey';
+
+const privatekey = enviroment.KEYJWT;
 
 const generateToken = (user) => {
 	return jwt.sign(user.toJSON(), privatekey, { expiresIn: '1h' });
@@ -11,6 +16,7 @@ const authToken = (req, res, next) => {
 	const authHeader = req.headers.authorization;
 	console.log(authHeader)
 	if (!authHeader) {
+
 		res.status(401).send({ message: 'Token not found' });
 	}
 
@@ -33,7 +39,7 @@ const middlewarePassportJwt = async (req, res, next) => {
 
 		if (!usr) {
 			console.log("token jwt expired")
-			res.redirect('/errorcaduco')	
+			res.redirect('/errorcaduco')
 		} else {
 			req.user = usr
 			next()

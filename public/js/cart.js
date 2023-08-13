@@ -3,7 +3,7 @@
 
 
 const cartId = localStorage.getItem('cartId');
-console.log(cartId)
+
 async function mostrarCarrito() {
   if (cartId !== null) {
     try {
@@ -14,7 +14,7 @@ async function mostrarCarrito() {
         },
       });
       const data = await response.json();
-      console.log(data)
+   
       const cartHtml = document.getElementById('mostrarCart');
       cartHtml.innerHTML = '';
       const cartElement = document.createElement('div');
@@ -83,7 +83,6 @@ async function mostrarCarrito() {
                 },
               });
               const data = await response.json();
-              console.log(data)
             } catch (error) {
               console.error("Error:", error);
             }

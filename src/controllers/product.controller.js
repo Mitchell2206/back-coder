@@ -13,7 +13,6 @@ class ProductController {
 
    async getProducts(limit, page, sort, descripcion, availability) {
         const resulta = await this.service.getProducts(limit, page, sort, descripcion, availability)
-      console.log(resulta)
         return resulta;
     }
 

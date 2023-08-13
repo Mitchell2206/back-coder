@@ -27,7 +27,6 @@ verifyCart();
 
 const cartId = localStorage.getItem('cartId')
 
-console.log(cartId);
 
 addToCartButtons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
