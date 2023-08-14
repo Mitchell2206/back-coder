@@ -14,7 +14,6 @@ async function verifyCart() {
         },
       });
       const data = await response.json();
-      console.log()
       localStorage.setItem('cartId', data._id);
 
     } catch (error) {

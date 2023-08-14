@@ -19,16 +19,6 @@ export default class cartService {
     }
 
 
-    async getCartProducts(cid) {
-        return this.dao.getCartProducts(cid)
-    }
-
-
-    async getCartContents(cid) {
-        return this.dao.getCartContents(cid)
-    }
-
-
     async deleteProductCart(cid, pid) {
         return this.dao.deleteProductCart(cid, pid)
     }

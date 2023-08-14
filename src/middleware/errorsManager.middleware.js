@@ -22,6 +22,9 @@ export default (err, req, res, next) => {
         case ErrorCodes.PRODUCT_ERROR:
             res.status(400)
             break;
+        case ErrorCodes.CART_ERROR:
+            res.status(400)
+            break;
         default:
             res.render('errorservidor');
             break;

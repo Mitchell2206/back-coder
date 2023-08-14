@@ -39,14 +39,6 @@ class CartController {
     }
 
 
-    async getCartProducts(cid) {
-        return this.service.getCartProducts(cid)
-    }
-
-
-    async getCartContents(cid) {
-        return this.service.getCartContents(cid)
-    }
 
     async deleteProductCart(cid, pid) {
         return this.service.deleteProductCart(cid, pid)

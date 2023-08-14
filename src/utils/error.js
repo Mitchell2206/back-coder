@@ -6,6 +6,7 @@ const ErrorCodes = {
     AUTENTICACION_ERROR: 5,
     ADMIN_NOAUTHORIZATION: 6,
     PRODUCT_ERROR: 7,
+    CART_ERROR: 8,
 }
 
 export default ErrorCodes;

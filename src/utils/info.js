@@ -29,6 +29,16 @@ export const generateErrorProduct = (err) => {
    `
 }
 
+export const generateErrorCart = (err) => {
+
+    return `
+    ${{err}}
+   
+   `
+}
+
+
+
 export const generateErrorAutenticacion = () => {
     return `
    Email ya registrado / datos faltante para el registro

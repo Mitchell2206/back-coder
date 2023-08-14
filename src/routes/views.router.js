@@ -2,7 +2,7 @@ import { Router } from "express";
 import productController from "../controllers/product.controller.js";
 import { isAuth, isGuest } from '../middleware/auth.middleware.js';
 import { authToken, middlewarePassportJwt } from "../middleware/jwt.middleware.js";
-
+ 
 
 const wiewsRouter = Router()
 
