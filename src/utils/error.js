@@ -5,6 +5,7 @@ const ErrorCodes = {
     DESLOGUEO_ERROR: 4,
     AUTENTICACION_ERROR: 5,
     ADMIN_NOAUTHORIZATION: 6,
+    PRODUCT_ERROR: 7,
 }
 
 export default ErrorCodes;

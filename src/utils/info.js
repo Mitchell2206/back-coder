@@ -21,10 +21,11 @@ export const generateErrorDeslogueo = () => {
 
 }
 
-export const generateErrorTokenNoFound = () => {
+export const generateErrorProduct = (err) => {
 
     return `
-    El token a caducado
+    ${{err}}
+   
    `
 }
 

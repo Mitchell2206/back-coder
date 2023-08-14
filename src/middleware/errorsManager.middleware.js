@@ -19,6 +19,9 @@ export default (err, req, res, next) => {
         case ErrorCodes.ADMIN_NOAUTHORIZATION:
             res.status(401)
             break;
+        case ErrorCodes.PRODUCT_ERROR:
+            res.status(400)
+            break;
         default:
             res.render('errorservidor');
             break;

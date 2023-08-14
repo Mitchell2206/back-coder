@@ -1,21 +1,13 @@
 import { Router } from "express";
 import productController from "../controllers/product.controller.js";
 import { isAuth, isGuest } from '../middleware/auth.middleware.js';
-import { authToken ,middlewarePassportJwt } from "../middleware/jwt.middleware.js";
-import ErrorCodes from "../utils/error.js";
-import CustomErrors from "../utils/customError.js";
-import { generateErrorTokenNoFound } from "../utils/info.js";
-import { generateProducts } from "../utils/generate.js";
+import { authToken, middlewarePassportJwt } from "../middleware/jwt.middleware.js";
+
 
 const wiewsRouter = Router()
 
 
-wiewsRouter.get('/profile' , middlewarePassportJwt, (req, res) => {
-
-  if (!req.user) {
-    CustomErrors.createError('token no found', generateErrorTokenNoFound(), 'Token caducado', ErrorCodes.AUTENTICACION_ERROR)
-    //res.redirect('/errorcaduco')
-  }
+wiewsRouter.get('/profile', middlewarePassportJwt, async (req, res) => {
 
   res.render('profile', {
     title: 'Perfil de Usuario',
@@ -64,7 +56,7 @@ wiewsRouter.get('/errorcaduco', isGuest, (req, res) => {
 
 
 
-wiewsRouter.get('/index', authToken , middlewarePassportJwt, async (req, res) => {
+wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
   const { limit = 4, page = 1, sort, descripcion, availability } = req.query;
 
   try {
@@ -101,12 +93,8 @@ wiewsRouter.get('/index', authToken , middlewarePassportJwt, async (req, res) =>
 });
 
 
-wiewsRouter.get('/chat', middlewarePassportJwt, (req, res) => {
+wiewsRouter.get('/chat', middlewarePassportJwt, isAuth, (req, res) => {
 
-  if (req.user.rol === 'ADMIN') {
-    console.log('LOS ', req.user.rol, ' NO PUEDEN ENVIAR MENSAJES AL CHAT')
-    res.status(500).redirect('/profile');
-  }
   res.render('chat', { user: req.user });
 
 });
@@ -120,7 +108,6 @@ wiewsRouter.get('/carts/', middlewarePassportJwt, async (req, res) => {
 
 wiewsRouter.post('/', middlewarePassportJwt, isGuest, async (req, res) => {
   const id = req.params.id
-  console.log(id)
   res.render('purchase', { user: req.user });
 });
 

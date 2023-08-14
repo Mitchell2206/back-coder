@@ -1,9 +1,6 @@
 import jwt from 'jsonwebtoken';
 import passport from 'passport';
 import enviroment from '../config/enviroment.js';
-import CustomErrors from '../utils/customError.js';
-import ErrorCodes from '../utils/error.js';
-import { generateErrorTokenNoFound } from '../utils/info.js';
 
 
 const privatekey = enviroment.KEYJWT;
@@ -14,9 +11,8 @@ const generateToken = (user) => {
 
 const authToken = (req, res, next) => {
 	const authHeader = req.headers.authorization;
-	console.log(authHeader)
-	if (!authHeader) {
 
+	if (!authHeader) {
 		res.status(401).send({ message: 'Token not found' });
 	}
 
@@ -33,6 +29,8 @@ const authToken = (req, res, next) => {
 
 const middlewarePassportJwt = async (req, res, next) => {
 	passport.authenticate('jwt', { session: false }, (err, usr, info) => {
+
+
 		if (err) {
 			next(err);
 		}

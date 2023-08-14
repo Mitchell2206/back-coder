@@ -4,7 +4,6 @@ export default class CustomErrors {
         error.name = name;
         error.code = status;
         error.cause = cause;
-        console.log(error)
         throw error;
     }
 }
