@@ -4,7 +4,6 @@ const existingCartId = localStorage.getItem('cartId');
 
 async function verifyCart() {
   if (existingCartId !== null) {
-    console.log(existingCartId, "el cart creado anteriormentessssss");
   } else {
     try {
       const response = await fetch(`/api/carts/`, {

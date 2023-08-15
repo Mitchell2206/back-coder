@@ -89,7 +89,6 @@ class CartDao {
 
 
     async updateQuantityProduct(cid, pid, qty) {
-        console.log(cid, pid, qty)
         try {
             const cart = await this.cart.findOne({ _id: cid });
             const product = cart.products.find((product) => product._id == pid);

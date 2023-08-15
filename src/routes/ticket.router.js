@@ -41,9 +41,7 @@ ticketRouter.post('/:id', middlewarePassportJwt, async (req, res) => {
 
       try {
         await productModel.findByIdAndUpdate(product._id, { stock: updatedStock });
-        console.log(`Stock actualizado para ${product.title}. Stock restante: ${updatedStock}`);
-
-
+       
         const total = cartClient.products.reduce((acc, product) => acc + product.product.price * product.quantity, 0);
         const purchase_datatime = new Date().toLocaleString();
 
@@ -57,14 +55,13 @@ ticketRouter.post('/:id', middlewarePassportJwt, async (req, res) => {
           amount: total,
           purchaser: user.email,
         })
-        console.log(createTicket)
 
         client.cart.push(cartClient);
 
         return await client.save()
 
       } catch (error) {
-        console.log(`Error al actualizar el stock para ${product.title}: ${error}`);
+        req.logger.error(`Error al actualizar el stock para ${product.title}: ${error}`)
       }
     } else {
       console.log(`Producto con ID ${productUpdate.productId} no encontrado en la base de datos.`);

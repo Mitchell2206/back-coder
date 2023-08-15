@@ -20,19 +20,18 @@ class CartController {
     async addProductCart(cid, pid) {
         try {
             const product = await productController.getProductsById(pid);
-            console.log(product)
-
             if (product.length > 0) {
                 const productStock = product[0]
                 if (productStock.stock === 0) {
 
-                    console.log("No hay stock para agregar al carrito")
+                    // creo un logger no hay productos
                 } else {
                     return this.service.addProductCart(cid, pid);
                 }
             }
 
         } catch (error) {
+            
             console.log("Ocurrió un error al obtener el producto:", error.message);
         }
 

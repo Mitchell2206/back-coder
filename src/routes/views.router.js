@@ -88,6 +88,7 @@ wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
 
     res.render("index", { title: "Products", products, products, pag, prevLink, totalPages, nextLink, user: req.user, });
   } catch (error) {
+    req.logger.error(`No se obtuvieron los productos de la base de dato`)
     res.status(500).send(`No se pudieron obtener los productos`);
   }
 });

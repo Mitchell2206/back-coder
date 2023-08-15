@@ -17,7 +17,6 @@ const authToken = (req, res, next) => {
 	}
 
 	jwt.verify(authHeader, privatekey, (err, credentials) => {
-		console.log(authHeader, privatekey)
 		if (err) {
 			res.status(401).send({ message: 'Token not valid' });
 		}
@@ -36,7 +35,7 @@ const middlewarePassportJwt = async (req, res, next) => {
 		}
 
 		if (!usr) {
-			console.log("token jwt expired")
+			//console.log("token jwt expired")  aqui creo otro 
 			res.redirect('/errorcaduco')
 		} else {
 			req.user = usr

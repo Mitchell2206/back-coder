@@ -1,12 +1,10 @@
 import { Router } from "express";
 import passport from "passport";
 import { generateToken, middlewarePassportJwt } from "../middleware/jwt.middleware.js";
-
 import ErrorCodes from "../utils/error.js";
 import { generateErrorAutenticacion, generateErrorDeslogueo, generateErrorEnrutamiento, generateUserErrorInfo } from "../utils/info.js";
 import CustomErrors from "../utils/customError.js";
-import { isGuest } from "../middleware/auth.middleware.js";
-import { es } from "@faker-js/faker";
+
 
 
 const userRouter = Router()
@@ -20,6 +18,7 @@ userRouter.post('/', (req, res, next) => {
 		}
 
 		if (info) {
+			req.logger.warn('Error de autenticacion en registro')
 			CustomErrors.createError("Error de autenticacion", generateErrorAutenticacion(), 'Register Error', ErrorCodes.AUTENTICACION_ERROR);
 		}
 
@@ -38,8 +37,11 @@ userRouter.post('/auth', (req, res, next) => {
 
 
 		if (!user) {
+			req.logger.warn('login error')
 			CustomErrors.createError("Error de autenticacion", generateUserErrorInfo(), 'Login Error', ErrorCodes.AUTENTICACION_ERROR);
 		}
+
+		
 
 		const token = generateToken(user);
 

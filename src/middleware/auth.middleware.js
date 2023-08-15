@@ -4,8 +4,6 @@ import { generateAdminNoAuthorization } from "../utils/info.js";
 
 
 export function isAuth(req, res, next) {
-	console.log(req.user, 'aqui entro ')
-
 	if (req.user.rol === 'ADMIN') {
 		CustomErrors.createError('Admin no authorization', generateAdminNoAuthorization(), 'No Authorizacion', ErrorCodes.ADMIN_NOAUTHORIZATION);
 	} else {

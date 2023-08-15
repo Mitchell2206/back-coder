@@ -6,9 +6,7 @@ import GitHubStrategy from 'passport-github2';
 import { ExtractJwt, Strategy } from "passport-jwt";
 import enviroment from "./enviroment.js";
 import UserDTO from "../dto/user.dto.js";
-import ErrorCodes from "../utils/error.js";
-import { generateErrorAutenticacion, generateUserErrorInfo } from "../utils/info.js";
-import CustomErrors from "../utils/customError.js";
+
 
 
 const localStrategy = local.Strategy;
@@ -129,6 +127,7 @@ const inicializePassport = () => {
 
                 try {
 
+                
                     const user = await userController.getByEmail(username)
 
                     if (!user) {
@@ -146,6 +145,7 @@ const inicializePassport = () => {
                     return done(null, user)
 
                 } catch (err) {
+                    
                     done(err);
                 }
             }

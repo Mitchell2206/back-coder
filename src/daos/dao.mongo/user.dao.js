@@ -7,13 +7,11 @@ class UserDao {
 
 
     async getAll() {
-        console.log("agregamos al usuario")
         return await this.user.find()
     }
 
 
     async getByEmail(email) {
-        console.log(email)
         return await this.user.findOne({ email: email });
     }
 

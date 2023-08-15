@@ -1,6 +1,5 @@
 
 import productModel from "../../models/product.model.js";
-import { generateProducts } from "../../utils/generate.js";
 import CustomErrors from "../../utils/customError.js";
 import ErrorCodes from "../../utils/error.js";
 import { generateErrorProduct } from "../../utils/info.js";

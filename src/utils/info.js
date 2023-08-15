@@ -24,7 +24,7 @@ export const generateErrorDeslogueo = () => {
 export const generateErrorProduct = (err) => {
 
     return `
-    ${{err}}
+    ${{ err }}
    
    `
 }
@@ -32,7 +32,7 @@ export const generateErrorProduct = (err) => {
 export const generateErrorCart = (err) => {
 
     return `
-    ${{err}}
+    ${{ err }}
    
    `
 }
