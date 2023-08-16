@@ -6,41 +6,23 @@ export default class TickeService {
 
 
     async createTicket(ticket) {
-        try {
-            const createTicket = this.dao.createTicket(ticket)
-            return createTicket;
-        } catch (error) {
-            console.log('create ticket service error', error)
-        }
+        const createTicket = this.dao.createTicket(ticket)
+        return createTicket
     }
 
     async getTicket() {
-        try {
-            const getticket = this.dao.getTicket()
-            return getticket;
-        } catch (error) {
-            console.log('Error al traer los ticket, capa de servicio', error)
-        }
+        const getticket = this.dao.getTicket()
+        return getticket;
     }
 
     async getTicketId(id) {
-        try {
-            const ticketid = this.dao.getTicketId(id)
-            return ticketid;
-        } catch (error) {
-            console.log('No se pudo obtener el ticket, capa de servicio', error)
-        }
-
+        const ticketid = this.dao.getTicketId(id)
+        return ticketid;
     }
 
     async deleteTicket(id) {
-        try {
-            const deleteTicket = this.dao.deleteTicket(id)
-            return deleteTicket;
-        } catch (error) {
-            console.log('No se pudo eliminar el ticket, capa de servicio', error)
-        }
-
+        const deleteTicket = this.dao.deleteTicket(id)
+        return deleteTicket;
     }
 
 }

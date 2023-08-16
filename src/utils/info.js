@@ -29,6 +29,14 @@ export const generateErrorProduct = (err) => {
    `
 }
 
+
+export const generateErrorTicket = (err) => {
+    return `
+    ${{err}}
+    `
+
+}
+
 export const generateErrorCart = (err) => {
 
     return `

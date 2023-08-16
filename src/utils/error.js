@@ -8,6 +8,7 @@ const ErrorCodes = {
     PRODUCT_ERROR: 7,
     CART_ERROR: 8,
     USER_ERROR: 9,
+    TICKET_ERROR: 10,
 }
 
 export default ErrorCodes;

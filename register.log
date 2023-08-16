@@ -141,3 +141,53 @@
 {"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
 {"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
 {"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Negra: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Azul: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Marron: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera verde oscur: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"error","message":"Error al generar el ticket Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al generar el ticket Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al generar el ticket Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al generar el ticket Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al generar el ticket Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"error","message":"Error al generar el ticket Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Azul: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"error","message":"No se logro agregar el producto 64975a76b9262303eb411e59"}
+{"level":"error","message":"No se logro agregar el producto 64974fccb9262303eb411d15"}
+{"level":"error","message":"Error al actualizar el stock para Remera Negra: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Cust: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Cust: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Negra: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Azul: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"No se logro agregar el producto 64974fccb9262303eb411d15"}
+{"level":"error","message":"No se logro agregar el producto 64974fccb9262303eb411d15"}
+{"level":"error","message":"No se logro agregar el producto 64974fccb9262303eb411d15"}
+{"level":"error","message":"No se logro agregar el producto 64974fccb9262303eb411d15"}
+{"level":"error","message":"No se logro agregar el producto 64974fccb9262303eb411d15"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"error","message":"No se logro agregar el producto 64975a76b9262303eb411e59"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"Error al generar el ticket"}
+{"level":"error","message":"Error al generar el ticket"}
+{"level":"error","message":"Error al generar el ticket"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
