@@ -8,3 +8,136 @@
 {"level":"error","message":"No se elimino el producto 649757a0b9262303eb411dc7 del carrito"}
 {"level":"error","message":"No se obtuvieron los productos de la base de dato"}
 {"level":"error","message":"No se obtuvieron los productos de la base de dato"}
+{"level":"error","message":"No se creo el carrito"}
+{"level":"error","message":"No se creo el carrito"}
+{"level":"error","message":"No se logro agregar el producto 64975c52b01e334ba314f239"}
+{"level":"error","message":"No se logro agregar el producto 64975af3b9262303eb411e69"}
+{"level":"error","message":"No se logro agregar el producto 64975af3b9262303eb411e69"}
+{"level":"error","message":"No se creo el carrito"}
+{"level":"error","message":"No se creo el carrito"}
+{"level":"error","message":"No se creo el carrito"}
+{"level":"error","message":"No se logro agregar el producto 64975c52b01e334ba314f239"}
+{"level":"error","message":"No se logro agregar el producto 64975c52b01e334ba314f239"}
+{"level":"warn","message":"no hay stock del producto 64975c52b01e334ba314f239"}
+{"level":"warn","message":"no hay stock del producto 64b30d1e07beaf1e84b19118"}
+{"level":"warn","message":"no hay stock del producto 64975c52b01e334ba314f239"}
+{"level":"warn","message":"no hay stock del producto 64b30d1e07beaf1e84b19118"}
+{"level":"warn","message":"no hay stock del producto 64b30d1e07beaf1e84b19118"}
+{"level":"warn","message":"no hay stock del producto 64b30d1e07beaf1e84b19118"}
+{"level":"warn","message":"no hay stock del producto 64b30d1e07beaf1e84b19118"}
+{"level":"warn","message":"no hay stock del producto 64b30d1e07beaf1e84b19118"}
+{"level":"warn","message":"no hay stock del producto 64974fccb9262303eb411d15"}
+{"level":"warn","message":"no hay stock del producto 64974fccb9262303eb411d15"}
+{"level":"warn","message":"login error"}
+{"level":"warn","message":"login error"}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"error","message":"No se logro agregar el producto 64975c52b01e334ba314f239"}
+{"level":"error","message":"No se logro agregar el producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"error","message":"No se logro agregar el producto 64975a76b9262303eb411e59"}
+{"level":"error","message":"No se logro agregar el producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"No se logro agregar el producto 64975c52b01e334ba314f239"}
+{"level":"error","message":"No se logro agregar el producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"No se logro agregar el producto 64975c52b01e334ba314f239"}
+{"level":"warn","message":"no hay stock del producto 64975a76b9262303eb411e59"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca Grafiti: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca Grafiti: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca Grafiti: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"warn","message":"no se pudo comprar el producto {\n  _id: new ObjectId(\"64975c52b01e334ba314f239\"),\n  title: 'Remera Blanca Grafiti',\n  descripcion: 'CLASIC',\n  thumbnail: 'https://www.distritomoda.com.ar/sites/default/files/styles/product_medium/public/imagenes/1809_i_1686809909.jpg?itok=3yImJP5N',\n  price: 6800,\n  code: 'R15B59',\n  stock: -12,\n  __v: 0\n} por falta de stock"}
+{"level":"warn","message":"no se pudo comprar el producto. su stock es -12 "}
+{"level":"warn","message":"no hay stock del producto 649759deb9262303eb411e49"}
+{"level":"warn","message":"no hay stock del producto 649757a0b9262303eb411dc7"}
+{"level":"warn","message":"no hay stock del producto 64975a76b9262303eb411e59"}
+{"level":"warn","message":"no hay stock del producto 64974fccb9262303eb411d15"}
+{"level":"warn","message":"no se pudo comprar el producto. su stock es 0 "}
+{"level":"warn","message":"no se pudo comprar el producto. su stock es 0 "}
+{"level":"warn","message":"no se pudo comprar el producto. su stock es 0 "}
+{"level":"warn","message":"no se pudo comprar el producto. su stock es 0 "}
+{"level":"warn","message":"no se pudo comprar el producto. su stock es 0 "}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca Grafiti: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Marron: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca Grafiti: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Marron: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca Grafiti: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Marron: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca Grafiti: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"error","message":"Error al actualizar el stock para Remera Marron: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"Error al actualizar el stock para Remera verde oscur: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Negra: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Negra: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Cust: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"error","message":"Error al actualizar el stock para Remera Azul: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Cust: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"error","message":"Error al actualizar el stock para Remera Blanca: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"No se logro agregar el producto 64d98138bb99882c6fa2cdaf"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 64975a76b9262303eb411e59"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"error","message":"No se logro agregar el producto 649757a0b9262303eb411dc7"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"error","message":"No se logro agregar el producto 649759deb9262303eb411e49"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}

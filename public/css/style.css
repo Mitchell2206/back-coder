@@ -599,3 +599,25 @@ body {
   background-color: rgb(219, 200, 200);
   border-radius: 10px;
 }
+
+
+/* ticket*/
+
+.ticketid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+
+.ticketid h1 {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgba(14, 188, 14, 0.83);
+  font-size: 20px;
+}
+
+
+.ticketid p {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 10px;
+}

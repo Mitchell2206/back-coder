@@ -1,5 +1,4 @@
 
-const addToCartButtons = document.querySelectorAll(".addToCart");
 const existingCartId = localStorage.getItem('cartId');
 
 async function verifyCart() {
@@ -23,21 +22,3 @@ async function verifyCart() {
 
 verifyCart();
 
-
-const cartId = localStorage.getItem('cartId')
-
-addToCartButtons.forEach((btn) => {
-  btn.addEventListener("click", (e) => {
-    const productId = e.target.dataset.productId;
-    async function addProductCart() {
-      const response = await fetch(`/api/carts/${cartId}/product/${productId}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await response.json();
-    }
-    addProductCart()
-  });
-});

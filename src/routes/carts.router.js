@@ -11,9 +11,10 @@ const cartRouter = Router();
 
 cartRouter.post('/', middlewarePassportJwt, isAuth, async (req, res, next) => {
     try {
+
         const crearCarrito = await cartController.addCart()
-        req.logger.info(`se creo el cart ID:${pid}`)
-        
+        req.logger.info(`se creo el cart ID:${crearCarrito}`)
+
         return res.status(201).send(crearCarrito);
     } catch (err) {
         next(err)
@@ -37,13 +38,19 @@ cartRouter.get('/:cid', middlewarePassportJwt, isAuth, async (req, res, next) =>
 
 
 cartRouter.post('/:cid/product/:pid', middlewarePassportJwt, isAuth, async (req, res, next) => {
-
+    
     const cid = req.params.cid;
     const pid = req.params.pid;
     try {
 
+
         const addProdCart = await cartController.addProductCart(cid, pid);
-        req.logger.info(`se agrego el producto ${pid}`)
+
+        if (!addProdCart) {
+            req.logger.warn(`no hay stock del producto ${pid}`)
+        } else {
+            req.logger.info(`se agrego el producto ${pid}`)
+        }
 
         res.status(201).send(addProdCart);
     } catch (err) {

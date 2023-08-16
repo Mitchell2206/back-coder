@@ -37,11 +37,11 @@ userRouter.post('/auth', (req, res, next) => {
 
 
 		if (!user) {
-			req.logger.warn('login error')
+			req.logger.warn('Error de autenticacion en login')
 			CustomErrors.createError("Error de autenticacion", generateUserErrorInfo(), 'Login Error', ErrorCodes.AUTENTICACION_ERROR);
 		}
 
-		
+
 
 		const token = generateToken(user);
 

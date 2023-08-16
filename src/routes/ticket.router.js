@@ -35,19 +35,25 @@ ticketRouter.post('/:id', middlewarePassportJwt, async (req, res) => {
 
       const updatedStock = product.stock - productUpdate.quantity;
       if (updatedStock < 0) {
-        return cartClient
+        req.logger.warn(`no se pudo comprar el producto. su stock es ${updatedStock} `)
+         res.status(300).send(cartClient)
       }
 
 
       try {
+
+
+
         await productModel.findByIdAndUpdate(product._id, { stock: updatedStock });
-       
+
         const total = cartClient.products.reduce((acc, product) => acc + product.product.price * product.quantity, 0);
         const purchase_datatime = new Date().toLocaleString();
 
         const generateRandomCode = () => Math.floor(Math.random() * 90000) + 10000;
         const generatedCode = generateRandomCode();
 
+        client.cart.push(cartClient);
+        await client.save()
 
         const createTicket = await ticketController.createTicket({
           code: generatedCode,
@@ -56,10 +62,8 @@ ticketRouter.post('/:id', middlewarePassportJwt, async (req, res) => {
           purchaser: user.email,
         })
 
-        client.cart.push(cartClient);
 
-        return await client.save()
-
+        res.status(201).send(createTicket)
       } catch (error) {
         req.logger.error(`Error al actualizar el stock para ${product.title}: ${error}`)
       }
