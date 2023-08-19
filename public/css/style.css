@@ -437,7 +437,7 @@ body {
 
 
 .container-cart h1 {
- 
+
   color: rgb(233, 14, 14);
   font-size: 15px;
   padding: 10px;
@@ -611,7 +611,7 @@ body {
 }
 
 .ticketid h1 {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: rgba(14, 188, 14, 0.83);
   font-size: 20px;
 }
@@ -620,4 +620,151 @@ body {
 .ticketid p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 10px;
+}
+
+
+/* Error ResPassword */
+
+.container-error-restpassword .card .row .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.container-error-restpassword .card .row .card-body .error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-error-restpassword .card .row .card-body .error h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding: 10px;
+  margin: 10;
+  color: rgb(193, 37, 37);
+
+}
+
+.container-error-restpassword .card .row .card-body .error h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgba(0, 0, 0, 0.601);
+  font-size: 20px;
+  padding: 10px;
+}
+
+.container-error-restpassword .card .row .card-body .row .col-md-6 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-error-restpassword .card .row .card-body .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-error-restpassword .card .row .card-body .row .col-md-6 .form-label {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.container-error-restpassword .card .row .card-body .row .col-md-6 .form-control {
+  width: 800px;
+
+}
+
+.container-error-restpassword .card .row .card-body .row .col-12 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-error-restpassword .card .row .card-body .row .col-12 .btn {
+  background-color: black;
+  margin: 10px;
+}
+
+/* emailsent */
+
+
+.container-error-emailsent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aliceblue;
+
+}
+
+.container-error-emailsent .email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+
+.container-error-emailsent .email h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px;
+}
+
+.container-error-emailsent .email .img-email {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+}
+
+/* error password */
+
+.container-errorpassword {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+}
+
+.container-errorpassword  .error {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container-errorpassword  .error h1 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 30px; 
+  color: rgb(161, 42, 42);
+  margin-top: 30px;
+}
+
+.container-errorpassword  .error h2 {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgba(0, 0, 0, 0.601);
+  font-size: 20px;
+  padding: 10px;
+}
+
+.container-errorpassword .btn {
+  margin-bottom: 40px;
+  padding: 10px;
+  
+}
+
+.container-errorpassword .btn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 120x;
+  height: 25px;
 }

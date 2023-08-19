@@ -1,4 +1,3 @@
-// creamos instancias //
 import mongoose from 'mongoose';
 import express from 'express';
 import { server, app } from './utils/socket.js';
@@ -7,7 +6,7 @@ import cookieParser from 'cookie-parser';
 import MongoStore from 'connect-mongo';
 import session from 'express-session';
 import passport from 'passport';
-// creamos rutas de js //
+
 import { productRouter } from './routes/products.router.js';
 import { cartRouter } from './routes/carts.router.js';
 import wiewsRouter from './routes/views.router.js';
@@ -85,6 +84,7 @@ app.use('/api/products', productRouter)
 app.use('/api/carts', cartRouter)
 app.use('/api/users', userRouter);
 app.use('/api/purchase', ticketRouter);
+
 
 app.use(errorsManagerMiddleware)
 

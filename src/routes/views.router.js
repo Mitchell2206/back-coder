@@ -2,13 +2,13 @@ import { Router } from "express";
 import productController from "../controllers/product.controller.js";
 import { isAuth } from '../middleware/auth.middleware.js';
 import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
- 
+
+
 
 const wiewsRouter = Router()
 
 
 wiewsRouter.get('/profile', middlewarePassportJwt, async (req, res) => {
-
   res.render('profile', {
     title: 'Perfil de Usuario',
     message: 'Private route',
@@ -55,6 +55,35 @@ wiewsRouter.get('/errorcaduco', (req, res) => {
 });
 
 
+wiewsRouter.get('/forgotpassword/:token', (req, res) => {
+  const token = req.params;
+  res.render('forgotpassword', {
+    title: 'Olvido contrasena',
+    token: token.token
+  });
+});
+
+
+wiewsRouter.get('/emailsent', (req, res) => {
+  res.render('emailsent', {
+    title: 'Se envio email de restablecimiento',
+  });
+});
+
+wiewsRouter.get('/restpassword', (req, res) => {
+  res.render('restpassword', {
+    title: 'restablecer contrasena',
+  });
+});
+
+wiewsRouter.get('/errorpassword', (req, res) => {
+  res.render('errorpassword', {
+    title: 'Error de password',
+  });
+});
+
+
+
 
 wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
   const { limit = 4, page = 1, sort, descripcion, availability } = req.query;
@@ -95,14 +124,11 @@ wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
 
 
 wiewsRouter.get('/chat', middlewarePassportJwt, isAuth, (req, res) => {
-
   res.render('chat', { user: req.user });
-
 });
 
 
 wiewsRouter.get('/carts/', middlewarePassportJwt, async (req, res) => {
-
   res.render('cart', { user: req.user });
 });
 

@@ -3,14 +3,12 @@ import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 import cartController from "../controllers/cart.controller.js";
 import ticketController from "../controllers/ticket.controller.js";
 import productModel from "../models/product.model.js";
-import userController from "../controllers/user.controller.js";
 import userModel from "../models/user.model.js";
-import cartModel from "../models/carts.model.js";
+
+
 
 
 const ticketRouter = Router()
-
-
 
 ticketRouter.post('/:id', middlewarePassportJwt, async (req, res, next) => {
   try {
