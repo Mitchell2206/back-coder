@@ -76,6 +76,35 @@ userRouter.post('/logout', middlewarePassportJwt, (req, res, next) => {
 });
 
 
+userRouter.post('/premium/:uid', async (req, res, next) => {
+	const userId = req.params.uid
+
+	try {
+		const user = await userController.getUserById(userId)
+
+		if (user.rol === "USER") {
+			user.rol = "PREMIUM"
+			user.save()
+		} else {
+			user.rol = "USER"
+			user.save()
+		}
+
+
+		console.log(user)
+		req.session.destroy();
+		res.clearCookie('connect.sid');
+		res.clearCookie('token');
+		res.redirect('/login')
+
+	} catch (err) {
+		req.logger.error(`no se puedo cambiar el rol del ${user.rol}`)
+	}
+});
+
+
+
+
 userRouter.get('/github', passport.authenticate('github', { scope: ['user:email'] }), (err, req, res, next) => {
 	if (err) {
 		CustomErrors.createError('Error Routing', generateErrorEnrutamiento(), 'no redireciono', ErrorCodes.ROUTING_ERROR)
@@ -138,6 +167,7 @@ userRouter.post('/forgotpassword', async (req, res, next) => {
 		})
 		res.redirect('/emailsent')
 	} catch (err) {
+		//agregar custon de errores//
 		req.logger.error('no se envio el email de restablecimiento')
 	}
 
@@ -164,6 +194,7 @@ userRouter.post('/emailreset/:token', async (req, res, next) => {
 
 		res.redirect('/login')
 	} catch (err) {
+		//agregar custon de errores//
 		req.logger.error('expiro el tiempo, debe volver a enviar el email')
 		res.redirect('/restpassword')
 

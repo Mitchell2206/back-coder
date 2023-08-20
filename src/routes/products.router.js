@@ -5,6 +5,8 @@ import productController from "../controllers/product.controller.js";
 import ErrorCodes from "../utils/error.js";
 import CustomErrors from "../utils/customError.js";
 import { generateErrorProduct } from "../utils/info.js";
+import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
+import { checkAuthorization } from "../middleware/auth.middleware.js";
 
 const productRouter = Router();
 
@@ -18,7 +20,6 @@ productRouter.get('/', async (req, res, next) => {
       descripcion,
       availability
     );
-
 
 
     const prevPage = products.prevPage;
@@ -72,7 +73,7 @@ productRouter.post('/', async (req, res, next) => {
   try {
     let product = req.body;
     let productos = await productController.addProducts(product);
-    res.status(201).send(productos);
+    res.status(201).send(productos)
   } catch (err) {
     next(err)
     req.logger.error(`No se pudo agregar el producto ${product} a la base de dato`)
@@ -83,7 +84,7 @@ productRouter.post('/', async (req, res, next) => {
 
 
 
-productRouter.put('/:uid', async (req, res, next) => {
+productRouter.put('/:uid', middlewarePassportJwt, checkAuthorization, async (req, res, next) => {
   const uid = req.params.uid;
   try {
     const productActualizado = await productController.updateProduct(uid, req.body)
@@ -95,12 +96,11 @@ productRouter.put('/:uid', async (req, res, next) => {
   }
 })
 
-productRouter.delete('/:id', async (req, res, next) => {
+productRouter.delete('/:id', middlewarePassportJwt, checkAuthorization, async (req, res, next) => {
   const id = req.params.id
   try {
     await productController.deleteProduct(id)
     req.logger.info(`se logro eliminar el pid ${id} del base de dato`)
-
     res.sendStatus(204)
   } catch (err) {
     next(err)

@@ -54,9 +54,9 @@ export const generateErrorAutenticacion = () => {
 
 }
 
-export const generateAdminNoAuthorization = () => {
+export const generateAdminNoAuthorization = (info) => {
     return `
-   El administrador no esta autorizado a realizar estas acciones 
+   El ${{ info }} no esta autorizado a realizar estas acciones 
     `
 
 }

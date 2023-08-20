@@ -11,6 +11,6 @@ submitButton.addEventListener('click', () => {
 
         document.getElementById('reset-form').submit();
     } else {
-        alert('Las contraseñas no coinciden. Por favor, inténtelo nuevamente.');
+        swal ( "¡Las contraseñas no coinciden! " , " ...¡Por favor, inténtelo nuevamente! ", "error")  ;
     }
 });

@@ -1,0 +1,14 @@
+<div class="container-premium">
+
+    <h1>Hazte premium con tan solo un clic</h1>
+    <h2>Empieza a vender ya!</h2>
+    <p>Puedes subir todos tus productos y ser parte de la tendencia V.I.P </p>
+
+    <form action='/api/users/premium/{{user._id}}' method='post' class="row g-3" id="reset-form">
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary cartid" id="submit-button">CAMBIATE A PREMIUM</button>
+            <button type="submit" class="btn btn-primary cartid" id="submit-button">CAMBIATE A USUARIO</button>
+        </div>
+    </form>
+    <p class="card-text-2">Se cerrara la sesión automaticamente para los cambios</p>
+</div>

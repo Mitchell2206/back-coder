@@ -1,6 +1,6 @@
 import { Router } from "express";
 import cartController from "../controllers/cart.controller.js";
-import { isAuth } from "../middleware/auth.middleware.js";
+import { checkCartAuthorization, isAuth } from "../middleware/auth.middleware.js";
 import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 
 
@@ -37,7 +37,7 @@ cartRouter.get('/:cid', middlewarePassportJwt, isAuth, async (req, res, next) =>
 });
 
 
-cartRouter.post('/:cid/product/:pid', middlewarePassportJwt, isAuth, async (req, res, next) => {
+cartRouter.post('/:cid/product/:pid', middlewarePassportJwt, checkCartAuthorization , isAuth , async (req, res, next) => {
     
     const cid = req.params.cid;
     const pid = req.params.pid;

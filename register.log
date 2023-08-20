@@ -210,3 +210,226 @@
 {"level":"error","message":"expiro el tiempo, debe volver a enviar el email"}
 {"level":"warn","message":" no puede ser la misma contrasena"}
 {"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":" no puede ser la misma contrasena"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM no autorizado"}
+{"level":"warn","message":"PREMIUM, No puedes eliminar productos que no son tuyos"}
+{"level":"warn","message":"PREMIUM, No puedes eliminar productos que no son tuyos"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"no hay stock del producto 64d98138bb99882c6fa2cdaf"}
+{"level":"warn","message":"no hay stock del producto 64d98138bb99882c6fa2cdaf"}
+{"level":"warn","message":"no hay stock del producto 64d98138bb99882c6fa2cdaf"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"no hay stock del producto 64d95732dbac64dd34b5e600"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":" no puede ser la misma contrasena"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
