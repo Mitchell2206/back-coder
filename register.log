@@ -433,3 +433,5 @@
 {"level":"warn","message":"ADMIN no autorizado"}
 {"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
 {"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}

@@ -59,7 +59,6 @@ ticketRouter.post('/:id', middlewarePassportJwt, async (req, res, next) => {
 
 ticketRouter.get('/', async (req, res) => {
   const tickets = await ticketController.getTicket()
-  console.log(tickets)
   res.status(200).send(tickets)
 })
 

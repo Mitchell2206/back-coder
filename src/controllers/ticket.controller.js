@@ -8,41 +8,23 @@ class TicketController {
     }
 
     async createTicket(ticket) {
-        try {
-            const createTicket = this.service.createTicket(ticket)
-            return createTicket;
-        } catch (error) {
-            console.log('No se pudo crear el ticket', error)
-        }
+        const createTicket = await this.service.createTicket(ticket)
+        return createTicket;
     }
 
     async getTicket() {
-        try {
-            const getticket = this.service.getTicket()
-            return getticket;
-        } catch (error) {
-            console.log('Error a traer los ticket', error)
-        }
+        const getticket = await this.service.getTicket()
+        return getticket;
     }
 
     async getTicketId(id) {
-        try {
-            const ticketid = this.service.getTicketId(id)
-            return ticketid;
-        } catch (error) {
-            console.log('No se pudo obtener el ticket', error)
-        }
-
+        const ticketid = await this.service.getTicketId(id)
+        return ticketid;
     }
 
     async deleteTicket(id) {
-        try {
-            const deleteTicket = this.service.deleteTicket(id)
-            return deleteTicket;
-        } catch (error) {
-            console.log('No se pudo eliminar el ticket', error)
-        }
-
+        const deleteTicket = await this.service.deleteTicket(id)
+        return deleteTicket;
     }
 
 }
