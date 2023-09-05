@@ -14,25 +14,21 @@ import { ticketRouter } from './routes/ticket.router.js';
 import inicializePassport from './config/passport.config.js';
 import enviroment from './config/enviroment.js';
 import errorsManagerMiddleware from './middleware/errorsManager.middleware.js';
+import swaggerJSDoc from 'swagger-jsdoc';
+import swaggerUi from 'swagger-ui-express';
 import { loggerMiddleware } from './middleware/logger.middleware.js';
 import { chatRouser } from './routes/chat.router.js';
-
 
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
 app.use(loggerMiddleware)
-
+app.use(express.static('public'))
+app.use(cookieParser())
 
 app.engine('handlebars', handlerbars.engine());
 app.set('views', 'views/');
 app.set('view engine', 'handlebars');
-
-app.use(express.static('public'))
-
-
-app.use(cookieParser())
-
 
 app.use(
   session({
@@ -49,15 +45,30 @@ app.use(
   })
 );
 inicializePassport()
+
 app.use(passport.initialize())
 app.use(passport.session())
-
-
 
 mongoose.connect(
   enviroment.DB_LINK
 );
 
+
+const swaggerOptions = {
+  definition: {
+    openapi: '3.0.1',
+    info: {
+      title: 'Vip Api',
+      version: '1.0.0',
+      description: 'Tienda online de caballero'
+    }
+  },
+  apis: ['./docs/**/*.yaml']
+}
+const spects = swaggerJSDoc(swaggerOptions)
+console.log(spects)
+
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(spects))
 app.use('/', wiewsRouter)
 app.use('/api/products', productRouter)
 app.use('/api/carts', cartRouter)

@@ -2,7 +2,6 @@ import productController from "../controllers/product.controller.js";
 
 
 export function isAuth(req, res, next) {
-	const userRole = req.user.rol;
 	if (req.user.rol === 'ADMIN') {
 		req.logger.warn(`${req.user.rol} no autorizado`);
 		return res.sendStatus(500)

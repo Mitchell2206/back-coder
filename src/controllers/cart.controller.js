@@ -52,8 +52,8 @@ class CartController {
 
     async updateQuantityProduct(cid, pid, qty) {
         return this.service.updateQuantityProduct(cid, pid, qty)
-
-    }
+      // falta este para documentar
+    } 
 
     async clearProductToCart(cid) {
         return this.service.clearProductToCart(cid);

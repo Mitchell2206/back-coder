@@ -1,4 +1,5 @@
 import winston from "winston";
+import enviroment from "../config/enviroment.js";
 
 
 const colors = {
@@ -28,8 +29,19 @@ const logger = winston.createLogger({
     ],
 });
 
+const productionLogger = winston.createLogger({
+    transports: [
+        new winston.transports.File({ filename: 'production.log', level: 'info' }),
+    ],
+});
+
 export const loggerMiddleware = (req, res, next) => {
     req.logger = logger;
+
+    if ( enviroment.NODE_ENV === 'production') {
+        req.logger = productionLogger;
+    }
+
     logger.info(`${req.method} - ${req.url} - [${req.ip}] - ${req.get('user-agent')} - ${new Date().toISOString()}`);
     next();
 };

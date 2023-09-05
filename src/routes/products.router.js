@@ -11,8 +11,9 @@ import { checkAuthorization } from "../middleware/auth.middleware.js";
 const productRouter = Router();
 
 productRouter.get('/', async (req, res, next) => {
+
+  const { limit = 20, page = 1, sort, descripcion, availability } = req.query;
   try {
-    const { limit = 10, page = 1, sort, descripcion, availability } = req.query;
     const products = await productController.getProducts(
       limit,
       page,
@@ -20,7 +21,6 @@ productRouter.get('/', async (req, res, next) => {
       descripcion,
       availability
     );
-
 
     const prevPage = products.prevPage;
     const nextPage = products.nextPage;
@@ -59,54 +59,54 @@ productRouter.get('/', async (req, res, next) => {
 productRouter.get('/:uid', async (req, res, next) => {
   try {
     let uid = req.params.uid
+
     const filterId = await productController.getProductsById(uid)
-    res.status(200).send(filterId)
+    res.status(201).send(filterId)
   } catch (err) {
     next(err)
-    req.logger.error(`No se encontro el producto ${uid} en la base de dato`)
     res.status(400).send(err)
   }
 });
 
 
 productRouter.post('/', async (req, res, next) => {
+  console.log(req.body)
   try {
     let product = req.body;
     let productos = await productController.addProducts(product);
-    res.status(201).send(productos)
+    res.status(200).send(productos)
   } catch (err) {
     next(err)
-    req.logger.error(`No se pudo agregar el producto ${product} a la base de dato`)
     res.status(500).send(err)
   }
 });
 
 
 
-
-productRouter.put('/:uid', middlewarePassportJwt, checkAuthorization, async (req, res, next) => {
+//, middlewarePassportJwt, checkAuthorization //  con los middleware de autorizacion no puedo usar swagger
+productRouter.put('/:uid', async (req, res, next) => {
   const uid = req.params.uid;
   try {
     const productActualizado = await productController.updateProduct(uid, req.body)
     res.status(201).send(productActualizado)
   } catch (err) {
     next(err)
-    req.logger.error(`No se pudo actualizar el producto ${uid} de la base de dato`)
     res.status(400).send(err)
   }
 })
-
-productRouter.delete('/:id', middlewarePassportJwt, checkAuthorization, async (req, res, next) => {
-  const id = req.params.id
+//, middlewarePassportJwt, checkAuthorization  //  con los middleware de autorizacion no puedo usar swagger
+productRouter.delete('/:uid', async (req, res, next) => {
+  const id = req.params.uid
+  console.log(id)
   try {
-    await productController.deleteProduct(id)
+    const deleteProduct = await productController.deleteProduct(id)
     req.logger.info(`se logro eliminar el pid ${id} del base de dato`)
-    res.sendStatus(204)
+    res.status(201).send(deleteProduct)
   } catch (err) {
     next(err)
-    req.logger.error(`No se elimino el producto ${id} de la base de dato`)
     res.status(500).send(err)
   }
 })
+
 
 export { productRouter };

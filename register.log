@@ -435,3 +435,66 @@
 {"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
 {"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
 {"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"PREMIUM, \"No puedes eliminar productos que no son tuyos\""}
+{"level":"warn","message":{"code":7,"name":"No se consigue el ID del producto"}}
+{"level":"warn","message":{"code":7,"name":"No se consigue el ID del producto"}}
+{"level":"warn","message":{"code":7,"name":"No se consigue el ID del producto"}}
+{"level":"warn","message":{"code":7,"name":"No se consigue el ID del producto"}}
+{"level":"warn","message":{"code":7,"name":"No se consigue el ID del producto"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Error update product"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"No se elimino el producto"}}
+{"level":"warn","message":{"code":7,"name":"No se elimino el producto"}}
+{"level":"warn","message":{"code":8,"name":"Problemas al conseguir id cart"}}
+{"level":"error","message":"No se obtuvo el cart 6h9h2h3m9c4c9t1b1c9r1b9c"}
+{"level":"warn","message":{"code":8,"name":"Problema en agregar pid al cid"}}
+{"level":"error","message":"No se logro agregar el producto 64e23cfeefafcab2144a4042"}
+{"level":"warn","message":{"code":8,"name":"Probl en eliminar pid del cid"}}
+{"level":"error","message":"No se elimino el producto 64e23cfeefafcab2144a4042 del carrito"}
+{"level":"warn","message":{"code":8,"name":"Problema en agregar pid al cid"}}
+{"level":"error","message":"No se actualizo el producto [object Object]"}
+{"level":"warn","message":{"code":8,"name":"Problema en agregar pid al cid"}}
+{"level":"error","message":"No se actualizo el producto [object Object]"}
+{"level":"error","message":"No se pudo limpiar los producto del cart 64dd3e7e8fc18b4adcb42c5d"}
+{"level":"warn","message":{"code":8,"name":"Error vaciar carrito"}}

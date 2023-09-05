@@ -78,6 +78,7 @@ class CartDao {
             if (!cart) {
                 throw new Error("No se encontró el carrito");
             }
+            console.log(cart.products, newProducts.products)
             cart.products = newProducts.products;
             await cart.save();
             return cart;
@@ -108,9 +109,8 @@ class CartDao {
 
     async clearProductToCart(cid) {
         try {
-            const cart = await this.cart.findOne({ _id: cid });
-            cart.products = []
-            return await cart.save();
+            const cart = await this.cart.deleteOne({ _id: cid });
+            return cart;
         } catch (err) {
             CustomErrors.createError('Error vaciar carrito', generateErrorCart({ err }), 'Error clean Cart', ErrorCodes.CART_ERROR)
         }

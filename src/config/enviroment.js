@@ -11,5 +11,6 @@ export default {
     PERSISTENCE: process.env.PERSISTENCE,
     KEYJWT: process.env.KEYJWT,
     CLIENTSECRET: process.env.CLIENTSECRET,
-    CLIENTID: process.env.CLIENTID
+    CLIENTID: process.env.CLIENTID,
+    NODE_ENV: process.env.NODE_ENV
 };
