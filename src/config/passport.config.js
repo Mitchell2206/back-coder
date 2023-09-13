@@ -19,10 +19,15 @@ const inicializePassport = () => {
         'register',
         new localStrategy(
             { usernameField: 'email', passReqToCallback: true },
+
             async (req, username, password, done) => {
+
+
                 const { first_name, last_name, img } = req.body;
 
+
                 try {
+
 
                     if (!first_name || !last_name || !username) {
                         return done(null, false, {
@@ -31,6 +36,7 @@ const inicializePassport = () => {
                     }
 
                     const user = await userController.getByEmail(username);
+
 
                     if (user) {
                         return done(null, false, {
@@ -126,8 +132,7 @@ const inicializePassport = () => {
             async (username, password, done) => {
 
                 try {
-
-                
+                   
                     const user = await userController.getByEmail(username)
 
                     if (!user) {
@@ -145,7 +150,7 @@ const inicializePassport = () => {
                     return done(null, user)
 
                 } catch (err) {
-                    
+
                     done(err);
                 }
             }

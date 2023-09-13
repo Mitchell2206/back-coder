@@ -27,6 +27,7 @@ userRouter.post('/', (req, res, next) => {
 		}
 
 		if (info) {
+
 			req.logger.warn('Error de autenticacion en registro')
 			CustomErrors.createError("Error de autenticacion", generateErrorAutenticacion(), 'Register Error', ErrorCodes.AUTENTICACION_ERROR);
 		}
@@ -50,7 +51,9 @@ userRouter.post('/auth', (req, res, next) => {
 			CustomErrors.createError("Error de autenticacion", generateUserErrorInfo(), 'Login Error', ErrorCodes.AUTENTICACION_ERROR);
 		}
 
+
 		const token = generateToken(user);
+
 
 		res.cookie('token', token, {
 			httpOnly: true,
@@ -62,8 +65,8 @@ userRouter.post('/auth', (req, res, next) => {
 
 
 
-
-userRouter.post('/logout', middlewarePassportJwt, (req, res, next) => {
+// para testing, remover el middleware del usuario, 
+userRouter.post('/logout' , middlewarePassportJwt,(req, res, next) => {
 
 	if (req.user) {
 		req.session.destroy();

@@ -498,3 +498,220 @@
 {"level":"error","message":"No se actualizo el producto [object Object]"}
 {"level":"error","message":"No se pudo limpiar los producto del cart 64dd3e7e8fc18b4adcb42c5d"}
 {"level":"warn","message":{"code":8,"name":"Error vaciar carrito"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"Producto ya existe"}}
+{"level":"warn","message":{"code":7,"name":"No se elimino el producto"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
