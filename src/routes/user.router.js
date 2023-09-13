@@ -65,7 +65,7 @@ userRouter.post('/auth', (req, res, next) => {
 
 
 
-// para testing, remover el middleware del usuario, 
+
 userRouter.post('/logout' , middlewarePassportJwt,(req, res, next) => {
 
 	if (req.user) {

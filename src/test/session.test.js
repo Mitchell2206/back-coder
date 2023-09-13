@@ -8,7 +8,7 @@ describe('Test de intregracion - session', () => {
 
     let ValueCookie = {};
 
-
+    // para testeo, remover el middleware del usuario en user.router //
 
     it('El post /api/users para registrar un usuario', async () => {
         const { statusCode, _body } = await request.post('/api/users/').send({

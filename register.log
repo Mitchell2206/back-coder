@@ -715,3 +715,11 @@
 {"level":"warn","message":"Error de autenticacion en registro"}
 {"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
 {"level":"warn","message":{"code":4,"name":"problemas en deslogueo"}}
+{"level":"warn","message":{"code":8,"name":"Problemas al conseguir id cart"}}
+{"level":"error","message":"No se obtuvo el cart :cid"}
+{"level":"warn","message":{"code":8,"name":"Problemas al conseguir id cart"}}
+{"level":"error","message":"No se obtuvo el cart :cid"}
+{"level":"warn","message":{"code":8,"name":"Problemas al conseguir id cart"}}
+{"level":"error","message":"No se obtuvo el cart :cid"}
+{"level":"warn","message":{"code":8,"name":"Problemas al conseguir id cart"}}
+{"level":"error","message":"No se obtuvo el cart :cid"}

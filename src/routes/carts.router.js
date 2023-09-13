@@ -8,8 +8,8 @@ import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 
 const cartRouter = Router();
 
-// , middlewarePassportJwt, isAuth //  con los middleware de autorizacion no puedo usar swagger
-cartRouter.post('/', async (req, res, next) => {
+// con los middleware de autorizacion no puedo usar swagger //
+cartRouter.post('/', middlewarePassportJwt, isAuth, async (req, res, next) => {
     try {
 
         const crearCarrito = await cartController.addCart()
@@ -24,9 +24,10 @@ cartRouter.post('/', async (req, res, next) => {
     }
 });
 
-// , middlewarePassportJwt, isAuth //  con los middleware de autorizacion no puedo usar swagger
-cartRouter.get('/:cid', async (req, res, next) => {
+// con los middleware de autorizacion no puedo usar swagger //
+cartRouter.get('/:cid', middlewarePassportJwt, isAuth, async (req, res, next) => {
     const cid = req.params.cid;
+
     try {
         const getCartRouter = await cartController.getCartId(cid)
         res.status(201).send(getCartRouter)
@@ -37,14 +38,13 @@ cartRouter.get('/:cid', async (req, res, next) => {
     }
 });
 
-// , middlewarePassportJwt, checkCartAuthorization , isAuth //  con los middleware de autorizacion no puedo usar swagger
-cartRouter.post('/:cid/product/:pid', async (req, res, next) => {
+//  con los middleware de autorizacion no puedo usar swagger // 
+cartRouter.post('/:cid/product/:pid', middlewarePassportJwt, checkCartAuthorization , isAuth, async (req, res, next) => {
 
     const cid = req.params.cid;
     const pid = req.params.pid;
-    console.log(cid, pid)
+    
     try {
-
 
         const addProdCart = await cartController.addProductCart(cid, pid);
 
@@ -62,8 +62,8 @@ cartRouter.post('/:cid/product/:pid', async (req, res, next) => {
     }
 });
 
-// , middlewarePassportJwt, isAuth //  con los middleware de autorizacion no puedo usar swagger
-cartRouter.delete('/:cid/product/:pid', async (req, res, next) => {
+//  con los middleware de autorizacion no puedo usar swagger  //
+cartRouter.delete('/:cid/product/:pid', middlewarePassportJwt, isAuth, async (req, res, next) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
     try {
@@ -78,8 +78,8 @@ cartRouter.delete('/:cid/product/:pid', async (req, res, next) => {
     }
 })
 
-// , middlewarePassportJwt, isAuth  //  con los middleware de autorizacion no puedo usar swagger
-cartRouter.put('/:cid', async (req, res, next) => {
+//   con los middleware de autorizacion no puedo usar swagger  //
+cartRouter.put('/:cid', middlewarePassportJwt, isAuth, async (req, res, next) => {
     const cid = req.params.cid;
     const newProducts = req.body;
     try {
@@ -92,7 +92,7 @@ cartRouter.put('/:cid', async (req, res, next) => {
     }
 })
 
-
+//  con los middleware de autorizacion no puedo usar swagger // 
 cartRouter.put('/:cid/product/:pid', middlewarePassportJwt, isAuth, async (req, res, next) => {
     const cid = req.params.cid;
     const pid = req.params.pid;
@@ -106,8 +106,9 @@ cartRouter.put('/:cid/product/:pid', middlewarePassportJwt, isAuth, async (req, 
         res.status(500).send(err);
     }
 });
-// , middlewarePassportJwt, isAuth //  con los middleware de autorizacion no puedo usar swagger
-cartRouter.delete('/:cid', async (req, res, next) => {
+
+//  con los middleware de autorizacion no puedo usar swagger // 
+cartRouter.delete('/:cid', middlewarePassportJwt, isAuth, async (req, res, next) => {
     const cid = req.params.cid;
     try {
 
