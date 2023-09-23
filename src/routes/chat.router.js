@@ -8,7 +8,7 @@ import { io } from "../utils/socket.js";
 const chatRouser = Router()
 
 
-chatRouser.post('/', middlewarePassportJwt , isAuth , async (req, res) => {
+chatRouser.post('/', middlewarePassportJwt , isAuth , async (req, res, next) => {
 
     try {
 
@@ -25,7 +25,7 @@ chatRouser.post('/', middlewarePassportJwt , isAuth , async (req, res) => {
 
         res.redirect('/chat');
     } catch (err) {
-        res.render('error', { error: err.message });
+        res.redirect('/errorcaduco');
     }
 });
 

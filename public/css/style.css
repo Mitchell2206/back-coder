@@ -111,7 +111,7 @@ body {
   width: 150px;
   border-radius: 10px;
   padding: 5px;
-  
+
 }
 
 .container-product .container .card-body .deleteProduct {
@@ -903,4 +903,47 @@ body {
 .container-myshop .row .col-md-6 .form-control {
   width: 300px;
   height: 30px;
+}
+
+.errorArchivo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+.errorArchivo h1 {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: brown;
+  font-size: 40px;
+  padding: 20px;
+  margin: 20px;
+}
+
+.filenamme {
+  font-size: 20px;
+  color: green;
+}
+
+/* Css de manejo de archivos */
+
+.container-archivos .card .row .card-body {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  margin: 50px;
+}
+
+
+
+.container-archivos .card .row .card-body form .mb-3{
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-archivos .card .row .card-body form .mb-3 .form-control{
+  margin: 10px;
 }

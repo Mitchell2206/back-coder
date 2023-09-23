@@ -21,6 +21,13 @@ export const generateErrorDeslogueo = () => {
 
 }
 
+export const generateErrorFile = () => {
+    return `
+    NO SE SUBIO EL ARCHIVO
+    `
+
+}
+
 export const generateErrorProduct = (err) => {
 
     return `

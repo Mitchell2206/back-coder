@@ -1,6 +1,7 @@
 import { Router } from "express";
 import productController from "../controllers/product.controller.js";
 import { middlewarePassportJwt } from "../middleware/jwt.middleware.js";
+import userController from "../controllers/user.controller.js";
 
 
 
@@ -84,8 +85,45 @@ wiewsRouter.get('/errorpassword', (req, res) => {
   });
 });
 
+wiewsRouter.get('/faltadearchivos', middlewarePassportJwt, (req, res) => {
+  const user = req.user;
+  res.render('faltadearchivos', {
+    title: 'falta de archivos',
+    user
+  });
+});
 
+wiewsRouter.get('/documents', middlewarePassportJwt, async (req, res) => {
+  const user = req.user;
+  res.render('documents', {
+    title: 'Carga de archivos',
+    user
+  });
+});
 
+wiewsRouter.get('/archivoenviado', middlewarePassportJwt, (req, res) => {
+  const user = req.user;
+  res.render('archivoenviado', {
+    title: 'Archivo enviado',
+    user
+  });
+});
+
+wiewsRouter.get('/fileuser', middlewarePassportJwt, async (req, res) => {
+  const user = req.user;
+ 
+  const identification = user.documents;
+  const addressProof = user.documents;
+  const bankStatement = user.documents;
+
+  res.render('fileuser', {
+    title: 'Subir archivos del usuario',
+    user,
+    identification,
+    addressProof,
+    bankStatement
+  });
+});
 
 wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
   const { limit = 4, page = 1, sort, descripcion, availability } = req.query;

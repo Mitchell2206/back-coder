@@ -53,7 +53,7 @@ const inicializePassport = () => {
                         password: escripPassword,
                         img,
                     });
-
+                    
                     if (userdto.email === "mitchel2206@gmail.com") {
                         userdto.rol = "ADMIN";
                     }
@@ -132,7 +132,7 @@ const inicializePassport = () => {
             async (username, password, done) => {
 
                 try {
-                   
+
                     const user = await userController.getByEmail(username)
 
                     if (!user) {

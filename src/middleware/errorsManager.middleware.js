@@ -14,10 +14,10 @@ export default (err, req, res, next) => {
             res.render('dataerror')
             break;
         case ErrorCodes.AUTENTICACION_ERROR:
-            res.render('dataerror')
+            res.render('errorautorizacion')
             break;
         case ErrorCodes.ADMIN_NOAUTHORIZATION:
-            res.status(401)
+            res.render('errorautorizacion')
             break;
         case ErrorCodes.PRODUCT_ERROR:
             res.status(400)
@@ -27,6 +27,9 @@ export default (err, req, res, next) => {
             break;
         case ErrorCodes.TICKET_ERROR:
             res.status(400)
+            break;
+        case ErrorCodes.FILE_ERROR:
+            res.render('faltadearchivos')
             break;
         default:
             res.render('errorservidor');

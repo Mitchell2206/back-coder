@@ -12,6 +12,15 @@ const userSchema = new mongoose.Schema({
 		index: true,
 	},
 	password: String,
+	documents: {
+		identification: String,
+		addressProof: String,
+		bankStatement: String,
+	},
+	last_connection: {
+		type: Date,
+		default: null,
+	},
 	cart: {
 		type: [
 			{

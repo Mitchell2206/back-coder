@@ -723,3 +723,192 @@
 {"level":"error","message":"No se obtuvo el cart :cid"}
 {"level":"warn","message":{"code":8,"name":"Problemas al conseguir id cart"}}
 {"level":"error","message":"No se obtuvo el cart :cid"}
+{"level":"warn","message":"PREMIUM, No puedes agregar tu propio producto al carrito"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"Error de autenticacion en registro"}
+{"level":"warn","message":{"code":5,"name":"Error de autenticacion"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":{"code":"LIMIT_UNEXPECTED_FILE","field":"profiles","message":"Unexpected field","name":"MulterError","storageErrors":[]}}
+{"level":"warn","message":{"code":"LIMIT_UNEXPECTED_FILE","field":"profiles","message":"Unexpected field","name":"MulterError","storageErrors":[]}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\documents\\documents-undefined.pdf","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\profiles\\profiles-undefined.jpg","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefined.jpg","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefined.jpg","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefinedundefined","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefinedundefined","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefinedundefined","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefinedundefined","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefined.jpg","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefined.jpg","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefined.jpg","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefined.jpg","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\img\\products\\products-undefined.jpg","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":{}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":"ERR_HTTP_HEADERS_SENT"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":11,"name":"Error file"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":11,"name":"Error file"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":11,"name":"Error file"}}
+{"level":"warn","message":{"code":"LIMIT_UNEXPECTED_FILE","field":"documents","message":"Unexpected field","name":"MulterError","storageErrors":[]}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":11,"name":"Error file"}}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{}}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":"Error de autenticacion en login"}
+{"level":"warn","message":{}}
+{"level":"warn","message":{}}
+{"level":"warn","message":{"code":"ENOENT","errno":-4058,"path":"C:\\Users\\Acer\\Desktop\\entregamitchell\\public\\documents\\userdocuments\\identification-undefined.pdf","storageErrors":[],"syscall":"open"}}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"error","message":"No se cargo el archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}
+{"level":"warn","message":"no se encuentra archivos"}

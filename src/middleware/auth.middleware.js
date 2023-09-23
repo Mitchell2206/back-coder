@@ -1,10 +1,12 @@
 import productController from "../controllers/product.controller.js";
-
+import CustomErrors from "../utils/customError.js";
+import ErrorCodes from "../utils/error.js";
+import { generateErrorAutenticacion } from "../utils/info.js";
 
 export function isAuth(req, res, next) {
 	if (req.user.rol === 'ADMIN') {
 		req.logger.warn(`${req.user.rol} no autorizado`);
-		return res.sendStatus(500)
+		CustomErrors.createError('Admi no usa chat', generateErrorAutenticacion(), 'El admin no esta autorizado', ErrorCodes.ADMIN_NOAUTHORIZATION)
 	}
 	next();
 

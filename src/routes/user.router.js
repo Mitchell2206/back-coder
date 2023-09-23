@@ -2,12 +2,14 @@ import { Router } from "express";
 import passport from "passport";
 import { generateToken, middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 import ErrorCodes from "../utils/error.js";
-import { generateErrorAutenticacion, generateErrorDeslogueo, generateErrorEnrutamiento, generateUserErrorInfo } from "../utils/info.js";
+import { generateErrorAutenticacion, generateErrorDeslogueo, generateErrorEnrutamiento, generateErrorFile, generateUserErrorInfo } from "../utils/info.js";
 import CustomErrors from "../utils/customError.js";
 import userController from "../controllers/user.controller.js";
 import { transporter } from "../utils/nodemailer.js";
 import enviroment from "../config/enviroment.js";
 import { comparePassword, hashPassword } from "../utils/encript.util.js";
+import { uploadGeneric } from "../middleware/uploadgeneric.middleware.js";
+import multer from "multer";
 
 import jwt from 'jsonwebtoken';
 import userModel from "../models/user.model.js";
@@ -39,26 +41,37 @@ userRouter.post('/', (req, res, next) => {
 
 
 userRouter.post('/auth', (req, res, next) => {
-	passport.authenticate('login', (err, user, info) => {
+	passport.authenticate('login', async (err, user, info) => {
 
 		if (err) {
 			return next(err)
 		}
 
 
-		if (!user) {
+		if (!user || user === false) {
+			console.log(user)
 			req.logger.warn('Error de autenticacion en login')
-			CustomErrors.createError("Error de autenticacion", generateUserErrorInfo(), 'Login Error', ErrorCodes.AUTENTICACION_ERROR);
+			res.redirect('dataerror')
+			//CustomErrors.createError("Error de autenticacion", generateUserErrorInfo(), 'Login Error', ErrorCodes.AUTENTICACION_ERROR);
 		}
 
 
 		const token = generateToken(user);
 
 
-		res.cookie('token', token, {
-			httpOnly: true,
-			maxAge: 60000000,
-		}).redirect('/profile');
+
+		if (user) {
+
+			user.last_connection = new Date()
+			await user.save()
+			console.log(user)
+
+			res.cookie('token', token, {
+				httpOnly: true,
+				maxAge: 60000000,
+			}).redirect('/profile');
+		}
+
 
 	})(req, res, next);
 });
@@ -66,7 +79,7 @@ userRouter.post('/auth', (req, res, next) => {
 
 
 
-userRouter.post('/logout' , middlewarePassportJwt,(req, res, next) => {
+userRouter.post('/logout', middlewarePassportJwt, (req, res, next) => {
 
 	if (req.user) {
 		req.session.destroy();
@@ -204,5 +217,143 @@ userRouter.post('/emailreset/:token', async (req, res, next) => {
 	}
 });
 
+
+
+userRouter.post("/:uid/products", uploadGeneric('public/img/products', ".jpg").single("products"),
+	(req, res) => {
+		const file = req.file;
+
+		if (file === undefined) {
+
+			req.logger.warn('No se cargo el archivo')
+			CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
+		}
+		console.log(file)
+		req.logger.info(`File uploaded successfully, ${file}`)
+		res.redirect('/archivoenviado')
+
+
+	}
+);
+
+userRouter.post("/:uid/profiles", uploadGeneric('public/img/profiles', ".jpg").single("profiles"),
+	(req, res) => {
+
+		const file = req.file;
+
+		if (file === undefined) {
+			req.logger.warn('No se cargo el archivo')
+			CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
+		}
+		console.log(file)
+		req.logger.info(`File uploaded successfully, ${file}`)
+		res.redirect('/archivoenviado')
+
+
+	}
+);
+
+userRouter.post("/:uid/documents", uploadGeneric('public/documents/', ".pdf").single("documents"),
+	(req, res) => {
+
+		const file = req.file;
+
+		if (file === undefined) {
+			req.logger.warn('No se cargo el archivo')
+			CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
+		}
+
+		req.logger.info(`File uploaded successfully, ${file}`)
+		res.redirect('/archivoenviado')
+
+	}
+);
+
+
+userRouter.post("/:uid/useridentification", uploadGeneric('public/documents/userdocuments', ".pdf").single("identification"),
+	async (req, res) => {
+
+		try {
+
+			const file = req.file;
+			console.log(file)
+
+			if (file === undefined) {
+				req.logger.warn('No se cargo el archivo')
+				//CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
+			} else {
+				const fileName = file.filename;
+				const id = req.params;
+				const user = await userController.getUserById(id.uid)
+				console.log(user)
+				user.documents.identification = fileName
+				await user.save()
+
+				req.logger.info(`File uploaded successfully, ${file}`)
+				res.redirect('/archivoenviado')
+			}
+
+		} catch (err) {
+			console.log("error ")
+		}
+	}
+)
+
+
+
+userRouter.post("/:uid/useraddressproof", uploadGeneric('public/documents/useraddressproof', ".pdf").single("addressproof"),
+	async (req, res) => {
+
+		try {
+
+			const file = req.file;
+			if (file === undefined) {
+				req.logger.warn('No se cargo el archivo')
+				CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
+			}
+			const fileName = file.filename;
+
+			const id = req.params;
+			const user = await userController.getUserById(id.uid)
+			user.documents.addressProof = fileName
+			await user.save()
+
+			req.logger.info(`File uploaded successfully, ${file}`)
+			res.redirect('/archivoenviado')
+		} catch (err) {
+			console.log("error ")
+		}
+	}
+)
+
+
+userRouter.post("/:uid/userbankstatement", uploadGeneric('public/documents/userbankstatement', ".pdf").single("bankstatement"),
+	async (req, res) => {
+
+		try {
+
+
+			if (req.file === undefined) {
+				req.logger.warn('no se encuentra archivos')
+				
+			}
+
+			const file = req.file;
+
+			console.log(file)
+			const fileName = file.filename;
+
+			const id = req.params;
+			const user = await userController.getUserById(id.uid)
+			user.documents.bankStatement = fileName
+			await user.save()
+
+			req.logger.info(`File uploaded successfully, ${file}`)
+			res.redirect('/archivoenviado')
+		} catch (err) {
+			CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
+		}
+	}
+)
 
 export { userRouter }
