@@ -3,14 +3,30 @@ const cartId = localStorage.getItem('cartId');
 
 async function mostrarCarrito() {
   if (cartId !== null) {
-    try {
-      const response = await fetch(`/api/carts/${cartId}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      const data = await response.json();
+
+
+
+
+    const response = await fetch(`/api/carts/${cartId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+
+    if (data.products.length === 0) {
+
+
+      const cartHtml = document.getElementById('noproduct');
+      cartHtml.innerHTML = '';
+      const cartElement = document.createElement('div');
+      cartElement.innerHTML = `
+              <h1 class=""> NO HAY PRODUCTOS EN EL CARRITO</h1>
+          `;
+      cartHtml.appendChild(cartElement);
+    } else {
+
 
       const cartHtml = document.getElementById('mostrarCart');
       cartHtml.innerHTML = '';
@@ -51,7 +67,7 @@ async function mostrarCarrito() {
               });
 
               const data = await response.json();
-              
+
               const cartHtml = document.getElementById('mostrarCart');
               cartHtml.innerHTML = '';
               await mostrarCarrito();
@@ -77,7 +93,6 @@ async function mostrarCarrito() {
                 },
               });
               const data = await response.json();
-
               if (data) {
                 const ticketHtml = document.getElementById('ticket');
                 ticketHtml.innerHTML = '';
@@ -106,11 +121,7 @@ async function mostrarCarrito() {
           await purchase();
         });
       });
-
-    } catch (error) {
-      console.error("Error:", error);
     }
-
   } else {
     const cartHtml = document.getElementById('noproduct');
     cartHtml.innerHTML = '';

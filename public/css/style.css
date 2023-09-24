@@ -911,6 +911,7 @@ body {
   align-items: center;
   padding: 50px;
 }
+
 .errorArchivo h1 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color: brown;
@@ -935,7 +936,7 @@ body {
 
 
 
-.container-archivos .card .row .card-body form .mb-3{
+.container-archivos .card .row .card-body form .mb-3 {
   padding: 20px;
   margin: 10px;
   display: flex;
@@ -944,6 +945,48 @@ body {
   justify-content: center;
 }
 
-.container-archivos .card .row .card-body form .mb-3 .form-control{
+.container-archivos .card .row .card-body form .mb-3 .form-control {
   margin: 10px;
 }
+
+
+/* falta de archivos */
+.error-envio {
+
+  padding: 90x;
+  margin: 100px
+}
+
+.error-envio h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: rgb(116, 38, 38);
+}
+
+
+.btn-archivos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.btn-archivos .btn {
+  height: 25px;
+  background-color: rgba(189, 147, 147, 0.881);
+  border-radius: 3px;
+  margin: 10px;
+  
+}
+
+
+.filenamme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

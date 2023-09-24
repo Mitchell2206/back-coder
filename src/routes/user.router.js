@@ -2,14 +2,14 @@ import { Router } from "express";
 import passport from "passport";
 import { generateToken, middlewarePassportJwt } from "../middleware/jwt.middleware.js";
 import ErrorCodes from "../utils/error.js";
-import { generateErrorAutenticacion, generateErrorDeslogueo, generateErrorEnrutamiento, generateErrorFile, generateUserErrorInfo } from "../utils/info.js";
+import { generateErrorAutenticacion, generateErrorDeslogueo, generateErrorEnrutamiento, generateErrorFile } from "../utils/info.js";
 import CustomErrors from "../utils/customError.js";
 import userController from "../controllers/user.controller.js";
 import { transporter } from "../utils/nodemailer.js";
 import enviroment from "../config/enviroment.js";
 import { comparePassword, hashPassword } from "../utils/encript.util.js";
 import { uploadGeneric } from "../middleware/uploadgeneric.middleware.js";
-import multer from "multer";
+
 
 import jwt from 'jsonwebtoken';
 import userModel from "../models/user.model.js";
@@ -97,24 +97,33 @@ userRouter.post('/premium/:uid', async (req, res, next) => {
 
 	try {
 		const user = await userController.getUserById(userId)
+		const userDocuments = user.documents;
 
-		if (user.rol === "USER") {
-			user.rol = "PREMIUM"
-			user.save()
+		if (!userDocuments.addressProof || !userDocuments.bankStatement || !userDocuments.identification) {
+			req.logger.warn("necesita cargar toda la documentacion antes de pasar a premium")
+			res.redirect('/filedocuments');
+			
 		} else {
-			user.rol = "USER"
-			user.save()
+
+			if (user.rol === "USER") {
+				user.rol = "PREMIUM"
+				user.save()
+			} else {
+				user.rol = "USER"
+				user.save()
+			}
+  
+			console.log(user)
+			req.session.destroy();
+			res.clearCookie('connect.sid');
+			res.clearCookie('token');
+			res.redirect('/login')
 		}
 
 
-		console.log(user)
-		req.session.destroy();
-		res.clearCookie('connect.sid');
-		res.clearCookie('token');
-		res.redirect('/login')
 
 	} catch (err) {
-		req.logger.error(`no se puedo cambiar el rol del ${user.rol}`)
+		req.logger.error(`no se puedo cambiar el rol `)
 	}
 });
 
@@ -275,26 +284,23 @@ userRouter.post("/:uid/useridentification", uploadGeneric('public/documents/user
 
 		try {
 
-			const file = req.file;
-			console.log(file)
-
-			if (file === undefined) {
-				req.logger.warn('No se cargo el archivo')
-				//CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
-			} else {
-				const fileName = file.filename;
-				const id = req.params;
-				const user = await userController.getUserById(id.uid)
-				console.log(user)
-				user.documents.identification = fileName
-				await user.save()
-
-				req.logger.info(`File uploaded successfully, ${file}`)
-				res.redirect('/archivoenviado')
+			if (req.file === undefined) {
+				req.logger.warn('no se envio ningun archivo')
+				res.render('faltadearchivos')
 			}
 
+			const file = req.file;
+			const fileName = file.filename;
+			const id = req.params;
+			const user = await userController.getUserById(id.uid)
+			console.log(user)
+			user.documents.identification = fileName
+			await user.save()
+
+			req.logger.info(`File uploaded successfully, ${file}`)
+			res.redirect('/archivoenviado')
 		} catch (err) {
-			console.log("error ")
+			res.status(400)
 		}
 	}
 )
@@ -306,11 +312,12 @@ userRouter.post("/:uid/useraddressproof", uploadGeneric('public/documents/userad
 
 		try {
 
-			const file = req.file;
-			if (file === undefined) {
-				req.logger.warn('No se cargo el archivo')
-				CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
+			if (req.file === undefined) {
+				req.logger.warn('no se envio ningun archivo')
+				res.render('faltadearchivos')
 			}
+
+			const file = req.file;
 			const fileName = file.filename;
 
 			const id = req.params;
@@ -321,7 +328,7 @@ userRouter.post("/:uid/useraddressproof", uploadGeneric('public/documents/userad
 			req.logger.info(`File uploaded successfully, ${file}`)
 			res.redirect('/archivoenviado')
 		} catch (err) {
-			console.log("error ")
+			res.status(400)
 		}
 	}
 )
@@ -332,26 +339,25 @@ userRouter.post("/:uid/userbankstatement", uploadGeneric('public/documents/userb
 
 		try {
 
-
 			if (req.file === undefined) {
-				req.logger.warn('no se encuentra archivos')
-				
+				req.logger.warn('no se envio ningun archivo')
+				res.redirect('/faltadearchivos')
 			}
 
 			const file = req.file;
-
-			console.log(file)
 			const fileName = file.filename;
 
 			const id = req.params;
 			const user = await userController.getUserById(id.uid)
+			console.log(user)
 			user.documents.bankStatement = fileName
+			console.log(user)
 			await user.save()
 
 			req.logger.info(`File uploaded successfully, ${file}`)
 			res.redirect('/archivoenviado')
 		} catch (err) {
-			CustomErrors.createError('Error file', generateErrorFile(), 'No se envio el archivo', ErrorCodes.FILE_ERROR)
+			res.status(400)
 		}
 	}
 )

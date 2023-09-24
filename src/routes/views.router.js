@@ -11,9 +11,12 @@ const wiewsRouter = Router()
 wiewsRouter.get('/profile', middlewarePassportJwt, async (req, res) => {
   const user = req.user
   const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
+  const autorizacionAdmin =  user.rol === "ADMIN";
+  console.log(autorizacionAdmin)
   res.render('profile', {
     title: 'Perfil de Usuario',
     message: 'Private route',
+    autorizacionAdmin,
     user,
     autorizacion
   });
@@ -87,49 +90,86 @@ wiewsRouter.get('/errorpassword', (req, res) => {
 
 wiewsRouter.get('/faltadearchivos', middlewarePassportJwt, (req, res) => {
   const user = req.user;
+  const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
+  const autorizacionAdmin =  user.rol === "ADMIN";
   res.render('faltadearchivos', {
     title: 'falta de archivos',
-    user
+    autorizacion,
+    user,
+    autorizacionAdmin
   });
 });
 
 wiewsRouter.get('/documents', middlewarePassportJwt, async (req, res) => {
   const user = req.user;
+  const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
+  const autorizacionAdmin =  user.rol === "ADMIN";
   res.render('documents', {
     title: 'Carga de archivos',
-    user
+    user,
+    autorizacion,
+    autorizacionAdmin
   });
 });
 
 wiewsRouter.get('/archivoenviado', middlewarePassportJwt, (req, res) => {
   const user = req.user;
+  const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
+  const autorizacionAdmin =  user.rol === "ADMIN";
   res.render('archivoenviado', {
     title: 'Archivo enviado',
-    user
+    autorizacion,
+    user,
+    autorizacionAdmin
   });
 });
 
 wiewsRouter.get('/fileuser', middlewarePassportJwt, async (req, res) => {
   const user = req.user;
- 
-  const identification = user.documents;
-  const addressProof = user.documents;
-  const bankStatement = user.documents;
+  const userid = user._id
+  const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
+  const autorizacionAdmin =  user.rol === "ADMIN";
+
+  const liveDocumentsUser = await userController.getUserById(userid)
+  const identification = liveDocumentsUser.documents;
+  const addressProof = liveDocumentsUser.documents;
+  const bankStatement = liveDocumentsUser.documents;
 
   res.render('fileuser', {
     title: 'Subir archivos del usuario',
     user,
+    autorizacion,
     identification,
     addressProof,
-    bankStatement
+    bankStatement,
+    autorizacionAdmin
   });
 });
+
+
+wiewsRouter.get('/falsedocuments', middlewarePassportJwt, async (req, res) => {
+  const user = req.user;
+  const userid = user._id
+  const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
+  const autorizacionAdmin =  user.rol === "ADMIN";
+
+  
+  res.render('falsedocuments', {
+    title: 'error de cambio de rol',
+    user,
+    autorizacion,
+    autorizacionAdmin
+  });
+});
+
+
+
 
 wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
   const { limit = 4, page = 1, sort, descripcion, availability } = req.query;
   const user = req.user
   const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
-
+  const autorizacionAdmin =  user.rol === "ADMIN";
   try {
     // const products = generateProducts(page, limit, sort, descripcion, availability)
 
@@ -157,7 +197,7 @@ wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
 
     const products = result.docs.map((product) => product.toObject());
 
-    res.render("index", { title: "Products", products, pag, prevLink, totalPages, nextLink, user, autorizacion });
+    res.render("index", { title: "Products", products, pag, prevLink, totalPages, nextLink, user, autorizacionAdmin, autorizacion });
   } catch (error) {
     req.logger.error(`No se obtuvieron los productos de la base de dato`)
     res.status(500).send(`No se pudieron obtener los productos`);
@@ -167,28 +207,32 @@ wiewsRouter.get('/index', middlewarePassportJwt, async (req, res) => {
 
 wiewsRouter.get('/chat', middlewarePassportJwt, (req, res) => {
   const user = req.user
+  const autorizacionAdmin =  user.rol === "ADMIN";
   const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
-  res.render('chat', { user, autorizacion });
+  res.render('chat', { user, autorizacion, autorizacionAdmin });
 });
 
 
 wiewsRouter.get('/carts/', middlewarePassportJwt, async (req, res) => {
   const user = req.user
+  const autorizacionAdmin =  user.rol === "ADMIN";
   const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
-  res.render('cart', { user, autorizacion });
+  res.render('cart', { user, autorizacion, autorizacionAdmin});
 });
 
 
 wiewsRouter.get('/changeofrole/', middlewarePassportJwt, async (req, res) => {
   const user = req.user
+  const autorizacionAdmin =  user.rol === "ADMIN";
   const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
-  res.render('changeofrole', { user, autorizacion });
+  res.render('changeofrole', { user, autorizacion, autorizacionAdmin });
 });
 
 wiewsRouter.get('/myshop/', middlewarePassportJwt, async (req, res) => {
   const user = req.user
+  const autorizacionAdmin =  user.rol === "ADMIN";
   const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
-  res.render('myshop', { user, autorizacion });
+  res.render('myshop', { user, autorizacion, autorizacionAdmin });
 });
 
 export default wiewsRouter
