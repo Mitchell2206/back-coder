@@ -47,20 +47,9 @@ userRouter.post('/auth', (req, res, next) => {
 			return next(err)
 		}
 
-
-		if (!user || user === false) {
-			console.log(user)
-			req.logger.warn('Error de autenticacion en login')
-			res.redirect('dataerror')
-			//CustomErrors.createError("Error de autenticacion", generateUserErrorInfo(), 'Login Error', ErrorCodes.AUTENTICACION_ERROR);
-		}
-
-
-		const token = generateToken(user);
-
-
-
 		if (user) {
+
+			const token = generateToken(user);
 
 			user.last_connection = new Date()
 			await user.save()
@@ -70,6 +59,9 @@ userRouter.post('/auth', (req, res, next) => {
 				httpOnly: true,
 				maxAge: 60000000,
 			}).redirect('/profile');
+		} else {
+			req.logger.warn('Error de autenticacion en login')
+			res.redirect('/dataerror')
 		}
 
 
@@ -101,8 +93,8 @@ userRouter.post('/premium/:uid', async (req, res, next) => {
 
 		if (!userDocuments.addressProof || !userDocuments.bankStatement || !userDocuments.identification) {
 			req.logger.warn("necesita cargar toda la documentacion antes de pasar a premium")
-			res.redirect('/filedocuments');
-			
+			res.redirect('/falsedocuments');
+
 		} else {
 
 			if (user.rol === "USER") {
@@ -112,7 +104,7 @@ userRouter.post('/premium/:uid', async (req, res, next) => {
 				user.rol = "USER"
 				user.save()
 			}
-  
+
 			console.log(user)
 			req.session.destroy();
 			res.clearCookie('connect.sid');

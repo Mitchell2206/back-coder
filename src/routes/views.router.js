@@ -12,7 +12,7 @@ wiewsRouter.get('/profile', middlewarePassportJwt, async (req, res) => {
   const user = req.user
   const autorizacion = user.rol === "PREMIUM" || user.rol === "ADMIN";
   const autorizacionAdmin =  user.rol === "ADMIN";
-  console.log(autorizacionAdmin)
+ 
   res.render('profile', {
     title: 'Perfil de Usuario',
     message: 'Private route',
