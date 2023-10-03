@@ -24,18 +24,18 @@
             {{#if user}}
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/profile">PERFIL</a>
-                    <a class="nav-link" href="http://localhost:8080/index">PRODUCTOS</a>
+                    <a class="nav-link active" aria-current="page" href="/profile">PERFIL</a>
+                    <a class="nav-link" href="/index">PRODUCTOS</a>
                     {{#if autorizacionUsPr}}
-                    <a class="nav-link user" href="http://localhost:8080/carts/">CARRITO</a>
+                    <a class="nav-link user" href="/carts/">CARRITO</a>
                     {{/if}}
-                    <a class="nav-link" href="http://localhost:8080/fileuser">CREDENCIALES</a>
-                    <a class="nav-link" href="http://localhost:8080/chat">CHAT</a>
+                    <a class="nav-link" href="/fileuser">CREDENCIALES</a>
+                    <a class="nav-link" href="/chat">CHAT</a>
                     {{#if autorizacion}}
-                    <a class="nav-link" href="http://localhost:8080/myshop">MI TIENDA</a>
+                    <a class="nav-link" href="/myshop">MI TIENDA</a>
                     {{#if autorizacionAdmin}}
-                    <a class="nav-link" href="http://localhost:8080/documents">DOCUMENTS</a>
-                    <a class="nav-link" href="http://localhost:8080/controlleruser">CONTROL DE USUARIOS</a>
+                    <a class="nav-link" href="/documents">DOCUMENTS</a>
+                    <a class="nav-link" href="/controlleruser">CONTROL DE USUARIOS</a>
                     {{/if}}
                     {{/if}}
                 </div>
@@ -45,7 +45,7 @@
                 style="color: black;"> {{user.rol}} {{user.first_name}} </a>
 
 
-            <a class="nav-link" href="http://localhost:8080/changeofrole">
+            <a class="nav-link" href="/changeofrole">
                 <button class='btn-logout ' type='submit'>
                     CAMBIO DE ROL
                 </button>
@@ -58,8 +58,8 @@
             </form>
             {{else}}
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="http://localhost:8080">Registrate</a>
-                <a class="nav-link active" aria-current="page" href="http://localhost:8080/login">Login</a>
+                <a class="nav-link active" aria-current="page" href="/">Registrate</a>
+                <a class="nav-link active" aria-current="page" href="/login">Login</a>
             </div>
             {{/if}}
         </div>

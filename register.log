@@ -1246,3 +1246,10 @@
 {"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
 {"level":"warn","message":"ADMIN no autorizado"}
 {"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"ADMIN no autorizado"}
+{"level":"warn","message":{"code":6,"name":"Admi no usa chat"}}
+{"level":"warn","message":"no se envio ningun archivo"}
+{"level":"warn","message":"No se cargo el archivo"}
+{"level":"warn","message":{"code":11,"name":"Error file"}}
