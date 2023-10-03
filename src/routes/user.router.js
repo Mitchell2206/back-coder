@@ -282,7 +282,7 @@ userRouter.post('/forgotpassword', async (req, res, next) => {
                    <div style="padding: 20px;">
                           <p style="margin-bottom: 20px; font-size: 16px; color: #333;">Has solicitado restablecer tu contraseña. Haz clic en el siguiente enlace para continuar:</p>
                           <p style="margin-bottom: 20px;">
-                           <a style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #ffffff; text-decoration: none; border-radius: 5px;" href="/forgotpassword/${token}">Restablecer Contraseña</a>
+                           <a style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: #ffffff; text-decoration: none; border-radius: 5px;" href="https://back-coder-production.up.railway.app/forgotpassword/${token}">Restablecer Contraseña</a>
                            </p>
                            <p style="font-size: 14px; color: #777;">Si no has solicitado esto, puedes ignorar este correo electrónico.</p>
                          </div>
