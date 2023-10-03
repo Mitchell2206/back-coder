@@ -103,7 +103,8 @@ async function mostrarCarrito() {
                   <p class="title">NUMERO DE ORDEN ${data.code}</p>
                   <p>${data.purchase_datatime}</p>
                   <p>Importe de la compra: ${data.amount}</p>   
-                  <p>GRACIAS POR SU COMPRA</p>
+                  <p>SE TE HA ENVIADO AL EMAIL EL COMPROBANTE DE COMPRA</p>
+                  <p>GRACIAS!</p>
                   <a class="nav-link active" aria-current="page" href="http://localhost:8080/profile">VOLVER</a>
                 </div> `;
                 ticketHtml.appendChild(ticketElement);
