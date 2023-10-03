@@ -2,6 +2,7 @@ import cartService from "../service/cart.service.js";
 import cartDao from "../daos/dao.mongo/cart.dao.js";
 import { isAuth } from "../middleware/auth.middleware.js";
 import productController from "./product.controller.js";
+import { Logger } from "winston";
 
 class CartController {
     constructor() {
@@ -18,23 +19,15 @@ class CartController {
     }
 
     async addProductCart(cid, pid) {
-        try {
-            const product = await productController.getProductsById(pid);
-            if (product.length > 0) {
-                const productStock = product[0]
-                if (productStock.stock === 0) {
-
-                    // creo un logger no hay productos
-                } else {
-                    return this.service.addProductCart(cid, pid);
-                }
+        const product = await productController.getProductsById(pid);
+        if (product.length > 0) {
+            const productStock = product[0]
+            if (productStock.stock === 0) {
+                // creo un logger no hay productos
+            } else {
+                return this.service.addProductCart(cid, pid);
             }
-
-        } catch (error) {
-            
-            console.log("Ocurrió un error al obtener el producto:", error.message);
         }
-
     }
 
 
@@ -52,8 +45,8 @@ class CartController {
 
     async updateQuantityProduct(cid, pid, qty) {
         return this.service.updateQuantityProduct(cid, pid, qty)
-      // falta este para documentar
-    } 
+        // falta este para documentar
+    }
 
     async clearProductToCart(cid) {
         return this.service.clearProductToCart(cid);

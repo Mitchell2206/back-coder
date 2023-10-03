@@ -15,13 +15,19 @@ export default class UserService {
     }
 
     createUser(userData) {
-    
-
         return this.dao.createUser(userData);
     }
 
+    getInactiveUsers(){
+        return this.dao.getInactiveUsers();
+    }
+
     getUserById(id) {
-        return this.dao.getUserById(id); 
+        return this.dao.getUserById(id);
+    }
+
+    deleteUserById(id) {
+        return this.dao.deleteUserById(id)
     }
 
 }

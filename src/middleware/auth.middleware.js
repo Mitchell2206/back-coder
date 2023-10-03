@@ -15,7 +15,7 @@ export function isAuth(req, res, next) {
 
 export async function checkAuthorization(req, res, next) {
 	const userRole = req.user.rol;
-	const products = await productController.getProductsById(req.params.id);
+	const products = await productController.getProductsById(req.params.uid);
 	const product = products[0];
 	const productOwner = product.owner;
 

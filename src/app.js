@@ -39,7 +39,7 @@ app.use(
       },
       ttl: 6000,
     }),
-    secret: 'B2zdY3B$pHmxW%',
+    secret: enviroment.DB_SECRET,
     resave: true,
     saveUninitialized: true,
   })
@@ -66,7 +66,6 @@ const swaggerOptions = {
   apis: ['./docs/**/*.yaml']
 }
 const spects = swaggerJSDoc(swaggerOptions)
-console.log(spects)
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(spects))
 app.use('/', wiewsRouter)

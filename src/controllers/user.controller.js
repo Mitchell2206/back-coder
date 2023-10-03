@@ -18,9 +18,16 @@ class UserController {
     async createUser(userData) {
         return await this.service.createUser(userData);
     }
+    async getInactiveUsers(){
+        return await this.service.getInactiveUsers();
+    }
 
     async getUserById(id) {
         return await this.service.getUserById(id);
+    }
+
+    async deleteUserById(id) {
+        return await this.service.deleteUserById(id);
     }
 
 }

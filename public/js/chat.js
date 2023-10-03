@@ -8,8 +8,8 @@ const render = async (data) => {
     data.messages.forEach((message) => {   
       const messageElement = document.createElement('div');
       messageElement.innerHTML = `
-      <p>${message.user}</p>
-      <p>Requerimiento: ${message.menssage}</p>
+      <p class="user">Usuario: ${message.user}</p>
+      <p class="req">Requerimiento: ${message.menssage}</p>
     `;
       messageHtml.appendChild(messageElement); 
     });
@@ -20,14 +20,3 @@ socket.on('List-Message', (data) => {
   render(data); 
 });
 
-/*
-socket.on('List-Product', (products) => {
-  render(products);
-});
-
-
-
-socket.on('product_updated', (data) => {
-  render(data);
-});
-*/

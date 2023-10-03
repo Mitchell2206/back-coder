@@ -282,10 +282,18 @@ body {
 
 /* css del profile*/
 
-
+.btn-2 {
+  color: rgb(234, 221, 221);
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-style: oblique;
+}
+.btn-2:hover{
+  color: rgb(157, 221, 185);
+}
 .container-profile {
   padding: 50px;
-  background-color: rgba(10, 4, 4, 0.808);
+  background-color: rgba(4, 10, 5, 0.808);
 }
 
 .container-profile .card {
@@ -336,12 +344,17 @@ body {
 
 /* Formulario - Chat  */
 
+#List-Message {
+  display: flex;
+  flex-direction: column-reverse
+}
 
 .container-chat {
-  padding: 50px;
+
   background-color: rgba(10, 4, 4, 0.808);
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  padding: 10px;
   justify-content: center;
   align-items: center;
 }
@@ -371,6 +384,7 @@ body {
   align-items: center;
   background-color: rgba(150, 172, 172, 0.419);
   padding: 80px;
+  margin: 20px;
   border-radius: 10px;
   justify-content: center;
   align-items: center;
@@ -390,19 +404,44 @@ body {
 
 
 .container-chat .container-mensaje {
-  padding: 100px;
+  padding: 25px;
   border-radius: 10px;
   display: flex;
+  height: 460px;
+  width: 460px;
+  display: inline-block;
+  overflow: auto;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(235, 243, 235, 0.968);
+  background-color: rgba(181, 54, 54, 0.601);
 
+}
+
+.lista {
+  color: wheat;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.container-chat .container-mensaje div {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(181, 127, 127, 0.431);
+}
+
+.container-chat .container-mensaje div .user {
+  color: rgb(33, 30, 30);
+}
+
+.container-chat .container-mensaje div p {
+  color: white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .container-chat .container-mensaje .Lista {
   color: rgb(0, 0, 0);
 }
+
 
 
 /* Register Error */
@@ -972,7 +1011,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
+
 }
 
 .btn-archivos .btn {
@@ -980,7 +1019,7 @@ body {
   background-color: rgba(189, 147, 147, 0.881);
   border-radius: 3px;
   margin: 10px;
-  
+
 }
 
 
@@ -990,3 +1029,73 @@ body {
   align-items: center;
 }
 
+/* registro de usuarios*/
+
+.container-register-user {
+  background-color: rgba(155, 72, 72, 0.655);
+  padding: 50px;
+  margin: 10px;
+  border-radius: 20px;
+}
+
+.container-register-user h1 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-register-user .container {
+  width: 1600px;
+  display: flex;
+  
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+
+}
+
+.container-register-user .container .card-body {
+  width: 250px;
+  height: 200px;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  background-color: brown;
+  border-radius: 10px;
+
+  padding: 50px;
+  margin: 20px;
+  flex-direction: column-reverse
+}
+
+.container-register-user .container .card-body .grupbtn {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.container-register-user .container .card-body .grupbtn .btn {
+  width: 120px;
+  height: 30px;
+  font-size: 9px;
+  margin: 5px;
+}
+
+.container-register-user .container .card-body .card-title {
+  color: rgb(242, 231, 231);
+  padding: 5px;
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container-register-user .container .card-body .card-text {
+  color: rgb(255, 250, 250);
+  margin: 8px;
+  font-size: 14px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

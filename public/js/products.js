@@ -64,6 +64,9 @@ deleteProducttButtons.forEach((btn) => {
         .then(response => {
           if (response.ok) {
             swal("¡Haz Eliminado tu producto! ", ` ¡Ya no existe en tu tienda! `, "success");
+            setTimeout(function () {
+              location.reload();
+          }, 2000);
           } else {
             swal("¡No estas autorizado! ", " ...¡No puedes eliminar productos que no son tuyos! ", "warning");
           }

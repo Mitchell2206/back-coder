@@ -2,7 +2,7 @@
     <form action='/api/chat/' method='post'>
         {{#if user}}
         <div class="mb-3">
-            <h2>Comunidad</h2>
+            <h2>Chat</h2>
 
             <input type='text' class='form-control' placeholder='Email' aria-label='user' name='user'
                 value='{{user.email}}' />
@@ -17,7 +17,6 @@
     </form>
 
     <div class='container-mensaje'>
-        <h2 class="Lista">Chat</h2>
         <div id="List-Message"></div>
     </div>
 </div>

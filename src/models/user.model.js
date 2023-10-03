@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema({
 		bankStatement: String,
 	},
 	last_connection: {
-		type: Date,
+		type: String,
 		default: null,
 	},
 	cart: {

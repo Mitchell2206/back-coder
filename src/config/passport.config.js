@@ -54,7 +54,7 @@ const inicializePassport = () => {
                         img,
                     });
                     
-                    if (userdto.email === "mitchel2206@gmail.com") {
+                    if (userdto.email === enviroment.EMAIL_ADMIN) {
                         userdto.rol = "ADMIN";
                     }
 
@@ -164,7 +164,7 @@ const inicializePassport = () => {
         new jwtStrategy(
             {
                 jwtFromRequest: jwtExtract.fromExtractors([cookieExtractor]),
-                secretOrKey: 'privatekey',
+                secretOrKey: enviroment.JWT_SECRET,
             },
             (payload, done) => {
                 done(null, payload);
