@@ -78,7 +78,7 @@ const inicializePassport = () => {
             {
                 clientID: enviroment.CLIENTID,
                 clientSecret: enviroment.CLIENTSECRET,
-                callbackURL: '/api/users/githubcallback',
+                callbackURL: enviroment.CALLBACK_URL,
             },
             async (accessToken, refreshToken, profile, done) => {
                 try {

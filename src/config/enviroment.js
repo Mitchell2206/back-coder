@@ -18,5 +18,6 @@ export default {
     NODMAILER_PASS: process.env.NODMAILER_PASS,
     DB_SECRET: process.env.DB_SECRET,
     EMAIL_ADMIN: process.env.EMAIL_ADMIN,
-    JWT_SECRET: process.env.JWT_SECRET
+    JWT_SECRET: process.env.JWT_SECRET,
+    CALLBACK_URL: process.env.CALLBACK_URL
 };
